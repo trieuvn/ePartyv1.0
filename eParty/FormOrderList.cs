@@ -79,12 +79,12 @@ namespace eParty
             // Xử lý sự kiện khi radio button 1 tháng được chọn
         }
 
-        /*private void btnOpenSchedule_Click(object sender, EventArgs e)
+        private void btnOpenSchedule_Click(object sender, EventArgs e)
         {
             DateTime currentWeekStart = DateTime.Now.Date.AddDays(-(int)DateTime.Now.DayOfWeek + 1);
             FormSchedule scheduleForm = new FormSchedule(currentWeekStart);
             scheduleForm.Show();
-        }*/
+        }
 
         public void LoadSchedule(DateTime weekStart)
         {
@@ -126,5 +126,7 @@ namespace eParty
             else if (time.Value.Hour >= 13 && time.Value.Hour < 18) return "Chiều";
             else return "Tối";
         }
+
+        
     }
 }
