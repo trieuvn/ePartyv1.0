@@ -1,0 +1,14 @@
+D:\aProjectInit\eParty\ObjectLayer\bin\Debug\net8.0\ObjectLayer.deps.json
+D:\aProjectInit\eParty\ObjectLayer\bin\Debug\net8.0\ObjectLayer.runtimeconfig.json
+D:\aProjectInit\eParty\ObjectLayer\bin\Debug\net8.0\ObjectLayer.dll
+D:\aProjectInit\eParty\ObjectLayer\bin\Debug\net8.0\ObjectLayer.pdb
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ObjectLayer.csproj.AssemblyReference.cache
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ObjectLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ObjectLayer.AssemblyInfoInputs.cache
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ObjectLayer.AssemblyInfo.cs
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ObjectLayer.csproj.CoreCompileInputs.cache
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ObjectLayer.dll
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\refint\ObjectLayer.dll
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ObjectLayer.pdb
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ObjectLayer.genruntimeconfig.cache
+D:\aProjectInit\eParty\ObjectLayer\obj\Debug\net8.0\ref\ObjectLayer.dll
