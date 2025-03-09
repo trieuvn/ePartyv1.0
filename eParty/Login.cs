@@ -7,10 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+using System.Configuration;
+using eParty.Properties;
+
+
 namespace eParty
 {
-    public partial class Login: Form
+    public partial class Login : Form
     {
+        string connectionString = "Data Source=localhost;Initial Catalog=ePartyDb;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;";
+
         public Login()
         {
             InitializeComponent();
@@ -38,7 +45,7 @@ namespace eParty
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         public void pass_color()
@@ -50,7 +57,7 @@ namespace eParty
         }
         private void txtLogin_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         public void login_color()
@@ -95,6 +102,82 @@ namespace eParty
             this.Hide();
             Registration registration = new Registration();
             registration.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtLogin.Text.Trim();
+            string password = txtPass.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=ePartyDb;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;"))
+            {
+                conn.Open();
+                string query = "SELECT UserName, Email FROM Manager WHERE UserName = @username AND Password = @password";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string user = reader["UserName"].ToString();
+                            string email = reader["Email"].ToString();
+
+                            // ✅ Lưu thông tin tài khoản vào Settings
+                            Properties.Settings.Default.LastUsername = user;
+                            Properties.Settings.Default.LastEmail = email;
+                            Properties.Settings.Default.Save();
+
+                            MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Chuyển sang FormOrderList
+                            this.Hide();
+                            FormOrderList orderList = new FormOrderList(user, new List<string>());
+                            orderList.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            string lastUsername = Properties.Settings.Default.LastUsername;
+            string lastEmail = Properties.Settings.Default.LastEmail;
+
+            if (!string.IsNullOrEmpty(lastUsername) && !string.IsNullOrEmpty(lastEmail) && Application.OpenForms["LoginShortcut"] == null)
+            {
+                // ✅ Hiển thị LoginShortcut nếu có tài khoản trước đó
+                LoginShortcut shortcutForm = new LoginShortcut(lastUsername, lastEmail);
+                shortcutForm.Show();
+            }
         }
     }
 }

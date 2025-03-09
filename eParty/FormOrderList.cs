@@ -14,13 +14,23 @@ namespace eParty
 {
     public partial class FormOrderList : Form
     {
+        private string eventName;
+        private List<string> foodList;
         public FormOrderList(string name, List<string> foods)
+        {
+            InitializeComponent();
+            this.eventName = name;
+            this.foodList = foods;
+            LoadOrders(null, null);
+        }
+
+        public FormOrderList()
         {
             InitializeComponent();
             LoadOrders(null, null);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormOrderList_Load(object sender, EventArgs e)
         {
             radio7Days.CheckedChanged += radioButton_CheckedChanged;
             radio1Month.CheckedChanged += radioButton_CheckedChanged;

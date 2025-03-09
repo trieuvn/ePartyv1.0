@@ -139,7 +139,7 @@ namespace eParty
             Margin = new Padding(4);
             Name = "FormOrderList";
             Text = "Form1";
-            Load += Form1_Load;
+            Load += FormOrderList_Load;
             ResumeLayout(false);
             PerformLayout();
         }
