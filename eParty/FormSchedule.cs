@@ -4,7 +4,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using BOLayer.Context;
 using BOLayer.Repository;
 using BOLayer.Repository.Models;
 
@@ -106,13 +105,13 @@ namespace eParty
 
         public void LoadSchedule(DateTime weekStart)
         {
-            using (var context = new ApplicationDbContext())
+            using (var context = new ePartyDbDbContext())
             {
                 var startOfWeek = weekStart.Date;
                 var endOfWeek = startOfWeek.AddDays(6).Date.AddHours(23).AddMinutes(59).AddSeconds(59);
 
                 // Lấy danh sách đơn hàng trong tuần
-                var orders = context.orders
+                var orders = context.Orders
                     .Where(o => o.BeginTime >= startOfWeek && o.BeginTime <= endOfWeek)
                     .OrderBy(o => o.BeginTime)
                     .ToList();

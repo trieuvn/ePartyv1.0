@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BOLayer.Context;
 using BOLayer.Repository;
 using BOLayer.Repository.Models;
 
@@ -50,9 +49,9 @@ namespace eParty
         {
             listViewOrders.Items.Clear();
 
-            using (var context = new ApplicationDbContext())
+            using (var context = new ePartyDbDbContext())
             {
-                var query = context.orders.AsQueryable();
+                var query = context.Orders.AsQueryable();
 
                 if (startDate.HasValue && endDate.HasValue)
                 {
@@ -90,12 +89,12 @@ namespace eParty
         {
             MessageBox.Show($"Tuần bắt đầu từ: {weekStart:dd/MM/yyyy} (Thứ {(int)weekStart.DayOfWeek})");
 
-            using (var context = new ApplicationDbContext())
+            using (var context = new ePartyDbDbContext())
             {
                 var startOfWeek = weekStart.Date;
                 var endOfWeek = startOfWeek.AddDays(6).Date.AddHours(23).AddMinutes(59).AddSeconds(59);
 
-                var orders = context.orders
+                var orders = context.Orders
                     .Where(o => o.BeginTime >= startOfWeek && o.BeginTime <= endOfWeek)
                     .OrderBy(o => o.BeginTime)
                     .ToList();
