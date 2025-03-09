@@ -4,9 +4,6 @@
     <Compile Update="ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormOrderList.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FormSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +11,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginShortcut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrderListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Registration.cs">
