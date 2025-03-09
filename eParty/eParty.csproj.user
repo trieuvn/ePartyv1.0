@@ -16,6 +16,9 @@
     <Compile Update="LoginShortcut.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PartyDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Registration.cs">
       <SubType>Form</SubType>
     </Compile>

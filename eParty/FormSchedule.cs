@@ -110,13 +110,11 @@ namespace eParty
                 var startOfWeek = weekStart.Date;
                 var endOfWeek = startOfWeek.AddDays(6).Date.AddHours(23).AddMinutes(59).AddSeconds(59);
 
-                // Lấy danh sách đơn hàng trong tuần
                 var orders = context.Orders
                     .Where(o => o.BeginTime >= startOfWeek && o.BeginTime <= endOfWeek)
                     .OrderBy(o => o.BeginTime)
                     .ToList();
 
-                // Nhóm đơn hàng theo khung giờ
                 Dictionary<string, List<Order>> schedule = new Dictionary<string, List<Order>>
         {
             { "Sáng", new List<Order>() },
@@ -127,11 +125,7 @@ namespace eParty
 
                 foreach (var order in orders)
                 {
-                    // Kiểm tra nếu BeginTime hoặc EndTime là null
-                    if (!order.BeginTime.HasValue || !order.EndTime.HasValue)
-                    {
-                        continue; // Bỏ qua đơn hàng nếu thời gian không hợp lệ
-                    }
+                    if (!order.BeginTime.HasValue || !order.EndTime.HasValue) continue;
 
                     string timeSlot = GetTimeSlot(order.BeginTime, order.EndTime);
                     schedule[timeSlot].Add(order);
@@ -140,7 +134,7 @@ namespace eParty
                 // Xóa dữ liệu cũ trước khi cập nhật
                 for (int col = 1; col <= 7; col++)
                 {
-                    for (int row = 1; row <= 4; row++) // Xóa 4 dòng: Sáng, Chiều, Tối, Khác
+                    for (int row = 1; row <= 4; row++)
                     {
                         Control existingControl = tableLayout.GetControlFromPosition(col, row);
                         if (existingControl != null)
@@ -149,10 +143,10 @@ namespace eParty
                 }
 
                 // Hiển thị dữ liệu mới
-                for (int col = 1; col <= 7; col++) // Lặp qua các cột từ Thứ 2 đến Chủ Nhật
+                for (int col = 1; col <= 7; col++)
                 {
                     DateTime day = weekStart.AddDays(col - 1);
-                    HashSet<int> displayedEvents = new HashSet<int>(); // Tránh hiển thị sự kiện trùng
+                    HashSet<int> displayedEvents = new HashSet<int>();
 
                     List<Order> ordersOnDay = schedule.Values.SelectMany(list => list)
                         .Where(o => o.BeginTime.HasValue && o.BeginTime.Value.Date == day.Date)
@@ -160,46 +154,47 @@ namespace eParty
 
                     foreach (var order in ordersOnDay)
                     {
-                        // Kiểm tra nếu BeginTime hoặc EndTime là null
-                        if (!order.BeginTime.HasValue || !order.EndTime.HasValue)
-                        {
-                            continue; // Bỏ qua đơn hàng nếu thời gian không hợp lệ
-                        }
+                        if (!order.BeginTime.HasValue || !order.EndTime.HasValue) continue;
 
                         string timeSlot = GetTimeSlot(order.BeginTime, order.EndTime);
-
-                        // Nếu sự kiện đã xuất hiện ở Sáng/Chiều/Tối thì chuyển sang cột "Khác"
-                        if (displayedEvents.Contains(order.Id))
-                        {
-                            timeSlot = "Khác";
-                        }
+                        if (displayedEvents.Contains(order.Id)) timeSlot = "Khác";
 
                         int rowIndex = timeSlot == "Sáng" ? 1 :
                                        timeSlot == "Chiều" ? 2 :
-                                       timeSlot == "Tối" ? 3 : 4; // Nếu không thuộc Sáng/Chiều/Tối -> Khác
+                                       timeSlot == "Tối" ? 3 : 4;
 
-                        Label lblData = (Label)tableLayout.GetControlFromPosition(col, rowIndex);
-                        if (lblData == null)
+                        Label lblData = new Label()
                         {
-                            lblData = new Label()
-                            {
-                                AutoSize = true,
-                                Font = new Font("Arial", 9, FontStyle.Regular),
-                                TextAlign = ContentAlignment.MiddleLeft,
-                                Text = ""
-                            };
-                            tableLayout.Controls.Add(lblData, col, rowIndex);
-                        }
+                            AutoSize = true,
+                            Font = new Font("Arial", 9, FontStyle.Regular),
+                            TextAlign = ContentAlignment.MiddleLeft,
+                            ForeColor = Color.Blue, // Làm nổi bật để thấy rõ
+                            Cursor = Cursors.Hand,  // Biến thành hình bàn tay khi hover
+                            Text = $"{order.Description}\n{order.NoTables} bàn\n{order.BeginTime:HH:mm} - {order.EndTime:HH:mm}\n{order.Manager}"
+                        };
 
-                        lblData.Text += $"{order.Description}\n" +
-                                        $"{order.NoTables} bàn\n" +
-                                        $"{order.BeginTime:HH:mm} - {order.EndTime:HH:mm}\n" +
-                                        $"{order.Manager}\n\n";
+                        // 🟢 Thêm sự kiện Click để mở chi tiết tiệc
+                        lblData.Click += (s, e) => OpenPartyDetails(order);
 
-                        displayedEvents.Add(order.Id); // Đánh dấu sự kiện đã hiển thị
+                        tableLayout.Controls.Add(lblData, col, rowIndex);
+                        displayedEvents.Add(order.Id);
                     }
                 }
             }
+        }
+        private void OpenPartyDetails(Order order)
+        {
+            PartyDetails partyDetailsForm = new PartyDetails(
+        order.Id,
+        order.Description ?? "Không có mô tả", // Nếu null, thay thế bằng chuỗi mặc định
+        order.NoTables ?? 0,  // ✅ Chuyển nullable int thành int, nếu null thì mặc định là 0
+        order.BeginTime?.ToString("dd/MM/yyyy HH:mm") ?? "Chưa xác định", // Xử lý null
+        order.EndTime?.ToString("dd/MM/yyyy HH:mm") ?? "Chưa xác định",   // Xử lý null
+        order.Manager ?? "Không có quản lý", // Nếu null, thay thế bằng chuỗi mặc định
+        order.Feedback ?? "Không có feedback" // Nếu null, thay thế bằng chuỗi mặc định
+    );
+
+            partyDetailsForm.ShowDialog();
         }
 
 

@@ -90,7 +90,7 @@ namespace eParty
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,  // Cổng SMTP của Gmail
-                    Credentials = new NetworkCredential("ongngoai2513@gmail.com", "fggt jyui tkxk ekmj"), // Thay bằng email & App Password
+                    Credentials = new NetworkCredential("epartyuef@gmail.com", "uyvn ibkq dlos jsnb"), // Thay bằng email & App Password
                     EnableSsl = true
                 };
 
