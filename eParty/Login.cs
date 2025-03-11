@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace eParty
 {
-    public partial class Login: Form
+    public partial class Login : Form
     {
         public Login()
         {
@@ -38,7 +38,7 @@ namespace eParty
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         public void pass_color()
@@ -50,7 +50,7 @@ namespace eParty
         }
         private void txtLogin_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         public void login_color()
@@ -95,6 +95,12 @@ namespace eParty
             this.Hide();
             Registration registration = new Registration();
             registration.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            System.Diagnostics.Process.Start(@"C:\Users\Phuc\Documents\eparty1.0\eParty\bin\Debug\net8.0-windows\Menu.exe");
         }
     }
 }
