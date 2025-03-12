@@ -37,7 +37,7 @@ public partial class Staff
     public virtual Manager? ManagerNavigation { get; set; }
 
     [InverseProperty("Staff")]
-    public virtual ICollection<OutdatedStaff> OutdatedStaffs { get; set; } = new List<OutdatedStaff>();
+    public virtual ICollection<StaticStaff> StaticStaffs { get; set; } = new List<StaticStaff>();
 
     [ForeignKey("StaffId")]
     [InverseProperty("Staff")]

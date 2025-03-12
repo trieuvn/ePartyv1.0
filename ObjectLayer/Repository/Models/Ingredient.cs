@@ -30,10 +30,10 @@ public partial class Ingredient
     [InverseProperty("Ingredient")]
     public virtual ICollection<FoodNeedIngre> FoodNeedIngres { get; set; } = new List<FoodNeedIngre>();
 
-    [InverseProperty("Ingredient")]
-    public virtual ICollection<IngreSupplyProvider> IngreSupplyProviders { get; set; } = new List<IngreSupplyProvider>();
-
     [ForeignKey("Manager")]
     [InverseProperty("Ingredients")]
     public virtual Manager? ManagerNavigation { get; set; }
+
+    [InverseProperty("Ingredient")]
+    public virtual ICollection<Supply> Supplies { get; set; } = new List<Supply>();
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huy59\\Downloads\\eParty\\ObjectLayer\\BOLayer.csproj": {}
+    "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huy59\\Downloads\\eParty\\ObjectLayer\\BOLayer.csproj": {
+    "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huy59\\Downloads\\eParty\\ObjectLayer\\BOLayer.csproj",
+        "projectUniqueName": "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj",
         "projectName": "BOLayer",
-        "projectPath": "C:\\Users\\huy59\\Downloads\\eParty\\ObjectLayer\\BOLayer.csproj",
+        "projectPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj",
         "packagesPath": "C:\\Users\\huy59\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huy59\\Downloads\\eParty\\ObjectLayer\\obj\\",
+        "outputPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
