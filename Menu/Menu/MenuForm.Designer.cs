@@ -48,7 +48,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new Menu.ArtanButton();
             this.btnExit = new Menu.ArtanButton();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.eclipseControl1 = new Menu.EclipseControl();
             this.PnlNavbar.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,7 +70,7 @@
             this.PnlNavbar.Location = new System.Drawing.Point(10, 10);
             this.PnlNavbar.Margin = new System.Windows.Forms.Padding(0);
             this.PnlNavbar.Name = "PnlNavbar";
-            this.PnlNavbar.Size = new System.Drawing.Size(230, 430);
+            this.PnlNavbar.Size = new System.Drawing.Size(230, 566);
             this.PnlNavbar.TabIndex = 0;
             this.PnlNavbar.MouseHover += new System.EventHandler(this.PnlNavbar_MouseHover);
             // 
@@ -169,6 +169,7 @@
             this.BtnDashboard.Text = "Dashboard";
             this.BtnDashboard.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(74)))));
             this.BtnDashboard.UseVisualStyleBackColor = false;
+            this.BtnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click_1);
             this.BtnDashboard.MouseLeave += new System.EventHandler(this.BtnReport_MouseLeave);
             this.BtnDashboard.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
@@ -179,7 +180,7 @@
             this.panel2.Controls.Add(this.lb1);
             this.panel2.Controls.Add(this.BtnOut);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 381);
+            this.panel2.Location = new System.Drawing.Point(0, 517);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(230, 49);
@@ -294,7 +295,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(240, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(550, 23);
+            this.panel3.Size = new System.Drawing.Size(699, 23);
             this.panel3.TabIndex = 4;
             // 
             // btnClose
@@ -311,7 +312,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(504, 0);
+            this.btnClose.Location = new System.Drawing.Point(653, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 20);
             this.btnClose.TabIndex = 2;
@@ -333,7 +334,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(530, 0);
+            this.btnExit.Location = new System.Drawing.Point(679, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(20, 20);
             this.btnExit.TabIndex = 1;
@@ -341,13 +342,14 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // panel4
+            // panelContainer
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(240, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(550, 407);
-            this.panel4.TabIndex = 5;
+            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(240, 33);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(699, 543);
+            this.panelContainer.TabIndex = 5;
             // 
             // eclipseControl1
             // 
@@ -358,8 +360,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel4);
+            this.ClientSize = new System.Drawing.Size(949, 586);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.PnlNavbar);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -397,7 +399,7 @@
         private ArtanButton BtnNavbar;
         private System.Windows.Forms.PictureBox pbTitle;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lb2;
         private System.Windows.Forms.PictureBox pBDefault;

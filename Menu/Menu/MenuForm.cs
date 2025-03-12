@@ -15,6 +15,7 @@ namespace Menu
 {
     public partial class MenuForm: Form
     {
+        DashboardForm db = new DashboardForm();
         public MenuForm()
         {
             InitializeComponent();
@@ -42,8 +43,9 @@ namespace Menu
             
             if (PnlNavbar.Width <= 65)
             {
-                timer1.Stop();
                 BtnNavbar.Image = ByteArrayToImage(Resources.Next);
+                timer1.Stop();
+
                 pbTitle.Visible = false;
                 BtnDashboard.Text = "";
                 BtnResource.Text = "";
@@ -52,6 +54,8 @@ namespace Menu
                 lb1.Visible = false;
                 lb2.Visible = false;
                 BtnOut.Visible = false;
+                db.chart3.Visible = true;
+                db.chart4.Visible = true;
             }
         }
 
@@ -67,18 +71,22 @@ namespace Menu
             PnlNavbar.Width = PnlNavbar.Width + 5;
             if (PnlNavbar.Width >= 230)
             {
-                timer2.Stop();
                 BtnNavbar.Image = ByteArrayToImage(Resources.previous);
+                timer2.Stop();
+                
                 
             }
             pbTitle.Visible = true;
             BtnOut.Visible = true;
+            db.chart3.Visible = false;
+            db.chart4.Visible = false;
         }
 
         private void BtnNavbar_Click(object sender, EventArgs e)
         {
             if (PnlNavbar.Width == 230)
                 timer1.Start();
+                
             else
                 timer2.Start();
         }
@@ -198,6 +206,32 @@ namespace Menu
                 ReleaseCapture();
                 SendMessage(this.Handle, 0xA1, 0x2, 0);
             }
+        }
+        private void OpenChildForm(Form childForm)
+        {
+            panelContainer.Controls.Clear();
+            panelContainer.AutoSize = true;
+
+            childForm.TopLevel = false; 
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            childForm.Padding = new Padding(0);
+            childForm.Margin = new Padding(0);
+
+            panelContainer.AutoScroll = false;
+            panelContainer.Controls.Add(childForm);
+            panelContainer.Tag = childForm;
+
+            childForm.Show();
+            childForm.BringToFront();
+
+            panelContainer.Refresh();
+        }
+
+        private void BtnDashboard_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(db);
         }
     }
 }
