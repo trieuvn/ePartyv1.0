@@ -68,6 +68,3 @@ C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\refint\eParty.
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.pdb
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.genruntimeconfig.cache
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\ref\eParty.dll
-C:\Users\Phuc\Documents\eparty1.0\eParty\bin\Debug\net8.0-windows\Menu.exe
-C:\Users\Phuc\Documents\eparty1.0\eParty\bin\Debug\net8.0-windows\Menu.pdb
-C:\Users\Phuc\Documents\eparty1.0\eParty\bin\Debug\net8.0-windows\Menu.exe.config

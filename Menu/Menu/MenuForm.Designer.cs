@@ -1,6 +1,6 @@
 ﻿namespace Menu
 {
-    partial class Menu
+    partial class MenuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.PnlNavbar = new System.Windows.Forms.Panel();
+            this.BtnReport = new Menu.ArtanButton();
+            this.BtnSchedule = new Menu.ArtanButton();
+            this.BtnResource = new Menu.ArtanButton();
+            this.BtnDashboard = new Menu.ArtanButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb2 = new System.Windows.Forms.Label();
             this.pBDefault = new System.Windows.Forms.PictureBox();
             this.lb1 = new System.Windows.Forms.Label();
+            this.BtnOut = new Menu.ArtanButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnNavbar = new Menu.ArtanButton();
             this.pbTitle = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClose = new Menu.ArtanButton();
+            this.btnExit = new Menu.ArtanButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnClose = new global::Menu.ArtanButton();
-            this.btnExit = new global::Menu.ArtanButton();
-            this.BtnReport = new global::Menu.ArtanButton();
-            this.BtnSchedule = new global::Menu.ArtanButton();
-            this.BtnResource = new global::Menu.ArtanButton();
-            this.BtnDashboard = new global::Menu.ArtanButton();
-            this.BtnNavbar = new global::Menu.ArtanButton();
-            this.eclipseControl1 = new global::Menu.EclipseControl();
-            this.BtnOut = new global::Menu.ArtanButton();
+            this.eclipseControl1 = new Menu.EclipseControl();
             this.PnlNavbar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBDefault)).BeginInit();
@@ -73,142 +73,6 @@
             this.PnlNavbar.Size = new System.Drawing.Size(230, 430);
             this.PnlNavbar.TabIndex = 0;
             this.PnlNavbar.MouseHover += new System.EventHandler(this.PnlNavbar_MouseHover);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lb2);
-            this.panel2.Controls.Add(this.pBDefault);
-            this.panel2.Controls.Add(this.lb1);
-            this.panel2.Controls.Add(this.BtnOut);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 381);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(230, 49);
-            this.panel2.TabIndex = 1;
-            // 
-            // lb2
-            // 
-            this.lb2.AutoSize = true;
-            this.lb2.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.lb2.Location = new System.Drawing.Point(54, 28);
-            this.lb2.Name = "lb2";
-            this.lb2.Size = new System.Drawing.Size(18, 13);
-            this.lb2.TabIndex = 2;
-            this.lb2.Text = "ID";
-            // 
-            // pBDefault
-            // 
-            this.pBDefault.Location = new System.Drawing.Point(12, 7);
-            this.pBDefault.Name = "pBDefault";
-            this.pBDefault.Size = new System.Drawing.Size(35, 35);
-            this.pBDefault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBDefault.TabIndex = 1;
-            this.pBDefault.TabStop = false;
-            // 
-            // lb1
-            // 
-            this.lb1.AutoSize = true;
-            this.lb1.Location = new System.Drawing.Point(53, 7);
-            this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(53, 21);
-            this.lb1.TabIndex = 0;
-            this.lb1.Text = "Name";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.BtnNavbar);
-            this.panel1.Controls.Add(this.pbTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 137);
-            this.panel1.TabIndex = 0;
-            // 
-            // pbTitle
-            // 
-            this.pbTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbTitle.Image = ((System.Drawing.Image)(resources.GetObject("pbTitle.Image")));
-            this.pbTitle.Location = new System.Drawing.Point(0, 0);
-            this.pbTitle.Name = "pbTitle";
-            this.pbTitle.Size = new System.Drawing.Size(185, 137);
-            this.pbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbTitle.TabIndex = 3;
-            this.pbTitle.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Controls.Add(this.btnExit);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(240, 10);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(550, 23);
-            this.panel3.TabIndex = 4;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(240, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(550, 407);
-            this.panel4.TabIndex = 5;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnClose.BorderRadius = 20;
-            this.btnClose.BorderSize = 0;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(504, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(20, 20);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.TextColor = System.Drawing.Color.White;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnExit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnExit.BorderRadius = 20;
-            this.btnExit.BorderSize = 0;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(530, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(20, 20);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.TextColor = System.Drawing.Color.White;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // BtnReport
             // 
@@ -308,30 +172,46 @@
             this.BtnDashboard.MouseLeave += new System.EventHandler(this.BtnReport_MouseLeave);
             this.BtnDashboard.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
-            // BtnNavbar
+            // panel2
             // 
-            this.BtnNavbar.BackColor = System.Drawing.Color.White;
-            this.BtnNavbar.BackgroundColor = System.Drawing.Color.White;
-            this.BtnNavbar.BorderColor = System.Drawing.Color.White;
-            this.BtnNavbar.BorderRadius = 20;
-            this.BtnNavbar.BorderSize = 0;
-            this.BtnNavbar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnNavbar.FlatAppearance.BorderSize = 0;
-            this.BtnNavbar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNavbar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(74)))));
-            this.BtnNavbar.Image = ((System.Drawing.Image)(resources.GetObject("BtnNavbar.Image")));
-            this.BtnNavbar.Location = new System.Drawing.Point(183, 0);
-            this.BtnNavbar.Name = "BtnNavbar";
-            this.BtnNavbar.Size = new System.Drawing.Size(47, 137);
-            this.BtnNavbar.TabIndex = 6;
-            this.BtnNavbar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(74)))));
-            this.BtnNavbar.UseVisualStyleBackColor = false;
-            this.BtnNavbar.Click += new System.EventHandler(this.BtnNavbar_Click);
+            this.panel2.Controls.Add(this.lb2);
+            this.panel2.Controls.Add(this.pBDefault);
+            this.panel2.Controls.Add(this.lb1);
+            this.panel2.Controls.Add(this.BtnOut);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 381);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(230, 49);
+            this.panel2.TabIndex = 1;
             // 
-            // eclipseControl1
+            // lb2
             // 
-            this.eclipseControl1.CornerRedius = 50;
-            this.eclipseControl1.TargetControl = this;
+            this.lb2.AutoSize = true;
+            this.lb2.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.lb2.Location = new System.Drawing.Point(54, 28);
+            this.lb2.Name = "lb2";
+            this.lb2.Size = new System.Drawing.Size(18, 13);
+            this.lb2.TabIndex = 2;
+            this.lb2.Text = "ID";
+            // 
+            // pBDefault
+            // 
+            this.pBDefault.Location = new System.Drawing.Point(12, 7);
+            this.pBDefault.Name = "pBDefault";
+            this.pBDefault.Size = new System.Drawing.Size(35, 35);
+            this.pBDefault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBDefault.TabIndex = 1;
+            this.pBDefault.TabStop = false;
+            // 
+            // lb1
+            // 
+            this.lb1.AutoSize = true;
+            this.lb1.Location = new System.Drawing.Point(53, 7);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(53, 21);
+            this.lb1.TabIndex = 0;
+            this.lb1.Text = "Name";
             // 
             // BtnOut
             // 
@@ -354,7 +234,127 @@
             this.BtnOut.MouseLeave += new System.EventHandler(this.BtnOut_MouseLeave);
             this.BtnOut.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
-            // Form1
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.BtnNavbar);
+            this.panel1.Controls.Add(this.pbTitle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(230, 137);
+            this.panel1.TabIndex = 0;
+            // 
+            // BtnNavbar
+            // 
+            this.BtnNavbar.BackColor = System.Drawing.Color.White;
+            this.BtnNavbar.BackgroundColor = System.Drawing.Color.White;
+            this.BtnNavbar.BorderColor = System.Drawing.Color.White;
+            this.BtnNavbar.BorderRadius = 20;
+            this.BtnNavbar.BorderSize = 0;
+            this.BtnNavbar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnNavbar.FlatAppearance.BorderSize = 0;
+            this.BtnNavbar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNavbar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(74)))));
+            this.BtnNavbar.Image = ((System.Drawing.Image)(resources.GetObject("BtnNavbar.Image")));
+            this.BtnNavbar.Location = new System.Drawing.Point(183, 0);
+            this.BtnNavbar.Name = "BtnNavbar";
+            this.BtnNavbar.Size = new System.Drawing.Size(47, 137);
+            this.BtnNavbar.TabIndex = 6;
+            this.BtnNavbar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(74)))));
+            this.BtnNavbar.UseVisualStyleBackColor = false;
+            this.BtnNavbar.Click += new System.EventHandler(this.BtnNavbar_Click);
+            // 
+            // pbTitle
+            // 
+            this.pbTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbTitle.Image = ((System.Drawing.Image)(resources.GetObject("pbTitle.Image")));
+            this.pbTitle.Location = new System.Drawing.Point(0, 0);
+            this.pbTitle.Name = "pbTitle";
+            this.pbTitle.Size = new System.Drawing.Size(185, 137);
+            this.pbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTitle.TabIndex = 3;
+            this.pbTitle.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
+            this.panel3.Controls.Add(this.btnClose);
+            this.panel3.Controls.Add(this.btnExit);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(240, 10);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(550, 23);
+            this.panel3.TabIndex = 4;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
+            this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
+            this.btnClose.BorderRadius = 20;
+            this.btnClose.BorderSize = 0;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(504, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 20);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.TextColor = System.Drawing.Color.White;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
+            this.btnExit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
+            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
+            this.btnExit.BorderRadius = 20;
+            this.btnExit.BorderSize = 0;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(530, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(20, 20);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.TextColor = System.Drawing.Color.White;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(240, 33);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(550, 407);
+            this.panel4.TabIndex = 5;
+            // 
+            // eclipseControl1
+            // 
+            this.eclipseControl1.CornerRedius = 50;
+            this.eclipseControl1.TargetControl = this;
+            // 
+            // MenuForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -365,10 +365,11 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(74)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "MenuForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuForm_MouseDown);
             this.PnlNavbar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

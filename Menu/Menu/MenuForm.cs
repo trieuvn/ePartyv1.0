@@ -3,19 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Menu
 {
-    //3 bieu do 1 bieu do duong,2 bieu do tron 
-    public partial class Menu: Form
+    public partial class MenuForm: Form
     {
-        public Menu()
+        public MenuForm()
         {
             InitializeComponent();
         }
@@ -149,6 +149,10 @@ namespace Menu
                 return Image.FromStream(ms);
             }
         }
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -158,9 +162,21 @@ namespace Menu
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            
+
             DialogResult dr=MessageBox.Show("Do you want to exit this application ?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(dr == DialogResult.Yes)
             {
+                Process currentProcess = Process.GetCurrentProcess();
+
+                var parentProcess = Process.GetProcesses()
+                                           .FirstOrDefault(p => p.ProcessName.Contains("eParty"));
+
+                if (parentProcess != null)
+                {
+                    parentProcess.Kill();
+                }
+
                 Application.Exit();
             }
         }
@@ -173,6 +189,15 @@ namespace Menu
         private void BtnOut_MouseLeave(object sender, EventArgs e)
         {
             BtnOut.Image = ByteArrayToImage(Resources.Out1);
+        }
+
+        private void MenuForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0xA1, 0x2, 0);
+            }
         }
     }
 }

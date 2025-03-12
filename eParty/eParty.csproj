@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Menu\Menu\Menu.csproj" />
     <ProjectReference Include="..\ObjectLayer\BOLayer.csproj" />
   </ItemGroup>
 

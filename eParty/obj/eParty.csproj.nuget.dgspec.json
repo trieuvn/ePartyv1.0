@@ -34,9 +34,6 @@
             "projectReferences": {
               "C:\\Users\\Phuc\\Documents\\eparty1.0\\ObjectLayer\\BOLayer.csproj": {
                 "projectPath": "C:\\Users\\Phuc\\Documents\\eparty1.0\\ObjectLayer\\BOLayer.csproj"
-              },
-              "C:\\Users\\Phuc\\Documents\\Menu\\Menu\\Menu.csproj": {
-                "projectPath": "C:\\Users\\Phuc\\Documents\\Menu\\Menu\\Menu.csproj"
               }
             }
           }
@@ -172,22 +169,6 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
-      }
-    },
-    "C:\\Users\\Phuc\\Documents\\Menu\\Menu\\Menu.csproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Phuc\\Documents\\Menu\\Menu\\Menu.csproj",
-        "projectName": "Menu",
-        "projectPath": "C:\\Users\\Phuc\\Documents\\Menu\\Menu\\Menu.csproj",
-        "UsingMicrosoftNETSdk": false,
-        "frameworks": {
-          "net472": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net472": {}
       }
     }
   }

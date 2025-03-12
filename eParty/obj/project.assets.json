@@ -1046,15 +1046,6 @@
         "runtime": {
           "bin/placeholder/BOLayer.dll": {}
         }
-      },
-      "Menu/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Menu.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Menu.dll": {}
-        }
       }
     }
   },
@@ -2878,17 +2869,11 @@
       "type": "project",
       "path": "../ObjectLayer/BOLayer.csproj",
       "msbuildProject": "../ObjectLayer/BOLayer.csproj"
-    },
-    "Menu/1.0.0": {
-      "type": "project",
-      "path": "../../Menu/Menu/Menu.csproj",
-      "msbuildProject": "../../Menu/Menu/Menu.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "BOLayer >= 1.0.0",
-      "Menu >= 1.0.0"
+      "BOLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2925,9 +2910,6 @@
           "projectReferences": {
             "C:\\Users\\Phuc\\Documents\\eparty1.0\\ObjectLayer\\BOLayer.csproj": {
               "projectPath": "C:\\Users\\Phuc\\Documents\\eparty1.0\\ObjectLayer\\BOLayer.csproj"
-            },
-            "C:\\Users\\Phuc\\Documents\\Menu\\Menu\\Menu.csproj": {
-              "projectPath": "C:\\Users\\Phuc\\Documents\\Menu\\Menu\\Menu.csproj"
             }
           }
         }

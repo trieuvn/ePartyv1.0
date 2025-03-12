@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eParty", "eParty\eParty.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOLayer", "ObjectLayer\BOLayer.csproj", "{3D41E6BD-DB6E-D88A-4C48-E07C38AF01C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "..\Menu\Menu\Menu.csproj", "{F157520D-5233-4A9B-A0F7-450FD86CCA70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "Menu\Menu\Menu.csproj", "{F157520D-5233-4A9B-A0F7-450FD86CCA70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
