@@ -39,6 +39,7 @@ namespace eParty
             ClientSize = new Size(1000, 600);
             Name = "OrderListForm";
             Text = "Danh Sách Đơn Hàng";
+            Load += OrderListForm_Load;
             ResumeLayout(false);
         }
 
@@ -325,12 +326,17 @@ namespace eParty
                     EndTime = endTime,
                     Manager = "admin",
                     NoTables = noTables, // Sử dụng giá trị số bàn từ NumericUpDown
-                    CustomerName = "Customer1",
-                    CustomerPhoneNumber = "1234567890"
+                    //CustomerName = "Customer1",
+                    //CustomerPhoneNumber = "1234567890"
                 };
                 context.Orders.Add(order);
                 context.SaveChanges();
             }
+        }
+
+        private void OrderListForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

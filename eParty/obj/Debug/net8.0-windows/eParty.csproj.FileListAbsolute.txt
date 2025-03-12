@@ -138,3 +138,4 @@ C:\Users\huy59\Downloads\ePartyDb\eParty\obj\Debug\net8.0-windows\refint\eParty.
 C:\Users\huy59\Downloads\ePartyDb\eParty\obj\Debug\net8.0-windows\eParty.pdb
 C:\Users\huy59\Downloads\ePartyDb\eParty\obj\Debug\net8.0-windows\eParty.genruntimeconfig.cache
 C:\Users\huy59\Downloads\ePartyDb\eParty\obj\Debug\net8.0-windows\ref\eParty.dll
+C:\Users\huy59\Downloads\ePartyDb\eParty\obj\Debug\net8.0-windows\eParty.FoodManagementForm.resources
