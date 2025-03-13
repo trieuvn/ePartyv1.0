@@ -44,6 +44,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             pictureBox1 = new PictureBox();
@@ -61,6 +62,9 @@
             label2 = new Label();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            dataGridView1 = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            Order = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -70,6 +74,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // chart2
@@ -389,12 +394,62 @@
             chart4.Titles.Add(title3);
             chart4.Visible = false;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Order });
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.Location = new Point(309, 431);
+            dataGridView1.Margin = new Padding(6);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 30;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(614, 418);
+            dataGridView1.TabIndex = 13;
+            // 
+            // ID
+            // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID.FillWeight = 50F;
+            ID.HeaderText = "OrderID";
+            ID.MinimumWidth = 10;
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // Order
+            // 
+            Order.HeaderText = "Order Status";
+            Order.MinimumWidth = 10;
+            Order.Name = "Order";
+            Order.ReadOnly = true;
+            Order.Width = 393;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1313, 879);
+            Controls.Add(dataGridView1);
             Controls.Add(chart4);
             Controls.Add(chart1);
             Controls.Add(chart3);
@@ -414,6 +469,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
 
         }
@@ -436,6 +492,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Order;
     }
 
 }
