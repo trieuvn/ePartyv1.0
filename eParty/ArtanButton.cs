@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Menu
+namespace eParty
 {
-    class ArtanButton:Button
+    class ArtanButton : Button
     {
         private int borderSize = 0;
         private int borderRadius = 50;

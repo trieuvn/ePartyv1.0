@@ -10,6 +10,15 @@
     <ActiveDebugProfile>eParty</ActiveDebugProfile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="ArtanButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FoodListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -19,10 +28,19 @@
     <Compile Update="FormSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="IngredientListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StaffListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginShortcut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Registration.cs">
