@@ -39,6 +39,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "StaffListForm";
             Text = "ItemListForm";
+            Load += StaffListForm_Load;
             ResumeLayout(false);
         }
 

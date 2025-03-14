@@ -70,10 +70,12 @@ namespace eParty
             // 
             // FoodManagementForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1920, 1080);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1209, 595);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(5, 5, 5, 5);
             MaximizeBox = false;
             Name = "FoodManagementForm";
             Text = "Quản Lý Món Ăn";

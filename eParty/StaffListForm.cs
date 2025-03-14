@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace eParty
 {
-    public partial class StaffListForm: Form
+    public partial class StaffListForm : Form
     {
         public StaffListForm()
         {
             InitializeComponent();
+        }
+
+        private void StaffListForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace eParty
 {
-    public partial class FoodListForm: Form
+    public partial class FoodListForm : Form
     {
         public FoodListForm()
         {
             InitializeComponent();
+        }
+
+        private void FoodListForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

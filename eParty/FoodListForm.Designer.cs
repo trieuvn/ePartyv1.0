@@ -36,8 +36,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1261, 737);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FoodListForm";
             Text = "FoodListForm";
+            Load += FoodListForm_Load;
             ResumeLayout(false);
         }
 

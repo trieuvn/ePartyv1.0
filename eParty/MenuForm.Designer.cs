@@ -63,6 +63,9 @@ namespace eParty
             staffListToolStripMenuItem = new ToolStripMenuItem();
             ingreListToolStripMenuItem = new ToolStripMenuItem();
             foodListToolStripMenuItem = new ToolStripMenuItem();
+            rjDropdownMenu2 = new RJDropdownMenu(components);
+            createOrderToolStripMenuItem = new ToolStripMenuItem();
+            orderDetailToolStripMenuItem = new ToolStripMenuItem();
             PnlNavbar.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pBDefault).BeginInit();
@@ -70,6 +73,7 @@ namespace eParty
             ((System.ComponentModel.ISupportInitialize)pbTitle).BeginInit();
             panel3.SuspendLayout();
             rjDropdownMenu1.SuspendLayout();
+            rjDropdownMenu2.SuspendLayout();
             SuspendLayout();
             // 
             // PnlNavbar
@@ -394,6 +398,29 @@ namespace eParty
             foodListToolStripMenuItem.Text = "Food List";
             foodListToolStripMenuItem.Click += foodListToolStripMenuItem_Click;
             // 
+            // rjDropdownMenu2
+            // 
+            rjDropdownMenu2.ImageScalingSize = new Size(32, 32);
+            rjDropdownMenu2.IsMainMenu = false;
+            rjDropdownMenu2.Items.AddRange(new ToolStripItem[] { createOrderToolStripMenuItem, orderDetailToolStripMenuItem });
+            rjDropdownMenu2.MenuItemHeight = 25;
+            rjDropdownMenu2.MenuItemTextColor = Color.Empty;
+            rjDropdownMenu2.Name = "rjDropdownMenu2";
+            rjDropdownMenu2.PrimaryColor = Color.Empty;
+            rjDropdownMenu2.Size = new Size(226, 80);
+            // 
+            // createOrderToolStripMenuItem
+            // 
+            createOrderToolStripMenuItem.Name = "createOrderToolStripMenuItem";
+            createOrderToolStripMenuItem.Size = new Size(225, 38);
+            createOrderToolStripMenuItem.Text = "Create Order";
+            // 
+            // orderDetailToolStripMenuItem
+            // 
+            orderDetailToolStripMenuItem.Name = "orderDetailToolStripMenuItem";
+            orderDetailToolStripMenuItem.Size = new Size(225, 38);
+            orderDetailToolStripMenuItem.Text = "Order Detail";
+            // 
             // MenuForm
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -418,6 +445,7 @@ namespace eParty
             ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             panel3.ResumeLayout(false);
             rjDropdownMenu1.ResumeLayout(false);
+            rjDropdownMenu2.ResumeLayout(false);
             ResumeLayout(false);
 
         }
@@ -449,6 +477,9 @@ namespace eParty
         private System.Windows.Forms.ToolStripMenuItem staffListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingreListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem foodListToolStripMenuItem;
+        private RJDropdownMenu rjDropdownMenu2;
+        private ToolStripMenuItem createOrderToolStripMenuItem;
+        private ToolStripMenuItem orderDetailToolStripMenuItem;
     }
     #endregion
 }
