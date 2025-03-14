@@ -210,3 +210,11 @@ D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\refint\eParty.dll
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.pdb
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.genruntimeconfig.cache
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\ref\eParty.dll
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.Dashboard.resources
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.FoodListForm.resources
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.IngredientListForm.resources
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.MenuForm.resources
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.Properties.Resources.resources
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.StaffListForm.resources
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\WinForms.DataVisualization.Utilities.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\WinForms.DataVisualization.dll
