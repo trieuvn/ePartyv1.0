@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ActiveDebugProfile>eParty</ActiveDebugProfile>
+  </PropertyGroup>
   <ItemGroup>
+    <Compile Update="ArtanButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FoodListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ForgotPassword.cs">
     <Compile Update="FoodManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -10,13 +29,19 @@
     <Compile Update="FormSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="IngredientListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StaffListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginShortcut.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="OrderListForm.cs">
+    <Compile Update="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Registration.cs">

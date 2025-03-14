@@ -29,285 +29,286 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.lbLogin = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnRegistration = new System.Windows.Forms.Button();
-            this.lLforgot = new System.Windows.Forms.LinkLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            btnExit = new Button();
+            lbLogin = new Label();
+            panel3 = new Panel();
+            txtLogin = new TextBox();
+            pictureBox2 = new PictureBox();
+            panel4 = new Panel();
+            txtPass = new TextBox();
+            pictureBox3 = new PictureBox();
+            btnLogin = new Button();
+            btnRegistration = new Button();
+            lLforgot = new LinkLabel();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 327);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.FromArgb(41, 128, 185);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(233, 377);
+            panel1.TabIndex = 0;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(131, 188);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "System";
+            label3.AutoSize = true;
+            label3.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(153, 217);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 21);
+            label3.TabIndex = 3;
+            label3.Text = "System";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 164);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Party Management ";
+            label2.AutoSize = true;
+            label2.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(44, 189);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(156, 21);
+            label2.TabIndex = 2;
+            label2.Text = "Party Management ";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(66, 141);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Welcome to the";
+            label1.AutoSize = true;
+            label1.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(77, 163);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(131, 21);
+            label1.TabIndex = 1;
+            label1.Text = "Welcome to the";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(49, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(98, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(57, 37);
+            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(114, 104);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // btnExit
             // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Verdana", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnExit.Location = new System.Drawing.Point(312, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(25, 26);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            btnExit.Cursor = Cursors.Hand;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatAppearance.MouseOverBackColor = Color.Red;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Verdana", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.FromArgb(41, 128, 185);
+            btnExit.Location = new Point(364, 0);
+            btnExit.Margin = new Padding(2);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(29, 30);
+            btnExit.TabIndex = 4;
+            btnExit.Text = "X";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // lbLogin
             // 
-            this.lbLogin.AutoSize = true;
-            this.lbLogin.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.lbLogin.Location = new System.Drawing.Point(28, 99);
-            this.lbLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(176, 21);
-            this.lbLogin.TabIndex = 4;
-            this.lbLogin.Text = "Login to your account";
-            this.lbLogin.Click += new System.EventHandler(this.label4_Click);
+            lbLogin.AutoSize = true;
+            lbLogin.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbLogin.ForeColor = Color.FromArgb(41, 128, 185);
+            lbLogin.Location = new Point(33, 114);
+            lbLogin.Margin = new Padding(2, 0, 2, 0);
+            lbLogin.Name = "lbLogin";
+            lbLogin.Size = new Size(176, 21);
+            lbLogin.TabIndex = 4;
+            lbLogin.Text = "Login to your account";
+            lbLogin.Click += label4_Click;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txtLogin);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(0, 132);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(337, 32);
-            this.panel3.TabIndex = 5;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 5);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(txtLogin);
+            panel3.Controls.Add(pictureBox2);
+            panel3.Location = new Point(0, 152);
+            panel3.Margin = new Padding(2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(393, 37);
+            panel3.TabIndex = 5;
             // 
             // txtLogin
             // 
-            this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLogin.Font = new System.Drawing.Font("Malgun Gothic", 10F);
-            this.txtLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(141)))));
-            this.txtLogin.Location = new System.Drawing.Point(32, 7);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(305, 18);
-            this.txtLogin.TabIndex = 1;
-            this.txtLogin.Click += new System.EventHandler(this.txtLogin_Click);
-            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
-            this.txtLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLogin_KeyPress);
+            txtLogin.BorderStyle = BorderStyle.None;
+            txtLogin.Font = new Font("Malgun Gothic", 10F);
+            txtLogin.ForeColor = Color.FromArgb(41, 128, 141);
+            txtLogin.Location = new Point(37, 8);
+            txtLogin.Margin = new Padding(2);
+            txtLogin.Name = "txtLogin";
+            txtLogin.Size = new Size(356, 18);
+            txtLogin.TabIndex = 1;
+            txtLogin.Click += txtLogin_Click;
+            txtLogin.TextChanged += txtLogin_TextChanged;
+            txtLogin.KeyPress += txtLogin_KeyPress;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(10, 6);
+            pictureBox2.Margin = new Padding(2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(23, 24);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txtPass);
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(0, 167);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(337, 32);
-            this.panel4.TabIndex = 6;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(9, 5);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 21);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseDown);
-            this.pictureBox3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseUp);
+            panel4.Controls.Add(txtPass);
+            panel4.Controls.Add(pictureBox3);
+            panel4.Location = new Point(0, 193);
+            panel4.Margin = new Padding(2);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(393, 37);
+            panel4.TabIndex = 6;
             // 
             // txtPass
             // 
-            this.txtPass.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPass.Font = new System.Drawing.Font("Malgun Gothic", 10F);
-            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(181)))));
-            this.txtPass.Location = new System.Drawing.Point(32, 7);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(305, 18);
-            this.txtPass.TabIndex = 2;
-            this.txtPass.UseSystemPasswordChar = true;
-            this.txtPass.Click += new System.EventHandler(this.txtPass_Click);
-            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
-            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
+            txtPass.BackColor = SystemColors.Control;
+            txtPass.BorderStyle = BorderStyle.None;
+            txtPass.Font = new Font("Malgun Gothic", 10F);
+            txtPass.ForeColor = Color.FromArgb(41, 128, 181);
+            txtPass.Location = new Point(37, 8);
+            txtPass.Margin = new Padding(2);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(356, 18);
+            txtPass.TabIndex = 2;
+            txtPass.UseSystemPasswordChar = true;
+            txtPass.Click += txtPass_Click;
+            txtPass.TextChanged += txtPass_TextChanged;
+            txtPass.KeyPress += txtPass_KeyPress;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(10, 6);
+            pictureBox3.Margin = new Padding(2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(23, 24);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 1;
+            pictureBox3.TabStop = false;
+            pictureBox3.MouseDown += pictureBox3_MouseDown;
+            pictureBox3.MouseUp += pictureBox3_MouseUp;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Malgun Gothic", 10F);
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(9, 246);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(143, 27);
-            this.btnLogin.TabIndex = 7;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.BackColor = Color.FromArgb(41, 128, 182);
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Malgun Gothic", 10F);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(10, 284);
+            btnLogin.Margin = new Padding(2);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(167, 31);
+            btnLogin.TabIndex = 7;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnRegistration
             // 
-            this.btnRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnRegistration.FlatAppearance.BorderSize = 0;
-            this.btnRegistration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistration.Font = new System.Drawing.Font("Malgun Gothic", 10F);
-            this.btnRegistration.ForeColor = System.Drawing.Color.White;
-            this.btnRegistration.Location = new System.Drawing.Point(175, 246);
-            this.btnRegistration.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegistration.Name = "btnRegistration";
-            this.btnRegistration.Size = new System.Drawing.Size(143, 27);
-            this.btnRegistration.TabIndex = 8;
-            this.btnRegistration.Text = "Registration";
-            this.btnRegistration.UseVisualStyleBackColor = false;
-            this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
+            btnRegistration.BackColor = Color.FromArgb(41, 128, 182);
+            btnRegistration.FlatAppearance.BorderSize = 0;
+            btnRegistration.FlatStyle = FlatStyle.Flat;
+            btnRegistration.Font = new Font("Malgun Gothic", 10F);
+            btnRegistration.ForeColor = Color.White;
+            btnRegistration.Location = new Point(204, 284);
+            btnRegistration.Margin = new Padding(2);
+            btnRegistration.Name = "btnRegistration";
+            btnRegistration.Size = new Size(167, 31);
+            btnRegistration.TabIndex = 8;
+            btnRegistration.Text = "Registration";
+            btnRegistration.UseVisualStyleBackColor = false;
+            btnRegistration.Click += btnRegistration_Click;
             // 
             // lLforgot
             // 
-            this.lLforgot.ActiveLinkColor = System.Drawing.Color.Blue;
-            this.lLforgot.AutoSize = true;
-            this.lLforgot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(181)))));
-            this.lLforgot.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(181)))));
-            this.lLforgot.Location = new System.Drawing.Point(108, 201);
-            this.lLforgot.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lLforgot.Name = "lLforgot";
-            this.lLforgot.Size = new System.Drawing.Size(117, 13);
-            this.lLforgot.TabIndex = 9;
-            this.lLforgot.TabStop = true;
-            this.lLforgot.Text = "Forgot your password ?";
-            this.lLforgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLforgot_LinkClicked);
+            lLforgot.ActiveLinkColor = Color.Blue;
+            lLforgot.AutoSize = true;
+            lLforgot.ForeColor = Color.FromArgb(41, 128, 181);
+            lLforgot.LinkColor = Color.FromArgb(41, 128, 181);
+            lLforgot.Location = new Point(126, 232);
+            lLforgot.Margin = new Padding(2, 0, 2, 0);
+            lLforgot.Name = "lLforgot";
+            lLforgot.Size = new Size(130, 15);
+            lLforgot.TabIndex = 9;
+            lLforgot.TabStop = true;
+            lLforgot.Text = "Forgot your password ?";
+            lLforgot.LinkClicked += lLforgot_LinkClicked;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lLforgot);
-            this.panel2.Controls.Add(this.btnRegistration);
-            this.panel2.Controls.Add(this.btnLogin);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.lbLogin);
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(200, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(337, 327);
-            this.panel2.TabIndex = 1;
+            panel2.Controls.Add(lLforgot);
+            panel2.Controls.Add(btnRegistration);
+            panel2.Controls.Add(btnLogin);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(lbLogin);
+            panel2.Controls.Add(btnExit);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(233, 0);
+            panel2.Margin = new Padding(2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(393, 377);
+            panel2.TabIndex = 1;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 327);
-            this.ControlBox = false;
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(626, 377);
+            ControlBox = false;
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
+            Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ResumeLayout(false);
 
         }
 
