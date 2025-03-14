@@ -33,11 +33,12 @@ public partial class Order
     [StringLength(50)]
     public string? Manager { get; set; }
 
-    [StringLength(50)]
-    public string? CustomerName { get; set; }
-
     [StringLength(15)]
-    public string? CustomerPhoneNumber { get; set; }
+    public string? PhoneNumber { get; set; }
+
+    public bool? Status { get; set; }
+
+    public int? ActualCost { get; set; }
 
     [ForeignKey("Manager")]
     [InverseProperty("Orders")]
@@ -45,6 +46,10 @@ public partial class Order
 
     [InverseProperty("Order")]
     public virtual ICollection<OrderHaveFood> OrderHaveFoods { get; set; } = new List<OrderHaveFood>();
+
+    [ForeignKey("PhoneNumber")]
+    [InverseProperty("Orders")]
+    public virtual Customer? PhoneNumberNavigation { get; set; }
 
     [ForeignKey("OrderId")]
     [InverseProperty("Orders")]

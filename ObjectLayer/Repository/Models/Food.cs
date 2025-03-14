@@ -26,6 +26,9 @@ public partial class Food
     [StringLength(50)]
     public string? Description { get; set; }
 
+    [Column(TypeName = "image")]
+    public byte[]? Image { get; set; }
+
     [StringLength(50)]
     public string? Manager { get; set; }
 
@@ -40,5 +43,5 @@ public partial class Food
     public virtual ICollection<OrderHaveFood> OrderHaveFoods { get; set; } = new List<OrderHaveFood>();
 
     [InverseProperty("Food")]
-    public virtual ICollection<OutdatedFood> OutdatedFoods { get; set; } = new List<OutdatedFood>();
+    public virtual ICollection<StaticFood> StaticFoods { get; set; } = new List<StaticFood>();
 }

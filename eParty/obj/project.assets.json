@@ -2877,23 +2877,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator.DESKTOP-M0KCUVC\\.nuget\\packages\\": {},
+    "C:\\Users\\huy59\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\aProjectInit\\eParty\\eParty\\eParty.csproj",
+      "projectUniqueName": "C:\\Users\\huy59\\Downloads\\ePartyDb\\eParty\\eParty.csproj",
       "projectName": "eParty",
-      "projectPath": "D:\\aProjectInit\\eParty\\eParty\\eParty.csproj",
-      "packagesPath": "C:\\Users\\Administrator.DESKTOP-M0KCUVC\\.nuget\\packages\\",
-      "outputPath": "D:\\aProjectInit\\eParty\\eParty\\obj\\",
+      "projectPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\eParty\\eParty.csproj",
+      "packagesPath": "C:\\Users\\huy59\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\eParty\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\Users\\Administrator.DESKTOP-M0KCUVC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\huy59\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2908,8 +2908,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj": {
-              "projectPath": "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj"
+            "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj": {
+              "projectPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj"
             }
           }
         }
@@ -2922,9 +2922,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -2948,7 +2948,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
