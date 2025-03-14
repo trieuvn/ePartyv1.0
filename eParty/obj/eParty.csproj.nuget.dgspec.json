@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huy59\\Downloads\\ePartyDb\\eParty\\eParty.csproj": {}
+    "D:\\aProjectInit\\eParty\\eParty\\eParty.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huy59\\Downloads\\ePartyDb\\eParty\\eParty.csproj": {
+    "D:\\aProjectInit\\eParty\\eParty\\eParty.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huy59\\Downloads\\ePartyDb\\eParty\\eParty.csproj",
+        "projectUniqueName": "D:\\aProjectInit\\eParty\\eParty\\eParty.csproj",
         "projectName": "eParty",
-        "projectPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\eParty\\eParty.csproj",
-        "packagesPath": "C:\\Users\\huy59\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\eParty\\obj\\",
+        "projectPath": "D:\\aProjectInit\\eParty\\eParty\\eParty.csproj",
+        "packagesPath": "C:\\Users\\Administrator.DESKTOP-M0KCUVC\\.nuget\\packages\\",
+        "outputPath": "D:\\aProjectInit\\eParty\\eParty\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\huy59\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Users\\Administrator.DESKTOP-M0KCUVC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj": {
-                "projectPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj"
+              "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj": {
+                "projectPath": "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj"
               }
             }
           }
@@ -46,9 +46,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -72,24 +72,24 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj": {
+    "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj",
+        "projectUniqueName": "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj",
         "projectName": "BOLayer",
-        "projectPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\BOLayer.csproj",
-        "packagesPath": "C:\\Users\\huy59\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huy59\\Downloads\\ePartyDb\\ObjectLayer\\obj\\",
+        "projectPath": "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj",
+        "packagesPath": "C:\\Users\\Administrator.DESKTOP-M0KCUVC\\.nuget\\packages\\",
+        "outputPath": "D:\\aProjectInit\\eParty\\ObjectLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\huy59\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Users\\Administrator.DESKTOP-M0KCUVC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -114,9 +114,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -167,7 +167,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
