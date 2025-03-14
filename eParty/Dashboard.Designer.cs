@@ -138,7 +138,6 @@
             title1.Name = "Title1";
             title1.Text = "Total Order";
             chart3.Titles.Add(title1);
-            chart3.Visible = false;
             // 
             // pictureBox1
             // 
@@ -347,6 +346,7 @@
             title2.Name = "Revenue gross";
             title2.Text = "Annual Growth Report";
             chart1.Titles.Add(title2);
+            chart1.Click += chart1_Click;
             // 
             // chart4
             // 
@@ -392,7 +392,6 @@
             title3.Name = "Title1";
             title3.Text = "Total Profit";
             chart4.Titles.Add(title3);
-            chart4.Visible = false;
             // 
             // dataGridView1
             // 

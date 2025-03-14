@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "IngredientListForm";
+            SuspendLayout();
+            // 
+            // IngredientListForm
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1235, 666);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "IngredientListForm";
+            Text = "IngredientListForm";
+            ResumeLayout(false);
         }
 
         #endregion

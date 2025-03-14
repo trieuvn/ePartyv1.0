@@ -84,7 +84,7 @@ namespace eParty
             PnlNavbar.Location = new Point(10, 10);
             PnlNavbar.Margin = new Padding(0);
             PnlNavbar.Name = "PnlNavbar";
-            PnlNavbar.Size = new Size(275, 566);
+            PnlNavbar.Size = new Size(275, 860);
             PnlNavbar.TabIndex = 0;
             // 
             // BtnReport
@@ -186,7 +186,7 @@ namespace eParty
             panel2.Controls.Add(lb1);
             panel2.Controls.Add(BtnOut);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 517);
+            panel2.Location = new Point(0, 811);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
             panel2.Size = new Size(275, 49);
@@ -301,7 +301,7 @@ namespace eParty
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(285, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(654, 23);
+            panel3.Size = new Size(1266, 23);
             panel3.TabIndex = 4;
             // 
             // btnClose
@@ -318,7 +318,7 @@ namespace eParty
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.ForeColor = Color.White;
             btnClose.Image = (Image)resources.GetObject("btnClose.Image");
-            btnClose.Location = new Point(608, 0);
+            btnClose.Location = new Point(1220, 0);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(20, 20);
             btnClose.TabIndex = 2;
@@ -340,7 +340,7 @@ namespace eParty
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.ForeColor = Color.White;
             btnExit.Image = (Image)resources.GetObject("btnExit.Image");
-            btnExit.Location = new Point(634, 0);
+            btnExit.Location = new Point(1246, 0);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(20, 20);
             btnExit.TabIndex = 1;
@@ -354,7 +354,7 @@ namespace eParty
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(285, 33);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(654, 543);
+            panelContainer.Size = new Size(1266, 837);
             panelContainer.TabIndex = 5;
             // 
             // eclipseControl1
@@ -398,7 +398,7 @@ namespace eParty
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
-            ClientSize = new Size(949, 586);
+            ClientSize = new Size(1561, 880);
             Controls.Add(panelContainer);
             Controls.Add(panel3);
             Controls.Add(PnlNavbar);

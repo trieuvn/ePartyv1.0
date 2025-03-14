@@ -15,7 +15,7 @@ namespace eParty
         private TextBox txtOrderName;
         private DateTimePicker dtpBeginTime;
         private DateTimePicker dtpEndTime;
-        private NumericUpDown nudNoTables; // Thêm NumericUpDown cho số bàn
+        private NumericUpDown nudNoTables; 
         private Button btnCreateOrder;
         private Label lblWeekTitle;
 
@@ -34,9 +34,12 @@ namespace eParty
             // 
             // OrderListForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 600);
+            BackColor = Color.White;
+            ClientSize = new Size(1235, 666);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(5, 5, 5, 5);
             Name = "OrderListForm";
             Text = "Danh Sách Đơn Hàng";
             Load += OrderListForm_Load;

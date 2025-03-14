@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace eParty
 {
-    public partial class Dashboard: Form
+    public partial class Dashboard : Form
     {
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

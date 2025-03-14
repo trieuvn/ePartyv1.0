@@ -83,6 +83,16 @@ namespace eParty.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Hide {
+            get {
+                object obj = ResourceManager.GetObject("Hide", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Next {
             get {
                 object obj = ResourceManager.GetObject("Next", resourceCulture);
@@ -176,6 +186,16 @@ namespace eParty.Properties {
         internal static byte[] Schedule2 {
             get {
                 object obj = ResourceManager.GetObject("Schedule2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] View {
+            get {
+                object obj = ResourceManager.GetObject("View", resourceCulture);
                 return ((byte[])(obj));
             }
         }

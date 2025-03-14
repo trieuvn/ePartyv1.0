@@ -100,7 +100,8 @@ namespace eParty
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            System.Diagnostics.Process.Start(@"C:\Users\Phuc\Documents\eparty1.0\Menu\Menu\bin\Debug\Menu.exe");
+            MenuForm m= new MenuForm();
+            m.Show();
         }
     }
 }

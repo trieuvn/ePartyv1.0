@@ -257,6 +257,7 @@ namespace eParty
         private void BtnReport_Click(object sender, EventArgs e)
         {
             Origion(sender, e);
+            OpenChildForm(new AuthorizationForm());
         }
     }
 }
