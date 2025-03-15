@@ -8,7 +8,13 @@
     <Compile Update="AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CheckEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EnternewPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FoodListForm.cs">
@@ -18,6 +24,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ForgotPassword2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormSchedule.cs">

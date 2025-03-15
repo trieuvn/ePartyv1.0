@@ -42,6 +42,7 @@
             label1 = new Label();
             label6 = new Label();
             label4 = new Label();
+            lLforgot = new LinkLabel();
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -64,6 +65,7 @@
             artanPanel1.Controls.Add(label1);
             artanPanel1.Controls.Add(label6);
             artanPanel1.Controls.Add(label4);
+            artanPanel1.Controls.Add(lLforgot);
             artanPanel1.ForeColor = Color.Black;
             artanPanel1.GradientAngle = 90F;
             artanPanel1.GradientBottomColor = Color.White;
@@ -236,6 +238,22 @@
             label4.Text = "___________________________________________________________________________________________________________";
             label4.UseWaitCursor = true;
             // 
+            // lLforgot
+            // 
+            lLforgot.ActiveLinkColor = Color.Blue;
+            lLforgot.AutoSize = true;
+            lLforgot.Font = new Font("Segoe UI", 6F);
+            lLforgot.ForeColor = Color.FromArgb(41, 128, 181);
+            lLforgot.LinkColor = Color.FromArgb(41, 128, 181);
+            lLforgot.Location = new Point(457, 495);
+            lLforgot.Margin = new Padding(4, 0, 4, 0);
+            lLforgot.Name = "lLforgot";
+            lLforgot.Size = new Size(174, 21);
+            lLforgot.TabIndex = 10;
+            lLforgot.TabStop = true;
+            lLforgot.Text = "Forgot your password ?";
+            lLforgot.LinkClicked += lLforgot_LinkClicked_1;
+            // 
             // AuthorizationForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -246,6 +264,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AuthorizationForm";
             Text = "AuthorizationForm";
+            Load += AuthorizationForm_Load;
             artanPanel1.ResumeLayout(false);
             artanPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -268,5 +287,6 @@
         private Button btnstarted;
         private ArtanButton artanButton2;
         private ArtanButton artanButton1;
+        private LinkLabel lLforgot;
     }
 }

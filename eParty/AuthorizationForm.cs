@@ -78,5 +78,14 @@ namespace eParty
         {
 
         }
+
+        private void lLforgot_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+        }
+
+        private void AuthorizationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

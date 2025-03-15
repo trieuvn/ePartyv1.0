@@ -99,8 +99,12 @@ namespace eParty
         {
 
         }
-
-
+        public void ShowForm3()
+        {
+            panelContainer.Controls.Clear(); 
+            ForgotPassword2 form3 = new ForgotPassword2();
+            OpenChildForm(form3);
+        }
         private void MenuForm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -254,7 +258,6 @@ namespace eParty
             Origion(sender, e);
             Open_DropdownMenu(rjDropdownMenu2, sender);
         }
-
         private void BtnReport_Click(object sender, EventArgs e)
         {
             Origion(sender, e);
