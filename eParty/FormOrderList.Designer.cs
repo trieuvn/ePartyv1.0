@@ -40,14 +40,16 @@ namespace eParty
             radio1Month = new RadioButton();
             radioAll = new RadioButton();
             btnOpenSchedule = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // listViewOrders
             // 
             listViewOrders.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
-            listViewOrders.Location = new Point(359, 236);
+            listViewOrders.Location = new Point(410, 315);
+            listViewOrders.Margin = new Padding(3, 4, 3, 4);
             listViewOrders.Name = "listViewOrders";
-            listViewOrders.Size = new Size(565, 252);
+            listViewOrders.Size = new Size(645, 335);
             listViewOrders.TabIndex = 2;
             listViewOrders.UseCompatibleStateImageBehavior = false;
             listViewOrders.View = View.Details;
@@ -85,9 +87,10 @@ namespace eParty
             // radio7Days
             // 
             radio7Days.AutoSize = true;
-            radio7Days.Location = new Point(234, 145);
+            radio7Days.Location = new Point(267, 193);
+            radio7Days.Margin = new Padding(3, 4, 3, 4);
             radio7Days.Name = "radio7Days";
-            radio7Days.Size = new Size(97, 19);
+            radio7Days.Size = new Size(120, 24);
             radio7Days.TabIndex = 3;
             radio7Days.TabStop = true;
             radio7Days.Text = "lịch 7 ngày kế";
@@ -96,9 +99,10 @@ namespace eParty
             // radio1Month
             // 
             radio1Month.AutoSize = true;
-            radio1Month.Location = new Point(234, 188);
+            radio1Month.Location = new Point(267, 251);
+            radio1Month.Margin = new Padding(3, 4, 3, 4);
             radio1Month.Name = "radio1Month";
-            radio1Month.Size = new Size(102, 19);
+            radio1Month.Size = new Size(126, 24);
             radio1Month.TabIndex = 4;
             radio1Month.TabStop = true;
             radio1Month.Text = "lịch 1 tháng kế";
@@ -108,9 +112,10 @@ namespace eParty
             // radioAll
             // 
             radioAll.AutoSize = true;
-            radioAll.Location = new Point(234, 236);
+            radioAll.Location = new Point(267, 315);
+            radioAll.Margin = new Padding(3, 4, 3, 4);
             radioAll.Name = "radioAll";
-            radioAll.Size = new Size(76, 19);
+            radioAll.Size = new Size(94, 24);
             radioAll.TabIndex = 5;
             radioAll.TabStop = true;
             radioAll.Text = "lịch tất cả";
@@ -118,25 +123,38 @@ namespace eParty
             // 
             // btnOpenSchedule
             // 
-            btnOpenSchedule.Location = new Point(155, 411);
+            btnOpenSchedule.Location = new Point(177, 548);
+            btnOpenSchedule.Margin = new Padding(3, 4, 3, 4);
             btnOpenSchedule.Name = "btnOpenSchedule";
-            btnOpenSchedule.Size = new Size(135, 55);
+            btnOpenSchedule.Size = new Size(154, 73);
             btnOpenSchedule.TabIndex = 6;
             btnOpenSchedule.Text = "Mở thời khóa biểu";
             btnOpenSchedule.UseVisualStyleBackColor = true;
             btnOpenSchedule.Click += btnOpenSchedule_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(177, 467);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(154, 73);
+            button1.TabIndex = 7;
+            button1.Text = "Mở Staff ";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // FormOrderList
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 519);
+            ClientSize = new Size(1067, 692);
+            Controls.Add(button1);
             Controls.Add(btnOpenSchedule);
             Controls.Add(radioAll);
             Controls.Add(radio1Month);
             Controls.Add(radio7Days);
             Controls.Add(listViewOrders);
-            Margin = new Padding(4);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "FormOrderList";
             Text = "Form1";
             Load += FormOrderList_Load;
@@ -157,6 +175,7 @@ namespace eParty
         private System.Windows.Forms.RadioButton radio1Month;
         private System.Windows.Forms.RadioButton radioAll;
         private System.Windows.Forms.Button btnOpenSchedule;
+        private Button button1;
     }
 }
 

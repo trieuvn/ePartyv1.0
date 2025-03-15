@@ -146,6 +146,11 @@ namespace eParty
             else return "Tối";
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormStaffManagement().ShowDialog();
+            this.Close();
+        }
     }
 }
