@@ -15,15 +15,15 @@ namespace eParty
 {
     public partial class AuthorizationForm : Form
     {
-        public AuthorizationForm()
+        private MenuForm menuForm;
+        public AuthorizationForm(MenuForm parent)
         {
             InitializeComponent();
+            menuForm = parent;
         }
 
         private void lLforgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ForgotPassword forgotPassword = new ForgotPassword();
-            forgotPassword.ShowDialog();
         }
 
         private Image ByteArrayToImage(byte[] byteArray)
@@ -81,6 +81,7 @@ namespace eParty
 
         private void lLforgot_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            menuForm.ShowForgotPasswordForm();
         }
 
         private void AuthorizationForm_Load(object sender, EventArgs e)

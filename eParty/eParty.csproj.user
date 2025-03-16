@@ -5,6 +5,9 @@
     <Compile Update="ArtanButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="ArtanTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>

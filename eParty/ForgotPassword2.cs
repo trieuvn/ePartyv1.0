@@ -31,5 +31,15 @@ namespace eParty
         {
 
         }
+
+        private void artanButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void artanPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

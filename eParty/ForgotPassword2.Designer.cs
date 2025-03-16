@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPassword2));
             artanPanel1 = new ArtanPanel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            artanButton1 = new ArtanButton();
-            label5 = new Label();
-            txtEmail = new TextBox();
-            pictureBox1 = new PictureBox();
             artanButton2 = new ArtanButton();
+            pictureBox1 = new PictureBox();
+            txtEmail = new TextBox();
+            artanButton1 = new ArtanButton();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            label5 = new Label();
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // artanPanel1
             // 
-            artanPanel1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            artanPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             artanPanel1.BackColor = Color.White;
             artanPanel1.BorderRadius = 30;
             artanPanel1.Controls.Add(artanButton2);
@@ -65,100 +65,7 @@
             artanPanel1.Name = "artanPanel1";
             artanPanel1.Size = new Size(1099, 664);
             artanPanel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.ForeColor = Color.FromArgb(42, 128, 182);
-            label1.Location = new Point(574, 121);
-            label1.Name = "label1";
-            label1.Size = new Size(189, 72);
-            label1.TabIndex = 0;
-            label1.Text = "Forgot";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F);
-            label2.ForeColor = Color.FromArgb(42, 128, 182);
-            label2.Location = new Point(574, 191);
-            label2.Name = "label2";
-            label2.Size = new Size(292, 72);
-            label2.TabIndex = 1;
-            label2.Text = "Password ?";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(574, 261);
-            label3.Name = "label3";
-            label3.Size = new Size(353, 45);
-            label3.TabIndex = 2;
-            label3.Text = "Enter the email address";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(574, 311);
-            label4.Name = "label4";
-            label4.Size = new Size(438, 45);
-            label4.TabIndex = 3;
-            label4.Text = "associated with your account.";
-            // 
-            // artanButton1
-            // 
-            artanButton1.BackColor = Color.FromArgb(42, 128, 182);
-            artanButton1.BackgroundColor = Color.FromArgb(42, 128, 182);
-            artanButton1.BorderColor = Color.FromArgb(42, 128, 182);
-            artanButton1.BorderRadius = 59;
-            artanButton1.BorderSize = 0;
-            artanButton1.FlatAppearance.BorderSize = 0;
-            artanButton1.FlatStyle = FlatStyle.Flat;
-            artanButton1.ForeColor = Color.White;
-            artanButton1.Location = new Point(868, 532);
-            artanButton1.Name = "artanButton1";
-            artanButton1.Size = new Size(144, 62);
-            artanButton1.TabIndex = 4;
-            artanButton1.Text = "Next";
-            artanButton1.TextColor = Color.White;
-            artanButton1.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.ForeColor = Color.DimGray;
-            label5.Location = new Point(574, 448);
-            label5.Name = "label5";
-            label5.Size = new Size(434, 32);
-            label5.TabIndex = 5;
-            label5.Text = "__________________________________________";
-            // 
-            // txtEmail
-            // 
-            txtEmail.BorderStyle = BorderStyle.None;
-            txtEmail.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEmail.ForeColor = Color.DimGray;
-            txtEmail.Location = new Point(574, 422);
-            txtEmail.Margin = new Padding(6, 7, 6, 7);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(438, 43);
-            txtEmail.TabIndex = 6;
-            txtEmail.Text = "Enter Email Address";
-            txtEmail.UseWaitCursor = true;
-            txtEmail.TextChanged += txtEmail_TextChanged;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(76, 121);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(463, 473);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            artanPanel1.Paint += artanPanel1_Paint;
             // 
             // artanButton2
             // 
@@ -178,6 +85,101 @@
             artanButton2.TextColor = Color.White;
             artanButton2.UseVisualStyleBackColor = false;
             artanButton2.Click += artanButton2_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(76, 121);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(463, 473);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // txtEmail
+            // 
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmail.ForeColor = Color.DimGray;
+            txtEmail.Location = new Point(574, 422);
+            txtEmail.Margin = new Padding(6, 7, 6, 7);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(438, 43);
+            txtEmail.TabIndex = 6;
+            txtEmail.Text = "Enter Email Address";
+            txtEmail.UseWaitCursor = true;
+            txtEmail.TextChanged += txtEmail_TextChanged;
+            // 
+            // artanButton1
+            // 
+            artanButton1.BackColor = Color.FromArgb(42, 128, 182);
+            artanButton1.BackgroundColor = Color.FromArgb(42, 128, 182);
+            artanButton1.BorderColor = Color.FromArgb(42, 128, 182);
+            artanButton1.BorderRadius = 59;
+            artanButton1.BorderSize = 0;
+            artanButton1.FlatAppearance.BorderSize = 0;
+            artanButton1.FlatStyle = FlatStyle.Flat;
+            artanButton1.ForeColor = Color.White;
+            artanButton1.Location = new Point(868, 532);
+            artanButton1.Name = "artanButton1";
+            artanButton1.Size = new Size(144, 62);
+            artanButton1.TabIndex = 4;
+            artanButton1.Text = "Next";
+            artanButton1.TextColor = Color.White;
+            artanButton1.UseVisualStyleBackColor = false;
+            artanButton1.Click += artanButton1_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(574, 311);
+            label4.Name = "label4";
+            label4.Size = new Size(438, 45);
+            label4.TabIndex = 3;
+            label4.Text = "associated with your account.";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.Location = new Point(574, 261);
+            label3.Name = "label3";
+            label3.Size = new Size(353, 45);
+            label3.TabIndex = 2;
+            label3.Text = "Enter the email address";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 20F);
+            label2.ForeColor = Color.FromArgb(42, 128, 182);
+            label2.Location = new Point(574, 191);
+            label2.Name = "label2";
+            label2.Size = new Size(292, 72);
+            label2.TabIndex = 1;
+            label2.Text = "Password ?";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20F);
+            label1.ForeColor = Color.FromArgb(42, 128, 182);
+            label1.Location = new Point(574, 121);
+            label1.Name = "label1";
+            label1.Size = new Size(189, 72);
+            label1.TabIndex = 0;
+            label1.Text = "Forgot";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = Color.DimGray;
+            label5.Location = new Point(574, 448);
+            label5.Name = "label5";
+            label5.Size = new Size(434, 32);
+            label5.TabIndex = 5;
+            label5.Text = "__________________________________________";
             // 
             // ForgotPassword2
             // 

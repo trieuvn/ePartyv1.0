@@ -21,5 +21,10 @@ namespace eParty
         {
 
         }
+
+        private void lbEmail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

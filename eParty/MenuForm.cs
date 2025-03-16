@@ -117,13 +117,16 @@ namespace eParty
         private void timer1_Tick(object sender, EventArgs e)
         {
             PnlNavbar.Width = PnlNavbar.Width - 5;
-
+            
 
             if (PnlNavbar.Width <= 65)
             {
-                BtnNavbar.Image = ByteArrayToImage(Resources.Next);
+                
+
                 timer1.Stop();
 
+                BtnNavbar.Image = null;
+                BtnNavbar.Image = ByteArrayToImage(Resources.Next);
                 pbTitle.Visible = false;
                 BtnDashboard.Text = "";
                 BtnResource.Text = "";
@@ -132,7 +135,9 @@ namespace eParty
                 lb1.Visible = false;
                 lb2.Visible = false;
                 BtnOut.Visible = false;
+
             }
+            
         }
         Dashboard db = new Dashboard();
         private void timer2_Tick(object sender, EventArgs e)
@@ -147,13 +152,15 @@ namespace eParty
             PnlNavbar.Width = PnlNavbar.Width + 5;
             if (PnlNavbar.Width >= 275)
             {
-                BtnNavbar.Image = ByteArrayToImage(Resources.previous);
+                
                 timer2.Stop();
-
+                BtnNavbar.Image = null;
+                BtnNavbar.Image = ByteArrayToImage(Resources.previous);
 
             }
             pbTitle.Visible = true;
             BtnOut.Visible = true;
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -178,7 +185,11 @@ namespace eParty
         private void BtnNavbar_Click(object sender, EventArgs e)
         {
             if (PnlNavbar.Width == 275)
+            {
                 timer1.Start();
+                
+            }
+
 
             else
                 timer2.Start();
@@ -261,7 +272,12 @@ namespace eParty
         private void BtnReport_Click(object sender, EventArgs e)
         {
             Origion(sender, e);
-            OpenChildForm(new AuthorizationForm());
+            OpenChildForm(new AuthorizationForm(this));
+        }
+        public void ShowForgotPasswordForm()
+        {
+            ForgotPassword2 forgotForm = new ForgotPassword2();
+            OpenChildForm(forgotForm);
         }
     }
 }
