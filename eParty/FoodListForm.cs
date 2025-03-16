@@ -19,10 +19,23 @@ namespace eParty
 
         private void FoodListForm_Load(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Insert(0, 1); 
+            dataGridView1.Rows.Insert(0, 1);
+            dataGridView1.Rows.Insert(0, 1);
 
         }
 
         private void lbEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void artanPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void artanPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -28,19 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodListForm));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             artanPanel1 = new ArtanPanel();
-            artanButton4 = new ArtanButton();
             dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            Order = new DataGridViewTextBoxColumn();
-            Amount = new DataGridViewTextBoxColumn();
-            Unit = new DataGridViewTextBoxColumn();
-            Cost = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
-            Image = new DataGridViewTextBoxColumn();
-            Manager = new DataGridViewTextBoxColumn();
+            artanPanel3 = new ArtanPanel();
+            textBox5 = new TextBox();
+            artanButton4 = new ArtanButton();
             artanPanel2 = new ArtanPanel();
             artanButton2 = new ArtanButton();
             artanButton1 = new ArtanButton();
@@ -56,13 +51,20 @@
             label2 = new Label();
             label1 = new Label();
             label4 = new Label();
-            artanPanel3 = new ArtanPanel();
-            textBox5 = new TextBox();
+            ID = new DataGridViewTextBoxColumn();
+            Order = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            Unit = new DataGridViewTextBoxColumn();
+            Cost = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
+            Image = new DataGridViewTextBoxColumn();
+            Manager = new DataGridViewTextBoxColumn();
+            Ingredients = new DataGridViewButtonColumn();
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            artanPanel3.SuspendLayout();
             artanPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            artanPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // artanPanel1
@@ -78,8 +80,71 @@
             artanPanel1.GradientTopColor = Color.White;
             artanPanel1.Location = new Point(0, 0);
             artanPanel1.Name = "artanPanel1";
-            artanPanel1.Size = new Size(939, 784);
+            artanPanel1.Size = new Size(1200, 784);
             artanPanel1.TabIndex = 0;
+            artanPanel1.Paint += artanPanel1_Paint;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Order, Amount, Unit, Cost, Description, Image, Manager, Ingredients });
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.Location = new Point(0, 78);
+            dataGridView1.Margin = new Padding(6);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 30;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1200, 706);
+            dataGridView1.TabIndex = 15;
+            // 
+            // artanPanel3
+            // 
+            artanPanel3.BackColor = Color.White;
+            artanPanel3.BorderRadius = 50;
+            artanPanel3.Controls.Add(textBox5);
+            artanPanel3.Controls.Add(artanButton4);
+            artanPanel3.ForeColor = Color.Black;
+            artanPanel3.GradientAngle = 90F;
+            artanPanel3.GradientBottomColor = Color.Silver;
+            artanPanel3.GradientTopColor = Color.Silver;
+            artanPanel3.Location = new Point(22, 12);
+            artanPanel3.Name = "artanPanel3";
+            artanPanel3.Size = new Size(425, 54);
+            artanPanel3.TabIndex = 18;
+            // 
+            // textBox5
+            // 
+            textBox5.BackColor = Color.Silver;
+            textBox5.BorderStyle = BorderStyle.None;
+            textBox5.Font = new Font("Segoe UI", 10F);
+            textBox5.ForeColor = Color.White;
+            textBox5.Location = new Point(29, 9);
+            textBox5.Margin = new Padding(6, 7, 6, 7);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(342, 36);
+            textBox5.TabIndex = 20;
+            textBox5.Text = "Search by food name...";
+            textBox5.UseWaitCursor = true;
             // 
             // artanButton4
             // 
@@ -99,104 +164,6 @@
             artanButton4.TabIndex = 17;
             artanButton4.TextColor = Color.White;
             artanButton4.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Order, Amount, Unit, Cost, Description, Image, Manager });
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(0, 78);
-            dataGridView1.Margin = new Padding(6);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 30;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(939, 706);
-            dataGridView1.TabIndex = 15;
-            // 
-            // ID
-            // 
-            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ID.FillWeight = 50F;
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 10;
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // Order
-            // 
-            Order.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Order.HeaderText = "Name";
-            Order.MinimumWidth = 10;
-            Order.Name = "Order";
-            Order.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Amount.HeaderText = "Amount";
-            Amount.MinimumWidth = 10;
-            Amount.Name = "Amount";
-            Amount.ReadOnly = true;
-            // 
-            // Unit
-            // 
-            Unit.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Unit.HeaderText = "Unit";
-            Unit.MinimumWidth = 10;
-            Unit.Name = "Unit";
-            Unit.ReadOnly = true;
-            // 
-            // Cost
-            // 
-            Cost.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Cost.HeaderText = "Cost";
-            Cost.MinimumWidth = 10;
-            Cost.Name = "Cost";
-            Cost.ReadOnly = true;
-            // 
-            // Description
-            // 
-            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 10;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            // 
-            // Image
-            // 
-            Image.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Image.HeaderText = "Image";
-            Image.MinimumWidth = 10;
-            Image.Name = "Image";
-            Image.ReadOnly = true;
-            // 
-            // Manager
-            // 
-            Manager.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Manager.HeaderText = "Manager";
-            Manager.MinimumWidth = 10;
-            Manager.Name = "Manager";
-            Manager.ReadOnly = true;
             // 
             // artanPanel2
             // 
@@ -221,10 +188,11 @@
             artanPanel2.GradientAngle = 120F;
             artanPanel2.GradientBottomColor = Color.FromArgb(227, 242, 253);
             artanPanel2.GradientTopColor = Color.FromArgb(227, 242, 253);
-            artanPanel2.Location = new Point(960, 0);
+            artanPanel2.Location = new Point(1206, 0);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Size = new Size(451, 784);
             artanPanel2.TabIndex = 1;
+            artanPanel2.Paint += artanPanel2_Paint;
             // 
             // artanButton2
             // 
@@ -264,9 +232,11 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(105, 78);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(242, 198);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
             // 
@@ -414,41 +384,93 @@
             label4.Text = "____________________________________";
             label4.UseWaitCursor = true;
             // 
-            // artanPanel3
+            // ID
             // 
-            artanPanel3.BackColor = Color.White;
-            artanPanel3.BorderRadius = 50;
-            artanPanel3.Controls.Add(textBox5);
-            artanPanel3.Controls.Add(artanButton4);
-            artanPanel3.ForeColor = Color.Black;
-            artanPanel3.GradientAngle = 90F;
-            artanPanel3.GradientBottomColor = Color.Silver;
-            artanPanel3.GradientTopColor = Color.Silver;
-            artanPanel3.Location = new Point(22, 12);
-            artanPanel3.Name = "artanPanel3";
-            artanPanel3.Size = new Size(425, 54);
-            artanPanel3.TabIndex = 18;
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID.FillWeight = 50F;
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 10;
+            ID.Name = "ID";
+            ID.ReadOnly = true;
             // 
-            // textBox5
+            // Order
             // 
-            textBox5.BackColor = Color.Silver;
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Font = new Font("Segoe UI", 10F);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(29, 9);
-            textBox5.Margin = new Padding(6, 7, 6, 7);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(342, 36);
-            textBox5.TabIndex = 20;
-            textBox5.Text = "Search by food name...";
-            textBox5.UseWaitCursor = true;
+            Order.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Order.HeaderText = "Name";
+            Order.MinimumWidth = 10;
+            Order.Name = "Order";
+            Order.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Amount.HeaderText = "Amount";
+            Amount.MinimumWidth = 10;
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            // 
+            // Unit
+            // 
+            Unit.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Unit.HeaderText = "Unit";
+            Unit.MinimumWidth = 10;
+            Unit.Name = "Unit";
+            Unit.ReadOnly = true;
+            // 
+            // Cost
+            // 
+            Cost.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Cost.HeaderText = "Cost";
+            Cost.MinimumWidth = 10;
+            Cost.Name = "Cost";
+            Cost.ReadOnly = true;
+            // 
+            // Description
+            // 
+            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 10;
+            Description.Name = "Description";
+            Description.ReadOnly = true;
+            // 
+            // Image
+            // 
+            Image.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Image.HeaderText = "Image";
+            Image.MinimumWidth = 10;
+            Image.Name = "Image";
+            Image.ReadOnly = true;
+            // 
+            // Manager
+            // 
+            Manager.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Manager.HeaderText = "Manager";
+            Manager.MinimumWidth = 10;
+            Manager.Name = "Manager";
+            Manager.ReadOnly = true;
+            // 
+            // Ingredients
+            // 
+            Ingredients.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            Ingredients.DefaultCellStyle = dataGridViewCellStyle2;
+            Ingredients.FlatStyle = FlatStyle.Flat;
+            Ingredients.HeaderText = "Ingredients";
+            Ingredients.MinimumWidth = 10;
+            Ingredients.Name = "Ingredients";
+            Ingredients.ReadOnly = true;
+            Ingredients.Text = "View";
+            Ingredients.UseColumnTextForButtonValue = true;
             // 
             // FoodListForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1411, 784);
+            ClientSize = new Size(1657, 784);
             Controls.Add(artanPanel2);
             Controls.Add(artanPanel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -457,11 +479,11 @@
             Load += FoodListForm_Load;
             artanPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            artanPanel3.ResumeLayout(false);
+            artanPanel3.PerformLayout();
             artanPanel2.ResumeLayout(false);
             artanPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            artanPanel3.ResumeLayout(false);
-            artanPanel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -469,14 +491,6 @@
 
         private ArtanPanel artanPanel1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Order;
-        private DataGridViewTextBoxColumn Amount;
-        private DataGridViewTextBoxColumn Unit;
-        private DataGridViewTextBoxColumn Cost;
-        private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn Image;
-        private DataGridViewTextBoxColumn Manager;
         private ArtanPanel artanPanel2;
         private TextBox txtEmail;
         private Label label1;
@@ -495,5 +509,14 @@
         private ArtanButton artanButton4;
         private ArtanPanel artanPanel3;
         private TextBox textBox5;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Order;
+        private DataGridViewTextBoxColumn Amount;
+        private DataGridViewTextBoxColumn Unit;
+        private DataGridViewTextBoxColumn Cost;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn Image;
+        private DataGridViewTextBoxColumn Manager;
+        private DataGridViewButtonColumn Ingredients;
     }
 }
