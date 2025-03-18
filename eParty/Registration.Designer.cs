@@ -88,7 +88,6 @@
             panel1.Size = new Size(377, 178);
             panel1.TabIndex = 0;
             panel1.UseWaitCursor = true;
-            panel1.Paint += panel1_Paint;
             // 
             // btnExit
             // 
@@ -170,7 +169,6 @@
             txtEmail.Size = new Size(304, 27);
             txtEmail.TabIndex = 3;
             txtEmail.UseWaitCursor = true;
-            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // label1
             // 
@@ -208,7 +206,6 @@
             txtFullname.Size = new Size(304, 27);
             txtFullname.TabIndex = 7;
             txtFullname.UseWaitCursor = true;
-            txtFullname.TextChanged += txtFullname_TextChanged;
             // 
             // pictureBox3
             // 
@@ -258,7 +255,6 @@
             txtPass.Size = new Size(304, 27);
             txtPass.TabIndex = 11;
             txtPass.UseWaitCursor = true;
-            txtPass.TextChanged += txtPass_TextChanged;
             // 
             // pictureBox4
             // 
@@ -271,7 +267,6 @@
             pictureBox4.TabIndex = 10;
             pictureBox4.TabStop = false;
             pictureBox4.UseWaitCursor = true;
-            pictureBox4.Click += pictureBox4_Click;
             // 
             // label4
             // 
@@ -285,7 +280,6 @@
             label4.TabIndex = 12;
             label4.Text = "__________________________________________________";
             label4.UseWaitCursor = true;
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -310,7 +304,6 @@
             txtConfirmPass.Size = new Size(304, 27);
             txtConfirmPass.TabIndex = 15;
             txtConfirmPass.UseWaitCursor = true;
-            txtConfirmPass.TextChanged += textBox1_TextChanged;
             // 
             // pictureBox5
             // 
@@ -398,7 +391,6 @@
             txtusername.Size = new Size(304, 27);
             txtusername.TabIndex = 21;
             txtusername.UseWaitCursor = true;
-            txtusername.TextChanged += txtusername_TextChanged;
             // 
             // txtphone
             // 
@@ -410,7 +402,6 @@
             txtphone.Size = new Size(304, 27);
             txtphone.TabIndex = 25;
             txtphone.UseWaitCursor = true;
-            txtphone.TextChanged += txtphone_TextChanged;
             // 
             // pictureBox7
             // 
@@ -498,11 +489,9 @@
             txtAddress.Size = new Size(304, 27);
             txtAddress.TabIndex = 29;
             txtAddress.UseWaitCursor = true;
-            txtAddress.TextChanged += textBox2_TextChanged;
             // 
             // timer1
             // 
-            timer1.Tick += timer1_Tick;
             // 
             // Registration
             // 
@@ -547,7 +536,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registration";
             UseWaitCursor = true;
-            Load += Registration_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

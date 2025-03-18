@@ -1,38 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
+using BOLayer.Repository;
+using BOLayer.Repository.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace eParty
 {
     public partial class Registration : Form
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=ePartyDb;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;";
-       
         public Registration()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -42,89 +20,102 @@ namespace eParty
             login.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-        }
-        private void Registration_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnstarted_Click(object sender, EventArgs e)
         {
             string username = txtusername.Text.Trim();
             string email = txtEmail.Text.Trim();
+            string fullName = txtFullname.Text.Trim();
+            string phoneNumber = txtphone.Text.Trim();
+            string location = txtAddress.Text.Trim();
             string password = txtPass.Text.Trim();
             string confirmPassword = txtConfirmPass.Text.Trim();
 
-            if (password != confirmPassword)
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(phoneNumber) ||
+                string.IsNullOrEmpty(location) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
-                MessageBox.Show("Mật khẩu xác nhận không trùng khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("All fields are required!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=ePartyDb;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;"))
+            if (username.Length < 6 || username.Length > 32 || !System.Text.RegularExpressions.Regex.IsMatch(username, @"^[a-z0-9]+$"))
             {
-                conn.Open();
-                string query = "INSERT INTO Manager (UserName, Email, Password) VALUES (@UserName, @Email, @Password)";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                MessageBox.Show("Username must be 6-32 characters and contain only lowercase letters and numbers!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (password.Length < 8 || password.Length > 32 || !System.Text.RegularExpressions.Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,32}$"))
+            {
+                MessageBox.Show("Password must be 8-32 characters with at least 1 lowercase, 1 uppercase, 1 number, and 1 special character!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string emailPattern = @"^[\w\.-]+@([\w\-]+\.)?(gmail\.com|yahoo\.com|uef.edu.vn)$";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(email, emailPattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+            {
+                MessageBox.Show("Email must be from gmail.com, yahoo.com, or uef.edu.vn domains!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!(phoneNumber.Length == 10 && phoneNumber.StartsWith("0") && System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^[0-9]{10}$")) &&
+                !(phoneNumber.Length == 9 && !phoneNumber.StartsWith("0") && System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^[0-9]{9}$")))
+            {
+                MessageBox.Show("Phone number must be 10 digits starting with 0, or 9 digits not starting with 0!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (password != confirmPassword)
+            {
+                MessageBox.Show("Passwords do not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using (var context = new ePartyDbDbContext())
                 {
-                    cmd.Parameters.AddWithValue("@UserName", username);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);
-
-                    try
+                    if (context.Managers.Any(m => m.UserName == username))
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Username already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
-                        // Ẩn form đăng ký và mở LoginShortcut
-                        this.Hide();
-                        LoginShortcut shortcutForm = new LoginShortcut(username, email);
-                        shortcutForm.ShowDialog();
-                        this.Close();
-                    }
-                    catch (Exception ex)
+                    if (context.Managers.Any(m => m.Email == email))
                     {
-                        MessageBox.Show("Lỗi đăng ký: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Email already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
+
+                    if (context.Managers.Any(m => m.PhoneNumber == phoneNumber))
+                    {
+                        MessageBox.Show("Phone number already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    var newManager = new Manager
+                    {
+                        UserName = username,
+                        Email = email,
+                        FullName = fullName,
+                        PhoneNumber = phoneNumber,
+                        Location = location,
+                        Password = password
+                    };
+
+                    context.Managers.Add(newManager);
+                    context.SaveChanges();
+
+                    MessageBox.Show("Registration successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Hide();
+                    LoginShortcut shortcutForm = new LoginShortcut(username, email);
+                    shortcutForm.ShowDialog();
+                    this.Close();
                 }
             }
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFullname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtusername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtphone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Registration error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

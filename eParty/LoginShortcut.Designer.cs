@@ -47,7 +47,6 @@
             lbUsername.Size = new Size(145, 32);
             lbUsername.TabIndex = 0;
             lbUsername.Text = "phucga1234";
-            lbUsername.Click += lbUsername_Click;
             // 
             // lbGmail
             // 
@@ -60,7 +59,6 @@
             lbGmail.Size = new Size(256, 32);
             lbGmail.TabIndex = 1;
             lbGmail.Text = "sangntt22@uef.edu.vn";
-            lbGmail.Click += lbGmail_Click;
             // 
             // btnLogin
             // 

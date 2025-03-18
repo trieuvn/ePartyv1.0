@@ -75,7 +75,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(393, 179);
             panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
             // 
             // btnExit
             // 
@@ -116,7 +115,6 @@
             lbRegistration.Size = new Size(286, 37);
             lbRegistration.TabIndex = 0;
             lbRegistration.Text = "Forgot your password";
-            lbRegistration.Click += lbRegistration_Click;
             // 
             // pictureBox2
             // 
@@ -162,7 +160,6 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(304, 27);
             txtEmail.TabIndex = 9;
-            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtVerifyCode
             // 
@@ -173,7 +170,6 @@
             txtVerifyCode.Name = "txtVerifyCode";
             txtVerifyCode.Size = new Size(304, 27);
             txtVerifyCode.TabIndex = 13;
-            txtVerifyCode.TextChanged += textBox1_TextChanged;
             // 
             // pictureBox3
             // 
@@ -209,7 +205,6 @@
             label3.Size = new Size(86, 20);
             label3.TabIndex = 12;
             label3.Text = "Verify code";
-            label3.Click += label3_Click;
             // 
             // btnCheck
             // 
@@ -297,7 +292,6 @@
             txtNewPassword.Name = "txtNewPassword";
             txtNewPassword.Size = new Size(304, 27);
             txtNewPassword.TabIndex = 20;
-            txtNewPassword.TextChanged += textBox3_TextChanged;
             // 
             // txtConfirmPassword
             // 
@@ -308,7 +302,6 @@
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.Size = new Size(304, 27);
             txtConfirmPassword.TabIndex = 24;
-            txtConfirmPassword.TextChanged += textBox4_TextChanged;
             // 
             // pictureBox5
             // 

@@ -67,7 +67,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(267, 503);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // label3
             // 
@@ -138,7 +137,6 @@
             lbLogin.Size = new Size(215, 28);
             lbLogin.TabIndex = 4;
             lbLogin.Text = "Login to your account";
-            lbLogin.Click += label4_Click;
             // 
             // panel3
             // 
@@ -149,7 +147,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(449, 49);
             panel3.TabIndex = 5;
-            panel3.Paint += panel3_Paint;
             // 
             // txtLogin
             // 
@@ -161,7 +158,6 @@
             txtLogin.Size = new Size(407, 23);
             txtLogin.TabIndex = 1;
             txtLogin.Click += txtLogin_Click;
-            txtLogin.TextChanged += txtLogin_TextChanged;
             txtLogin.KeyPress += txtLogin_KeyPress;
             // 
             // pictureBox2
@@ -195,8 +191,6 @@
             txtPass.TabIndex = 2;
             txtPass.UseSystemPasswordChar = true;
             txtPass.Click += txtPass_Click;
-            txtPass.TextChanged += txtPass_TextChanged;
-            txtPass.KeyPress += txtPass_KeyPress;
             // 
             // pictureBox3
             // 
@@ -268,7 +262,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(449, 503);
             panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint;
             // 
             // Login
             // 

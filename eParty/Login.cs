@@ -1,23 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-using System.Configuration;
-using eParty.Properties;
-
+using BOLayer.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace eParty
 {
     public partial class Login : Form
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=ePartyDb;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;";
-
         public Login()
         {
             InitializeComponent();
@@ -26,11 +15,6 @@ namespace eParty
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
@@ -43,21 +27,12 @@ namespace eParty
             txtPass.UseSystemPasswordChar = true;
         }
 
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public void pass_color()
         {
             txtPass.BackColor = Color.White;
             panel4.BackColor = Color.White;
             txtLogin.BackColor = SystemColors.Control;
             panel3.BackColor = SystemColors.Control;
-        }
-        private void txtLogin_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         public void login_color()
@@ -67,6 +42,7 @@ namespace eParty
             txtPass.BackColor = SystemColors.Control;
             panel4.BackColor = SystemColors.Control;
         }
+
         private void txtLogin_Click(object sender, EventArgs e)
         {
             login_color();
@@ -84,10 +60,6 @@ namespace eParty
                 pass_color();
                 txtPass.Focus();
             }
-        }
-
-        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
-        {
         }
 
         private void lLforgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -111,62 +83,55 @@ namespace eParty
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter all login information!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=ePartyDb;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;"))
+            if (username.Length < 6 || username.Length > 32)
             {
-                conn.Open();
-                string query = "SELECT UserName, Email FROM Manager WHERE UserName = @username AND Password = @password";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                MessageBox.Show("Username must be between 6 and 32 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (password.Length < 8 || password.Length > 32)
+            {
+                MessageBox.Show("Password must be between 8 and 32 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using (var context = new ePartyDbDbContext())
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
+                    var manager = context.Managers
+                        .AsNoTracking()
+                        .FirstOrDefault(m => m.UserName == username && m.Password == password);
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    if (manager != null)
                     {
-                        if (reader.Read())
-                        {
-                            string user = reader["UserName"].ToString();
-                            string email = reader["Email"].ToString();
+                        Properties.Settings.Default.LastUsername = manager.UserName;
+                        Properties.Settings.Default.LastEmail = manager.Email;
+                        Properties.Settings.Default.Save();
 
-                            // ✅ Lưu thông tin tài khoản vào Settings
-                            Properties.Settings.Default.LastUsername = user;
-                            Properties.Settings.Default.LastEmail = email;
-                            Properties.Settings.Default.Save();
+                        MessageBox.Show("Login successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Chuyển sang FormOrderList
-                            this.Hide();
-                            FormOrderList orderList = new FormOrderList(user, new List<string>());
-                            orderList.ShowDialog();
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        this.Hide();
+                        FormOrderList orderList = new FormOrderList(manager.UserName, new List<string>());
+                        orderList.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Login error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void Login_Load(object sender, EventArgs e)
         {
             string lastUsername = Properties.Settings.Default.LastUsername;
@@ -174,7 +139,6 @@ namespace eParty
 
             if (!string.IsNullOrEmpty(lastUsername) && !string.IsNullOrEmpty(lastEmail) && Application.OpenForms["LoginShortcut"] == null)
             {
-                // ✅ Hiển thị LoginShortcut nếu có tài khoản trước đó
                 LoginShortcut shortcutForm = new LoginShortcut(lastUsername, lastEmail);
                 shortcutForm.Show();
             }
