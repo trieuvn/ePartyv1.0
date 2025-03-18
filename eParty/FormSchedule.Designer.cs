@@ -78,7 +78,7 @@
             artanButton8 = new ArtanButton();
             panel20 = new Panel();
             artanButton3 = new ArtanButton();
-            panel7 = new Panel();
+            panelline2 = new Panel();
             panel63 = new Panel();
             artanButton32 = new ArtanButton();
             panel58 = new Panel();
@@ -94,7 +94,7 @@
             artanButton10 = new ArtanButton();
             panel18 = new Panel();
             artanButton2 = new ArtanButton();
-            panel6 = new Panel();
+            panelline1 = new Panel();
             panel62 = new Panel();
             artanButton35 = new ArtanButton();
             panel57 = new Panel();
@@ -144,6 +144,14 @@
             artanButton39 = new ArtanButton();
             label13 = new Label();
             panel3 = new Panel();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
+            comboBox1 = new ComboBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             label21 = new Label();
             label20 = new Label();
             label19 = new Label();
@@ -154,14 +162,6 @@
             label14 = new Label();
             artanButton37 = new ArtanButton();
             artanButton36 = new ArtanButton();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
             label22 = new Label();
             label23 = new Label();
             label24 = new Label();
@@ -195,7 +195,7 @@
             panel38.SuspendLayout();
             panel33.SuspendLayout();
             panel20.SuspendLayout();
-            panel7.SuspendLayout();
+            panelline2.SuspendLayout();
             panel63.SuspendLayout();
             panel58.SuspendLayout();
             panel49.SuspendLayout();
@@ -203,7 +203,7 @@
             panel37.SuspendLayout();
             panel32.SuspendLayout();
             panel18.SuspendLayout();
-            panel6.SuspendLayout();
+            panelline1.SuspendLayout();
             panel62.SuspendLayout();
             panel57.SuspendLayout();
             panel47.SuspendLayout();
@@ -234,8 +234,8 @@
             panel1.Controls.Add(panel10);
             panel1.Controls.Add(panel9);
             panel1.Controls.Add(panel8);
-            panel1.Controls.Add(panel7);
-            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(panelline2);
+            panel1.Controls.Add(panelline1);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(panel4);
             panel1.Dock = DockStyle.Left;
@@ -888,20 +888,20 @@
             artanButton3.TextColor = Color.White;
             artanButton3.UseVisualStyleBackColor = false;
             // 
-            // panel7
+            // panelline2
             // 
-            panel7.Controls.Add(panel63);
-            panel7.Controls.Add(panel58);
-            panel7.Controls.Add(panel49);
-            panel7.Controls.Add(panel42);
-            panel7.Controls.Add(panel37);
-            panel7.Controls.Add(panel32);
-            panel7.Controls.Add(panel18);
-            panel7.Dock = DockStyle.Top;
-            panel7.Location = new Point(234, 202);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(1307, 115);
-            panel7.TabIndex = 10;
+            panelline2.Controls.Add(panel63);
+            panelline2.Controls.Add(panel58);
+            panelline2.Controls.Add(panel49);
+            panelline2.Controls.Add(panel42);
+            panelline2.Controls.Add(panel37);
+            panelline2.Controls.Add(panel32);
+            panelline2.Controls.Add(panel18);
+            panelline2.Dock = DockStyle.Top;
+            panelline2.Location = new Point(234, 202);
+            panelline2.Name = "panelline2";
+            panelline2.Size = new Size(1307, 115);
+            panelline2.TabIndex = 10;
             // 
             // panel63
             // 
@@ -1100,20 +1100,20 @@
             artanButton2.TextColor = Color.White;
             artanButton2.UseVisualStyleBackColor = false;
             // 
-            // panel6
+            // panelline1
             // 
-            panel6.Controls.Add(panel62);
-            panel6.Controls.Add(panel57);
-            panel6.Controls.Add(panel47);
-            panel6.Controls.Add(panel41);
-            panel6.Controls.Add(panel36);
-            panel6.Controls.Add(panel31);
-            panel6.Controls.Add(panel17);
-            panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(234, 87);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(1307, 115);
-            panel6.TabIndex = 9;
+            panelline1.Controls.Add(panel62);
+            panelline1.Controls.Add(panel57);
+            panelline1.Controls.Add(panel47);
+            panelline1.Controls.Add(panel41);
+            panelline1.Controls.Add(panel36);
+            panelline1.Controls.Add(panel31);
+            panelline1.Controls.Add(panel17);
+            panelline1.Dock = DockStyle.Top;
+            panelline1.Location = new Point(234, 87);
+            panelline1.Name = "panelline1";
+            panelline1.Size = new Size(1307, 115);
+            panelline1.TabIndex = 9;
             // 
             // panel62
             // 
@@ -1718,6 +1718,79 @@
             panel3.Size = new Size(379, 487);
             panel3.TabIndex = 2;
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Font = new Font("Segoe UI", 8F);
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(90, 160);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(141, 36);
+            dateTimePicker2.TabIndex = 27;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("Segoe UI", 8F);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(90, 110);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(141, 36);
+            dateTimePicker1.TabIndex = 26;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FlatStyle = FlatStyle.Flat;
+            comboBox1.Font = new Font("Segoe UI", 8F);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(168, 62);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(199, 38);
+            comboBox1.TabIndex = 25;
+            // 
+            // textBox5
+            // 
+            textBox5.BorderStyle = BorderStyle.None;
+            textBox5.Font = new Font("Segoe UI", 8F);
+            textBox5.Location = new Point(128, 366);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(239, 29);
+            textBox5.TabIndex = 24;
+            // 
+            // textBox4
+            // 
+            textBox4.BorderStyle = BorderStyle.None;
+            textBox4.Font = new Font("Segoe UI", 8F);
+            textBox4.Location = new Point(102, 317);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(265, 29);
+            textBox4.TabIndex = 23;
+            // 
+            // textBox3
+            // 
+            textBox3.BorderStyle = BorderStyle.None;
+            textBox3.Font = new Font("Segoe UI", 8F);
+            textBox3.Location = new Point(119, 266);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(248, 29);
+            textBox3.TabIndex = 22;
+            // 
+            // textBox2
+            // 
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Segoe UI", 8F);
+            textBox2.Location = new Point(128, 216);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(239, 29);
+            textBox2.TabIndex = 21;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI", 8F);
+            textBox1.Location = new Point(150, 16);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(217, 29);
+            textBox1.TabIndex = 20;
+            // 
             // label21
             // 
             label21.AutoSize = true;
@@ -1834,79 +1907,6 @@
             artanButton36.TextColor = Color.White;
             artanButton36.UseVisualStyleBackColor = false;
             artanButton36.Click += artanButton36_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 8F);
-            textBox1.Location = new Point(150, 16);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(217, 29);
-            textBox1.TabIndex = 20;
-            // 
-            // textBox2
-            // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 8F);
-            textBox2.Location = new Point(128, 216);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(239, 29);
-            textBox2.TabIndex = 21;
-            // 
-            // textBox3
-            // 
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Segoe UI", 8F);
-            textBox3.Location = new Point(119, 266);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(248, 29);
-            textBox3.TabIndex = 22;
-            // 
-            // textBox4
-            // 
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Font = new Font("Segoe UI", 8F);
-            textBox4.Location = new Point(102, 317);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(265, 29);
-            textBox4.TabIndex = 23;
-            // 
-            // textBox5
-            // 
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Font = new Font("Segoe UI", 8F);
-            textBox5.Location = new Point(128, 366);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(239, 29);
-            textBox5.TabIndex = 24;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Segoe UI", 8F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(168, 62);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(199, 38);
-            comboBox1.TabIndex = 25;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Segoe UI", 8F);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(90, 110);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(141, 36);
-            dateTimePicker1.TabIndex = 26;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Font = new Font("Segoe UI", 8F);
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(90, 160);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(141, 36);
-            dateTimePicker2.TabIndex = 27;
             // 
             // label22
             // 
@@ -2035,7 +2035,7 @@
             panel38.ResumeLayout(false);
             panel33.ResumeLayout(false);
             panel20.ResumeLayout(false);
-            panel7.ResumeLayout(false);
+            panelline2.ResumeLayout(false);
             panel63.ResumeLayout(false);
             panel58.ResumeLayout(false);
             panel49.ResumeLayout(false);
@@ -2043,7 +2043,7 @@
             panel37.ResumeLayout(false);
             panel32.ResumeLayout(false);
             panel18.ResumeLayout(false);
-            panel6.ResumeLayout(false);
+            panelline1.ResumeLayout(false);
             panel62.ResumeLayout(false);
             panel57.ResumeLayout(false);
             panel47.ResumeLayout(false);
@@ -2104,8 +2104,8 @@
         private Panel panel10;
         private Panel panel9;
         private Panel panel8;
-        private Panel panel7;
-        private Panel panel6;
+        private Panel panelline2;
+        private Panel panelline1;
         private Panel panel4;
         private Panel panel19;
         private Panel panel26;

@@ -267,7 +267,7 @@ namespace eParty
         private void BtnSchedule_Click(object sender, EventArgs e)
         {
             Origion(sender, e);
-            Open_DropdownMenu(rjDropdownMenu2, sender);
+            OpenChildForm(new FormSchedule());
         }
         private void BtnReport_Click(object sender, EventArgs e)
         {
