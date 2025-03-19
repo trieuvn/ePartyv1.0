@@ -458,6 +458,7 @@
             Margin = new Padding(6, 7, 6, 7);
             Name = "Dashboard";
             Text = "DashboardForm";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
