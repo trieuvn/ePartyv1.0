@@ -29,10 +29,19 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodListForm));
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodListForm));
             artanPanel1 = new ArtanPanel();
             dataGridView1 = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            Order = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            Unit = new DataGridViewTextBoxColumn();
+            Cost = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
+            Image = new DataGridViewTextBoxColumn();
+            Manager = new DataGridViewTextBoxColumn();
+            Ingredients = new DataGridViewButtonColumn();
             artanPanel3 = new ArtanPanel();
             textBox5 = new TextBox();
             artanButton4 = new ArtanButton();
@@ -51,15 +60,6 @@
             label2 = new Label();
             label1 = new Label();
             label4 = new Label();
-            ID = new DataGridViewTextBoxColumn();
-            Order = new DataGridViewTextBoxColumn();
-            Amount = new DataGridViewTextBoxColumn();
-            Unit = new DataGridViewTextBoxColumn();
-            Cost = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
-            Image = new DataGridViewTextBoxColumn();
-            Manager = new DataGridViewTextBoxColumn();
-            Ingredients = new DataGridViewButtonColumn();
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             artanPanel3.SuspendLayout();
@@ -116,6 +116,87 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1200, 706);
             dataGridView1.TabIndex = 15;
+            // 
+            // ID
+            // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID.FillWeight = 50F;
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 10;
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // Order
+            // 
+            Order.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Order.HeaderText = "Name";
+            Order.MinimumWidth = 10;
+            Order.Name = "Order";
+            Order.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Amount.HeaderText = "Amount";
+            Amount.MinimumWidth = 10;
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            // 
+            // Unit
+            // 
+            Unit.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Unit.HeaderText = "Unit";
+            Unit.MinimumWidth = 10;
+            Unit.Name = "Unit";
+            Unit.ReadOnly = true;
+            // 
+            // Cost
+            // 
+            Cost.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Cost.HeaderText = "Cost";
+            Cost.MinimumWidth = 10;
+            Cost.Name = "Cost";
+            Cost.ReadOnly = true;
+            // 
+            // Description
+            // 
+            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 10;
+            Description.Name = "Description";
+            Description.ReadOnly = true;
+            // 
+            // Image
+            // 
+            Image.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Image.HeaderText = "Image";
+            Image.MinimumWidth = 10;
+            Image.Name = "Image";
+            Image.ReadOnly = true;
+            // 
+            // Manager
+            // 
+            Manager.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Manager.HeaderText = "Manager";
+            Manager.MinimumWidth = 10;
+            Manager.Name = "Manager";
+            Manager.ReadOnly = true;
+            // 
+            // Ingredients
+            // 
+            Ingredients.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            Ingredients.DefaultCellStyle = dataGridViewCellStyle2;
+            Ingredients.FlatStyle = FlatStyle.Flat;
+            Ingredients.HeaderText = "Ingredients";
+            Ingredients.MinimumWidth = 10;
+            Ingredients.Name = "Ingredients";
+            Ingredients.ReadOnly = true;
+            Ingredients.Text = "View";
+            Ingredients.UseColumnTextForButtonValue = true;
             // 
             // artanPanel3
             // 
@@ -383,87 +464,6 @@
             label4.TabIndex = 14;
             label4.Text = "____________________________________";
             label4.UseWaitCursor = true;
-            // 
-            // ID
-            // 
-            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ID.FillWeight = 50F;
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 10;
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // Order
-            // 
-            Order.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Order.HeaderText = "Name";
-            Order.MinimumWidth = 10;
-            Order.Name = "Order";
-            Order.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Amount.HeaderText = "Amount";
-            Amount.MinimumWidth = 10;
-            Amount.Name = "Amount";
-            Amount.ReadOnly = true;
-            // 
-            // Unit
-            // 
-            Unit.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Unit.HeaderText = "Unit";
-            Unit.MinimumWidth = 10;
-            Unit.Name = "Unit";
-            Unit.ReadOnly = true;
-            // 
-            // Cost
-            // 
-            Cost.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Cost.HeaderText = "Cost";
-            Cost.MinimumWidth = 10;
-            Cost.Name = "Cost";
-            Cost.ReadOnly = true;
-            // 
-            // Description
-            // 
-            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 10;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            // 
-            // Image
-            // 
-            Image.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Image.HeaderText = "Image";
-            Image.MinimumWidth = 10;
-            Image.Name = "Image";
-            Image.ReadOnly = true;
-            // 
-            // Manager
-            // 
-            Manager.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Manager.HeaderText = "Manager";
-            Manager.MinimumWidth = 10;
-            Manager.Name = "Manager";
-            Manager.ReadOnly = true;
-            // 
-            // Ingredients
-            // 
-            Ingredients.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            Ingredients.DefaultCellStyle = dataGridViewCellStyle2;
-            Ingredients.FlatStyle = FlatStyle.Flat;
-            Ingredients.HeaderText = "Ingredients";
-            Ingredients.MinimumWidth = 10;
-            Ingredients.Name = "Ingredients";
-            Ingredients.ReadOnly = true;
-            Ingredients.Text = "View";
-            Ingredients.UseColumnTextForButtonValue = true;
             // 
             // FoodListForm
             // 

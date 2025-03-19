@@ -36,9 +36,9 @@
             artanButton1 = new ArtanButton();
             label4 = new Label();
             label3 = new Label();
+            label2 = new Label();
             label1 = new Label();
             label5 = new Label();
-            label2 = new Label();
             artanPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -124,6 +124,7 @@
             artanButton1.Text = "Confirm";
             artanButton1.TextColor = Color.White;
             artanButton1.UseVisualStyleBackColor = false;
+            artanButton1.Click += artanButton1_Click;
             // 
             // label4
             // 
@@ -145,6 +146,17 @@
             label3.TabIndex = 2;
             label3.Text = "Check if the email ";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 20F);
+            label2.ForeColor = Color.FromArgb(42, 128, 182);
+            label2.Location = new Point(574, 191);
+            label2.Name = "label2";
+            label2.Size = new Size(297, 72);
+            label2.TabIndex = 1;
+            label2.Text = "Verification";
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -165,17 +177,6 @@
             label5.Size = new Size(434, 32);
             label5.TabIndex = 5;
             label5.Text = "__________________________________________";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F);
-            label2.ForeColor = Color.FromArgb(42, 128, 182);
-            label2.Location = new Point(574, 191);
-            label2.Name = "label2";
-            label2.Size = new Size(297, 72);
-            label2.TabIndex = 1;
-            label2.Text = "Verification";
             // 
             // CheckEmail
             // 

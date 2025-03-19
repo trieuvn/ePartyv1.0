@@ -42,8 +42,8 @@ namespace eParty
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            sc.Left += 10;
-            if (sc.Left >= 780)
+            sc.Left += 40;
+            if (sc.Left >= this.Left + sc.Width)
             {
                 timer1.Stop();
             }
@@ -51,11 +51,16 @@ namespace eParty
         LoginShortcut sc=new LoginShortcut();
         private void Registration_Load(object sender, EventArgs e)
         {
-            sc.Show();
+           
         }
 
         private void btnstarted_Click(object sender, EventArgs e)
         {
+            sc.Left = this.Left;
+            sc.Hide();
+            sc.Show();
+            this.BringToFront();
+
             timer1.Start();
         }
     }

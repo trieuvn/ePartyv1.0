@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace eParty
 {
-    public partial class CheckEmail: Form
+    public partial class CheckEmail : Form
     {
         public CheckEmail()
         {
             InitializeComponent();
+        }
+
+        private void artanButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
