@@ -34,21 +34,12 @@ namespace eParty
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            sc.Hide();
-            this.Hide();
-            Login login = new Login();
-            login.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            sc.Left += 40;
-            if (sc.Left >= this.Left + sc.Width)
-            {
-                timer1.Stop();
-            }
+            
         }
-        LoginShortcut sc=new LoginShortcut();
         private void Registration_Load(object sender, EventArgs e)
         {
            
@@ -56,12 +47,8 @@ namespace eParty
 
         private void btnstarted_Click(object sender, EventArgs e)
         {
-            sc.Left = this.Left;
-            sc.Hide();
-            sc.Show();
-            this.BringToFront();
-
-            timer1.Start();
+            MenuForm menu=new MenuForm();
+            menu.Show();
         }
     }
 }

@@ -217,9 +217,7 @@ C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.ForgotP
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.FormSchedule.resources
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.IngredientListForm.resources
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.Login.resources
-C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.LoginShortcut.resources
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.MenuForm.resources
-C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.OrderListForm.resources
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.Properties.Resources.resources
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.Registration.resources
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.StaffListForm.resources
@@ -289,6 +287,3 @@ C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.pdb
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.genruntimeconfig.cache
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\ref\eParty.dll
 C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.AuthorizationForm.resources
-C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.ForgotPassword2.resources
-C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.CheckEmail.resources
-C:\Users\Phuc\Documents\eparty1.0\eParty\obj\Debug\net8.0-windows\eParty.EnternewPassword.resources

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace eParty
 {
-    public partial class IngredientListForm: Form
+    public partial class IngredientListForm : Form
     {
         public IngredientListForm()
         {
             InitializeComponent();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

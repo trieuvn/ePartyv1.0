@@ -29,13 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffListForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             artanPanel3 = new ArtanPanel();
             textBox5 = new TextBox();
             artanButton4 = new ArtanButton();
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            Order = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            Unit = new DataGridViewTextBoxColumn();
+            Cost = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
+            Image = new DataGridViewTextBoxColumn();
             panel3 = new Panel();
             artanButton1 = new ArtanButton();
             artanButton37 = new ArtanButton();
@@ -54,13 +61,6 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            ID = new DataGridViewTextBoxColumn();
-            Order = new DataGridViewTextBoxColumn();
-            Amount = new DataGridViewTextBoxColumn();
-            Unit = new DataGridViewTextBoxColumn();
-            Cost = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
-            Image = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             artanPanel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -89,7 +89,7 @@
             artanPanel3.GradientAngle = 90F;
             artanPanel3.GradientBottomColor = Color.Silver;
             artanPanel3.GradientTopColor = Color.Silver;
-            artanPanel3.Location = new Point(12, 27);
+            artanPanel3.Location = new Point(22, 12);
             artanPanel3.Name = "artanPanel3";
             artanPanel3.Size = new Size(425, 54);
             artanPanel3.TabIndex = 22;
@@ -145,20 +145,20 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Order, Amount, Unit, Cost, Description, Image });
             dataGridView1.Dock = DockStyle.Bottom;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(0, 94);
+            dataGridView1.Location = new Point(0, 75);
             dataGridView1.Margin = new Padding(6);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
@@ -166,8 +166,66 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 30;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1026, 784);
+            dataGridView1.Size = new Size(1026, 803);
             dataGridView1.TabIndex = 20;
+            // 
+            // ID
+            // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID.FillWeight = 50F;
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 10;
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // Order
+            // 
+            Order.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Order.HeaderText = "Full Name";
+            Order.MinimumWidth = 10;
+            Order.Name = "Order";
+            Order.ReadOnly = true;
+            Order.Width = 159;
+            // 
+            // Amount
+            // 
+            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Amount.HeaderText = "Role";
+            Amount.MinimumWidth = 10;
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            // 
+            // Unit
+            // 
+            Unit.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Unit.HeaderText = "Phone";
+            Unit.MinimumWidth = 10;
+            Unit.Name = "Unit";
+            Unit.ReadOnly = true;
+            // 
+            // Cost
+            // 
+            Cost.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Cost.HeaderText = "Location";
+            Cost.MinimumWidth = 10;
+            Cost.Name = "Cost";
+            Cost.ReadOnly = true;
+            // 
+            // Description
+            // 
+            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Description.HeaderText = "Cost";
+            Description.MinimumWidth = 10;
+            Description.Name = "Description";
+            Description.ReadOnly = true;
+            // 
+            // Image
+            // 
+            Image.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Image.HeaderText = "Manager";
+            Image.MinimumWidth = 10;
+            Image.Name = "Image";
+            Image.ReadOnly = true;
             // 
             // panel3
             // 
@@ -175,7 +233,6 @@
             panel3.Controls.Add(artanButton1);
             panel3.Controls.Add(artanButton37);
             panel3.Controls.Add(textBox6);
-            panel3.Controls.Add(label7);
             panel3.Controls.Add(textBox1);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(textBox4);
@@ -189,6 +246,7 @@
             panel3.Controls.Add(label1);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label3);
+            panel3.Controls.Add(label7);
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(1032, 0);
             panel3.Name = "panel3";
@@ -351,7 +409,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(71, 94);
+            pictureBox1.Location = new Point(75, 75);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(242, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -422,64 +480,6 @@
             label3.TabIndex = 39;
             label3.Text = "____________________________________";
             label3.UseWaitCursor = true;
-            // 
-            // ID
-            // 
-            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ID.FillWeight = 50F;
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 10;
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // Order
-            // 
-            Order.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Order.HeaderText = "Full Name";
-            Order.MinimumWidth = 10;
-            Order.Name = "Order";
-            Order.ReadOnly = true;
-            Order.Width = 159;
-            // 
-            // Amount
-            // 
-            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Amount.HeaderText = "Role";
-            Amount.MinimumWidth = 10;
-            Amount.Name = "Amount";
-            Amount.ReadOnly = true;
-            // 
-            // Unit
-            // 
-            Unit.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Unit.HeaderText = "Phone";
-            Unit.MinimumWidth = 10;
-            Unit.Name = "Unit";
-            Unit.ReadOnly = true;
-            // 
-            // Cost
-            // 
-            Cost.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Cost.HeaderText = "Location";
-            Cost.MinimumWidth = 10;
-            Cost.Name = "Cost";
-            Cost.ReadOnly = true;
-            // 
-            // Description
-            // 
-            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Description.HeaderText = "Cost";
-            Description.MinimumWidth = 10;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            // 
-            // Image
-            // 
-            Image.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Image.HeaderText = "Manager";
-            Image.MinimumWidth = 10;
-            Image.Name = "Image";
-            Image.ReadOnly = true;
             // 
             // StaffListForm
             // 

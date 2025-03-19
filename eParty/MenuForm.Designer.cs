@@ -435,6 +435,7 @@ namespace eParty
             Name = "MenuForm";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
             Load += MenuForm_Load_1;
             MouseDown += MenuForm_MouseDown;
             PnlNavbar.ResumeLayout(false);
