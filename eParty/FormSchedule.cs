@@ -43,5 +43,37 @@ namespace eParty
         {
 
         }
+
+        private void panel28_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormSchedule_Resize(object sender, EventArgs e)
+        {
+        }
+
+        private void FormSchedule_ResizeBegin(object sender, EventArgs e)
+        {
+        }
+
+        private void FormSchedule_ResizeEnd(object sender, EventArgs e)
+        {
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

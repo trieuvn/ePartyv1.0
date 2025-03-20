@@ -1,6 +1,6 @@
 ﻿namespace eParty
 {
-    partial class StaffListForm
+    partial class IngredientProvider
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientProvider));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel3 = new Panel();
             artanButton1 = new ArtanButton();
             artanButton37 = new ArtanButton();
-            textBox6 = new TextBox();
             textBox1 = new TextBox();
             label6 = new Label();
             textBox4 = new TextBox();
@@ -47,24 +46,19 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label7 = new Label();
             panel1 = new Panel();
-            artanPanel3 = new ArtanPanel();
-            textBox5 = new TextBox();
-            artanButton4 = new ArtanButton();
+            artanButton2 = new ArtanButton();
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             Order = new DataGridViewTextBoxColumn();
-            Role = new DataGridViewTextBoxColumn();
-            Phone = new DataGridViewTextBoxColumn();
             Location = new DataGridViewTextBoxColumn();
+            PhoneNumber = new DataGridViewTextBoxColumn();
+            Ingredient = new DataGridViewTextBoxColumn();
             Cost = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            artanPanel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -74,7 +68,6 @@
             panel3.BackColor = Color.FromArgb(227, 242, 253);
             panel3.Controls.Add(artanButton1);
             panel3.Controls.Add(artanButton37);
-            panel3.Controls.Add(textBox6);
             panel3.Controls.Add(textBox1);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(textBox4);
@@ -88,12 +81,11 @@
             panel3.Controls.Add(label1);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(label7);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(1032, 0);
+            panel3.Location = new Point(1379, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(374, 878);
-            panel3.TabIndex = 22;
+            panel3.Size = new Size(374, 972);
+            panel3.TabIndex = 24;
             // 
             // artanButton1
             // 
@@ -131,19 +123,6 @@
             artanButton37.TextColor = Color.White;
             artanButton37.UseVisualStyleBackColor = false;
             // 
-            // textBox6
-            // 
-            textBox6.BackColor = Color.FromArgb(227, 242, 253);
-            textBox6.BorderStyle = BorderStyle.None;
-            textBox6.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(32, 718);
-            textBox6.Margin = new Padding(6, 7, 6, 7);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(337, 43);
-            textBox6.TabIndex = 42;
-            textBox6.Text = "Manager";
-            textBox6.UseWaitCursor = true;
-            // 
             // textBox1
             // 
             textBox1.BackColor = Color.FromArgb(227, 242, 253);
@@ -180,7 +159,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(337, 43);
             textBox4.TabIndex = 42;
-            textBox4.Text = "Location";
+            textBox4.Text = "Ingredient";
             textBox4.UseWaitCursor = true;
             // 
             // textBox3
@@ -206,8 +185,9 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(337, 43);
             textBox2.TabIndex = 38;
-            textBox2.Text = "Role ";
+            textBox2.Text = "Location";
             textBox2.UseWaitCursor = true;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // txtFullname
             // 
@@ -310,84 +290,46 @@
             label3.Text = "____________________________________";
             label3.UseWaitCursor = true;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(41, 128, 182);
-            label7.Location = new Point(32, 749);
-            label7.Margin = new Padding(6, 0, 6, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(337, 30);
-            label7.TabIndex = 43;
-            label7.Text = "____________________________________";
-            label7.UseWaitCursor = true;
-            // 
             // panel1
             // 
-            panel1.Controls.Add(artanPanel3);
+            panel1.Controls.Add(artanButton2);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1032, 75);
-            panel1.TabIndex = 23;
+            panel1.Size = new Size(1379, 95);
+            panel1.TabIndex = 25;
+            panel1.Paint += panel1_Paint;
             // 
-            // artanPanel3
+            // artanButton2
             // 
-            artanPanel3.BackColor = Color.White;
-            artanPanel3.BorderRadius = 50;
-            artanPanel3.Controls.Add(textBox5);
-            artanPanel3.Controls.Add(artanButton4);
-            artanPanel3.ForeColor = Color.Black;
-            artanPanel3.GradientAngle = 90F;
-            artanPanel3.GradientBottomColor = Color.Silver;
-            artanPanel3.GradientTopColor = Color.Silver;
-            artanPanel3.Location = new Point(22, 12);
-            artanPanel3.Name = "artanPanel3";
-            artanPanel3.Size = new Size(425, 54);
-            artanPanel3.TabIndex = 20;
-            // 
-            // textBox5
-            // 
-            textBox5.BackColor = Color.Silver;
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Font = new Font("Segoe UI", 10F);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(29, 9);
-            textBox5.Margin = new Padding(6, 7, 6, 7);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(342, 36);
-            textBox5.TabIndex = 20;
-            textBox5.Text = "Search by staff name...";
-            textBox5.UseWaitCursor = true;
-            // 
-            // artanButton4
-            // 
-            artanButton4.BackColor = Color.White;
-            artanButton4.BackgroundColor = Color.White;
-            artanButton4.BorderColor = Color.White;
-            artanButton4.BorderRadius = 50;
-            artanButton4.BorderSize = 0;
-            artanButton4.Dock = DockStyle.Right;
-            artanButton4.FlatAppearance.BorderSize = 0;
-            artanButton4.FlatStyle = FlatStyle.Flat;
-            artanButton4.ForeColor = Color.White;
-            artanButton4.Image = (Image)resources.GetObject("artanButton4.Image");
-            artanButton4.Location = new Point(371, 0);
-            artanButton4.Name = "artanButton4";
-            artanButton4.Size = new Size(54, 54);
-            artanButton4.TabIndex = 17;
-            artanButton4.TextColor = Color.White;
-            artanButton4.UseVisualStyleBackColor = false;
+            artanButton2.BackColor = Color.FromArgb(42, 128, 182);
+            artanButton2.BackgroundColor = Color.FromArgb(42, 128, 182);
+            artanButton2.BorderColor = Color.FromArgb(42, 128, 182);
+            artanButton2.BorderRadius = 30;
+            artanButton2.BorderSize = 0;
+            artanButton2.FlatAppearance.BorderSize = 0;
+            artanButton2.FlatStyle = FlatStyle.Flat;
+            artanButton2.ForeColor = Color.White;
+            artanButton2.Image = (Image)resources.GetObject("artanButton2.Image");
+            artanButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            artanButton2.Location = new Point(25, 14);
+            artanButton2.Name = "artanButton2";
+            artanButton2.Size = new Size(136, 62);
+            artanButton2.TabIndex = 49;
+            artanButton2.Text = "Back";
+            artanButton2.TextAlign = ContentAlignment.MiddleRight;
+            artanButton2.TextColor = Color.White;
+            artanButton2.UseVisualStyleBackColor = false;
+            artanButton2.Click += artanButton2_Click;
             // 
             // panel2
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 75);
+            panel2.Location = new Point(0, 95);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1032, 803);
-            panel2.TabIndex = 24;
+            panel2.Size = new Size(1379, 877);
+            panel2.TabIndex = 26;
             // 
             // dataGridView1
             // 
@@ -407,7 +349,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Order, Role, Phone, Location, Cost, Description });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Order, Location, PhoneNumber, Ingredient, Cost });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.LightGray;
@@ -419,7 +361,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 30;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1032, 803);
+            dataGridView1.Size = new Size(1379, 877);
             dataGridView1.TabIndex = 22;
             // 
             // ID
@@ -440,22 +382,6 @@
             Order.ReadOnly = true;
             Order.Width = 117;
             // 
-            // Role
-            // 
-            Role.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Role.HeaderText = "Role";
-            Role.MinimumWidth = 10;
-            Role.Name = "Role";
-            Role.ReadOnly = true;
-            // 
-            // Phone
-            // 
-            Phone.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Phone.HeaderText = "Phone";
-            Phone.MinimumWidth = 10;
-            Phone.Name = "Phone";
-            Phone.ReadOnly = true;
-            // 
             // Location
             // 
             Location.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -463,6 +389,22 @@
             Location.MinimumWidth = 10;
             Location.Name = "Location";
             Location.ReadOnly = true;
+            // 
+            // PhoneNumber
+            // 
+            PhoneNumber.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            PhoneNumber.HeaderText = "Phone";
+            PhoneNumber.MinimumWidth = 10;
+            PhoneNumber.Name = "PhoneNumber";
+            PhoneNumber.ReadOnly = true;
+            // 
+            // Ingredient
+            // 
+            Ingredient.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Ingredient.HeaderText = "Ingredient";
+            Ingredient.MinimumWidth = 10;
+            Ingredient.Name = "Ingredient";
+            Ingredient.ReadOnly = true;
             // 
             // Cost
             // 
@@ -472,41 +414,34 @@
             Cost.Name = "Cost";
             Cost.ReadOnly = true;
             // 
-            // Description
-            // 
-            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Description.HeaderText = "Manager";
-            Description.MinimumWidth = 10;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            // 
-            // StaffListForm
+            // IngredientProvider
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1406, 878);
+            ClientSize = new Size(1753, 972);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "StaffListForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "ItemListForm";
-            Load += StaffListForm_Load;
+            Name = "IngredientProvider";
+            Text = "IngredientProvider";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
-            artanPanel3.ResumeLayout(false);
-            artanPanel3.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
         private Panel panel3;
+        private ArtanButton artanButton1;
+        private ArtanButton artanButton37;
+        private TextBox textBox1;
+        private Label label6;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
@@ -518,24 +453,15 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox6;
-        private Label label7;
-        private TextBox textBox1;
-        private Label label6;
-        private ArtanButton artanButton1;
-        private ArtanButton artanButton37;
         private Panel panel1;
+        private ArtanButton artanButton2;
         private Panel panel2;
-        private ArtanPanel artanPanel3;
-        private TextBox textBox5;
-        private ArtanButton artanButton4;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Order;
-        private DataGridViewTextBoxColumn Role;
-        private DataGridViewTextBoxColumn Phone;
         private DataGridViewTextBoxColumn Location;
+        private DataGridViewTextBoxColumn PhoneNumber;
+        private DataGridViewTextBoxColumn Ingredient;
         private DataGridViewTextBoxColumn Cost;
-        private DataGridViewTextBoxColumn Description;
     }
 }

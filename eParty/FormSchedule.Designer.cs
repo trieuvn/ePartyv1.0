@@ -1881,7 +1881,7 @@
             artanButton37.FlatAppearance.BorderSize = 0;
             artanButton37.FlatStyle = FlatStyle.Flat;
             artanButton37.ForeColor = Color.White;
-            artanButton37.Location = new Point(223, 407);
+            artanButton37.Location = new Point(223, 413);
             artanButton37.Name = "artanButton37";
             artanButton37.Size = new Size(144, 62);
             artanButton37.TabIndex = 11;
@@ -1899,7 +1899,7 @@
             artanButton36.FlatAppearance.BorderSize = 0;
             artanButton36.FlatStyle = FlatStyle.Flat;
             artanButton36.ForeColor = Color.White;
-            artanButton36.Location = new Point(17, 407);
+            artanButton36.Location = new Point(17, 413);
             artanButton36.Name = "artanButton36";
             artanButton36.Size = new Size(144, 62);
             artanButton36.TabIndex = 11;

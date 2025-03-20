@@ -99,6 +99,12 @@ namespace eParty
         {
 
         }
+        public void OpenForm(Form form)
+        {
+            if (form == null)
+                return;
+            OpenChildForm(form);
+        }
         private void MenuForm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -110,7 +116,7 @@ namespace eParty
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            PnlNavbar.Width = PnlNavbar.Width - 5;
+            PnlNavbar.Width = PnlNavbar.Width - 10;
             
 
             if (PnlNavbar.Width <= 65)
@@ -250,7 +256,7 @@ namespace eParty
         }
         private void ingreListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new IngredientListForm());
+            OpenChildForm(new IngredientListForm(this));
         }
 
         private void foodListToolStripMenuItem_Click(object sender, EventArgs e)

@@ -240,6 +240,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(227, 242, 253);
             ClientSize = new Size(1287, 808);
             Controls.Add(artanPanel1);
             FormBorderStyle = FormBorderStyle.None;

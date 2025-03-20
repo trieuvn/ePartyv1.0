@@ -47,6 +47,7 @@ namespace eParty
 
         private void btnstarted_Click(object sender, EventArgs e)
         {
+            this.Hide();
             MenuForm menu=new MenuForm();
             menu.Show();
         }
