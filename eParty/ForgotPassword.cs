@@ -13,6 +13,7 @@ namespace eParty
         private string userEmail;
         public ForgotPassword()
         {
+            
             InitializeComponent();
         }
 

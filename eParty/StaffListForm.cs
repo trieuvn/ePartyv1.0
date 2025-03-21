@@ -11,13 +11,14 @@ namespace eParty
     {
         private ePartyDbDbContext _context;
         private Staff _selectedStaff;
-
-        public StaffListForm()
+        public string username;
+        public StaffListForm(string username)
         {
             InitializeComponent();
             _context = new ePartyDbDbContext();
             ConfigureDataGridView();
             AttachEventHandlers(); // Gắn các sự kiện
+            this.username = username;
         }
 
         private void StaffListForm_Load(object sender, EventArgs e)
@@ -310,6 +311,11 @@ namespace eParty
             cboManager.SelectedItem = "None";
             _selectedStaff = null;
             dataGridStaff.ClearSelection();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

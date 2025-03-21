@@ -11,9 +11,10 @@ namespace eParty
     public partial class Dashboard : Form
     {
         private ePartyDbDbContext _context;
-
-        public Dashboard()
+        public string username;
+        public Dashboard(string username)
         {
+            this.username = username;   
             InitializeComponent();
             _context = new ePartyDbDbContext();
 
@@ -295,6 +296,11 @@ namespace eParty
         private void chart1_Click(object sender, EventArgs e)
         {
             // Xử lý sự kiện click trên chart (nếu cần)
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

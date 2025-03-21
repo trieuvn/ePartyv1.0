@@ -13,9 +13,10 @@ namespace eParty
         private DateTime _startOfWeek;
         private Order _selectedOrder;
         private ArtanButton _selectedButton;
-
-        public FormSchedule()
+        public string username;
+        public FormSchedule(string username)
         {
+            this.username = username;
             InitializeComponent();
             _context = new ePartyDbDbContext();
             _startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
@@ -25,6 +26,7 @@ namespace eParty
 
             LoadSchedule();
             RegisterButtonEvents();
+            this.username = username;
         }
 
         private void LoadManagersIntoComboBox()
@@ -147,6 +149,7 @@ namespace eParty
 
         private void ScheduleButton_Click(object sender, EventArgs e)
         {
+
             var button = sender as ArtanButton;
             if (button == null) return;
 
@@ -154,6 +157,7 @@ namespace eParty
             {
                 _selectedButton.BorderSize = 0;
             }
+
 
             button.BorderSize = 2;
             _selectedButton = button;
@@ -417,6 +421,16 @@ namespace eParty
             txtAddress.Text = "";
             txtPhone.Text = "";
             txtFeedBack.Text = "";
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

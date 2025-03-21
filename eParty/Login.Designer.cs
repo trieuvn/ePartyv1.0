@@ -279,6 +279,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(393, 377);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // Login
             // 
@@ -305,7 +306,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
-
         }
 
         #endregion

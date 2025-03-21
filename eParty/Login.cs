@@ -116,7 +116,7 @@ namespace eParty
                         MessageBox.Show("Login successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Hide();
-                        MenuForm m = new MenuForm();
+                        MenuForm m = new MenuForm(manager.UserName);
                         m.Show();
                     }
                     else
@@ -133,7 +133,12 @@ namespace eParty
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using BOLayer.Repository;
+using Azure.Identity;
 
 namespace eParty
 {
@@ -23,9 +24,10 @@ namespace eParty
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-
-        public MenuForm()
+        public string uniqueusername="not null";
+        public MenuForm(string username)
         {
+            this.uniqueusername = username;
             InitializeComponent();
             _context = new ePartyDbDbContext();
             LoadManagerInfo();
@@ -182,7 +184,7 @@ namespace eParty
             }
 
         }
-        Dashboard db = new Dashboard();
+
         private void timer2_Tick(object sender, EventArgs e)
         {
             BtnDashboard.Text = "Dashboard";
@@ -261,7 +263,7 @@ namespace eParty
         private void BtnDashboard_Click_1(object sender, EventArgs e)
         {
             Origion(sender, e);
-            OpenChildForm(new Dashboard());
+            OpenChildForm(new Dashboard(uniqueusername));
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -295,30 +297,35 @@ namespace eParty
 
         private void staffListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new StaffListForm());
+            OpenChildForm(new StaffListForm(uniqueusername));
         }
         private void ingreListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new IngredientListForm()); // Remove the 'this' argument
+            OpenChildForm(new IngredientListForm(uniqueusername)); // Remove the 'this' argument
         }
 
         private void foodListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FoodListForm());
+            OpenChildForm(new FoodListForm(uniqueusername));
         }
 
         private void BtnSchedule_Click(object sender, EventArgs e)
         {
             Origion(sender, e);
-            OpenChildForm(new FormSchedule());
+            OpenChildForm(new FormSchedule(uniqueusername));
         }
         private void BtnReport_Click(object sender, EventArgs e)
         {
             Origion(sender, e);
-            OpenChildForm(new AuthorizationForm(this));
+            OpenChildForm(new AuthorizationForm(this, uniqueusername));
         }
 
         private void lb1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

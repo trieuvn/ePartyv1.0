@@ -202,7 +202,7 @@ namespace eParty
             lblID.Font = new Font("Segoe UI Semibold", 4F, FontStyle.Bold);
             lblID.Location = new Point(53, 29);
             lblID.Name = "lblID";
-            lblID.Size = new Size(12, 10);
+            lblID.Size = new Size(10, 8);
             lblID.TabIndex = 2;
             lblID.Text = "ID";
             // 
@@ -222,7 +222,7 @@ namespace eParty
             lblName.Font = new Font("Segoe UI Semibold", 6F, FontStyle.Bold);
             lblName.Location = new Point(53, 8);
             lblName.Name = "lblName";
-            lblName.Size = new Size(32, 12);
+            lblName.Size = new Size(26, 11);
             lblName.TabIndex = 0;
             lblName.Text = "Name";
             lblName.Click += lb1_Click;
@@ -308,6 +308,7 @@ namespace eParty
             panel3.Name = "panel3";
             panel3.Size = new Size(1266, 23);
             panel3.TabIndex = 4;
+            panel3.Paint += panel3_Paint;
             // 
             // btnClose
             // 
@@ -376,26 +377,26 @@ namespace eParty
             rjDropdownMenu1.MenuItemTextColor = Color.Empty;
             rjDropdownMenu1.Name = "rjDropdownMenu1";
             rjDropdownMenu1.PrimaryColor = Color.Empty;
-            rjDropdownMenu1.Size = new Size(139, 76);
+            rjDropdownMenu1.Size = new Size(123, 70);
             // 
             // staffListToolStripMenuItem
             // 
             staffListToolStripMenuItem.Name = "staffListToolStripMenuItem";
-            staffListToolStripMenuItem.Size = new Size(138, 24);
+            staffListToolStripMenuItem.Size = new Size(122, 22);
             staffListToolStripMenuItem.Text = "Staff List";
             staffListToolStripMenuItem.Click += staffListToolStripMenuItem_Click;
             // 
             // ingreListToolStripMenuItem
             // 
             ingreListToolStripMenuItem.Name = "ingreListToolStripMenuItem";
-            ingreListToolStripMenuItem.Size = new Size(138, 24);
+            ingreListToolStripMenuItem.Size = new Size(122, 22);
             ingreListToolStripMenuItem.Text = "Ingre List";
             ingreListToolStripMenuItem.Click += ingreListToolStripMenuItem_Click;
             // 
             // foodListToolStripMenuItem
             // 
             foodListToolStripMenuItem.Name = "foodListToolStripMenuItem";
-            foodListToolStripMenuItem.Size = new Size(138, 24);
+            foodListToolStripMenuItem.Size = new Size(122, 22);
             foodListToolStripMenuItem.Text = "Food List";
             foodListToolStripMenuItem.Click += foodListToolStripMenuItem_Click;
             // 
@@ -408,18 +409,18 @@ namespace eParty
             rjDropdownMenu2.MenuItemTextColor = Color.Empty;
             rjDropdownMenu2.Name = "rjDropdownMenu2";
             rjDropdownMenu2.PrimaryColor = Color.Empty;
-            rjDropdownMenu2.Size = new Size(164, 52);
+            rjDropdownMenu2.Size = new Size(142, 48);
             // 
             // createOrderToolStripMenuItem
             // 
             createOrderToolStripMenuItem.Name = "createOrderToolStripMenuItem";
-            createOrderToolStripMenuItem.Size = new Size(163, 24);
+            createOrderToolStripMenuItem.Size = new Size(141, 22);
             createOrderToolStripMenuItem.Text = "Create Order";
             // 
             // orderDetailToolStripMenuItem
             // 
             orderDetailToolStripMenuItem.Name = "orderDetailToolStripMenuItem";
-            orderDetailToolStripMenuItem.Size = new Size(163, 24);
+            orderDetailToolStripMenuItem.Size = new Size(141, 22);
             orderDetailToolStripMenuItem.Text = "Order Detail";
             // 
             // MenuForm

@@ -1,4 +1,5 @@
-﻿using eParty.Properties;
+﻿using Azure.Identity;
+using eParty.Properties;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,10 +17,12 @@ namespace eParty
     public partial class AuthorizationForm : Form
     {
         private MenuForm menuForm;
-        public AuthorizationForm(MenuForm parent)
+        public string username;
+        public AuthorizationForm(MenuForm parent, string username)
         {
             InitializeComponent();
             menuForm = parent;
+            this.username = username;
         }
 
         private void lLforgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -84,6 +87,11 @@ namespace eParty
         }
 
         private void AuthorizationForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void artanPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

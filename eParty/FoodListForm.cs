@@ -11,9 +11,10 @@ namespace eParty
     {
         private ePartyDbDbContext _context;
         private Food _selectedFood;
-
-        public FoodListForm()
+        public string username;
+        public FoodListForm(string username)
         {
+            this.username = username;   
             InitializeComponent();
             _context = new ePartyDbDbContext();
             ConfigureDataGridView();

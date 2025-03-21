@@ -11,9 +11,10 @@ namespace eParty
     {
         private ePartyDbDbContext _context;
         private Ingredient _selectedIngredient;
-
-        public IngredientListForm()
+        public string username;
+        public IngredientListForm(string username)
         {
+            this.username = username;
             InitializeComponent();
             _context = new ePartyDbDbContext();
             try
@@ -33,6 +34,7 @@ namespace eParty
 
             // Attach the Shown event
             this.Shown += IngredientListForm_Shown;
+            this.username = username;
         }
 
         private void ConfigureDataGridView()
@@ -471,6 +473,11 @@ namespace eParty
         private void artanButton2_Click(object sender, EventArgs e)
         {
             // Có thể thêm logic để hiển thị thông tin nhà cung cấp (Provider) nếu cần
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
