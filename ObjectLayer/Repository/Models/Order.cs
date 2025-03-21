@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using BOLayer.Repository.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
-namespace BOLayer.Repository.Models;
+using System.ComponentModel.DataAnnotations;
 
 [Table("Order")]
 public partial class Order
@@ -36,6 +32,10 @@ public partial class Order
     [StringLength(15)]
     public string? PhoneNumber { get; set; }
 
+    public bool? Status { get; set; }
+
+    public int? ActualCost { get; set; }
+
     [ForeignKey("Manager")]
     [InverseProperty("Orders")]
     public virtual Manager? ManagerNavigation { get; set; }
@@ -44,10 +44,9 @@ public partial class Order
     public virtual ICollection<OrderHaveFood> OrderHaveFoods { get; set; } = new List<OrderHaveFood>();
 
     [InverseProperty("Order")]
-    public virtual ICollection<OrderHaveStaff> OrderHaveStaffs { get; set; } = new List<OrderHaveStaff>();
+    public virtual ICollection<OrderHaveStaff> OrderHaveStaffs { get; set; } = new List<OrderHaveStaff>(); // Thêm mối quan hệ với OrderHaveStaff
 
-    // Rename CustomerNavigation to Customer to avoid naming conflict
     [ForeignKey("PhoneNumber")]
     [InverseProperty("Orders")]
-    public virtual Customer? Customer { get; set; }
+    public virtual Customer? PhoneNumberNavigation { get; set; }
 }

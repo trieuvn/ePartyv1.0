@@ -116,9 +116,8 @@ namespace eParty
                         MessageBox.Show("Login successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Hide();
-                        FormOrderList orderList = new FormOrderList(manager.UserName, new List<string>());
-                        orderList.ShowDialog();
-                        this.Close();
+                        MenuForm m = new MenuForm();
+                        m.Show();
                     }
                     else
                     {
@@ -134,14 +133,7 @@ namespace eParty
 
         private void Login_Load(object sender, EventArgs e)
         {
-            string lastUsername = Properties.Settings.Default.LastUsername;
-            string lastEmail = Properties.Settings.Default.LastEmail;
-
-            if (!string.IsNullOrEmpty(lastUsername) && !string.IsNullOrEmpty(lastEmail) && Application.OpenForms["LoginShortcut"] == null)
-            {
-                LoginShortcut shortcutForm = new LoginShortcut(lastUsername, lastEmail);
-                shortcutForm.Show();
-            }
+            
         }
     }
 }

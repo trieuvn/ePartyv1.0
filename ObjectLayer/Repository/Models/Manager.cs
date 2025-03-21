@@ -38,8 +38,5 @@ public partial class Manager
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
     [InverseProperty("ManagerNavigation")]
-    public virtual ICollection<OutdatedEvent> OutdatedEvents { get; set; } = new List<OutdatedEvent>();
-
-    [InverseProperty("ManagerNavigation")]
     public virtual ICollection<Staff> Staff { get; set; } = new List<Staff>();
 }

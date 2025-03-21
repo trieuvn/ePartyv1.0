@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             panel1 = new Panel();
             btnExit = new Button();
@@ -63,7 +62,6 @@
             label12 = new Label();
             label13 = new Label();
             txtAddress = new TextBox();
-            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -83,9 +81,9 @@
             panel1.Controls.Add(lbRegistration);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(377, 178);
+            panel1.Size = new Size(377, 179);
             panel1.TabIndex = 0;
             panel1.UseWaitCursor = true;
             // 
@@ -98,6 +96,7 @@
             btnExit.Font = new Font("Verdana", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExit.ForeColor = Color.White;
             btnExit.Location = new Point(344, 3);
+            btnExit.Margin = new Padding(2, 3, 2, 3);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(33, 40);
             btnExit.TabIndex = 5;
@@ -110,7 +109,7 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(23, 60);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(72, 83);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -138,9 +137,9 @@
             btnstarted.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnstarted.ForeColor = Color.White;
             btnstarted.Location = new Point(23, 849);
-            btnstarted.Margin = new Padding(4, 5, 4, 5);
+            btnstarted.Margin = new Padding(4);
             btnstarted.Name = "btnstarted";
-            btnstarted.Size = new Size(339, 63);
+            btnstarted.Size = new Size(338, 63);
             btnstarted.TabIndex = 1;
             btnstarted.Text = "GET STARTED";
             btnstarted.UseVisualStyleBackColor = false;
@@ -150,10 +149,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(23, 215);
-            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Location = new Point(23, 216);
+            pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(27, 31);
+            pictureBox2.Size = new Size(26, 31);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
@@ -163,8 +162,8 @@
             // 
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEmail.Location = new Point(57, 215);
-            txtEmail.Margin = new Padding(4, 5, 4, 5);
+            txtEmail.Location = new Point(57, 216);
+            txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(304, 27);
             txtEmail.TabIndex = 3;
@@ -175,7 +174,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(41, 128, 182);
-            label1.Location = new Point(19, 240);
+            label1.Location = new Point(18, 240);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(309, 19);
@@ -188,7 +187,7 @@
             lbEmail.AutoSize = true;
             lbEmail.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbEmail.ForeColor = Color.FromArgb(42, 128, 182);
-            lbEmail.Location = new Point(53, 183);
+            lbEmail.Location = new Point(54, 183);
             lbEmail.Margin = new Padding(4, 0, 4, 0);
             lbEmail.Name = "lbEmail";
             lbEmail.Size = new Size(46, 20);
@@ -201,7 +200,7 @@
             txtFullname.BorderStyle = BorderStyle.None;
             txtFullname.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFullname.Location = new Point(57, 308);
-            txtFullname.Margin = new Padding(4, 5, 4, 5);
+            txtFullname.Margin = new Padding(4);
             txtFullname.Name = "txtFullname";
             txtFullname.Size = new Size(304, 27);
             txtFullname.TabIndex = 7;
@@ -211,9 +210,9 @@
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(23, 308);
-            pictureBox3.Margin = new Padding(4, 5, 4, 5);
+            pictureBox3.Margin = new Padding(4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(27, 31);
+            pictureBox3.Size = new Size(26, 31);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
@@ -224,7 +223,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 182);
-            label2.Location = new Point(19, 332);
+            label2.Location = new Point(18, 332);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(309, 19);
@@ -237,7 +236,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(42, 128, 182);
-            label3.Location = new Point(53, 275);
+            label3.Location = new Point(54, 276);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(76, 20);
@@ -250,7 +249,7 @@
             txtPass.BorderStyle = BorderStyle.None;
             txtPass.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPass.Location = new Point(57, 677);
-            txtPass.Margin = new Padding(4, 5, 4, 5);
+            txtPass.Margin = new Padding(4);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(304, 27);
             txtPass.TabIndex = 11;
@@ -260,9 +259,9 @@
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(23, 677);
-            pictureBox4.Margin = new Padding(4, 5, 4, 5);
+            pictureBox4.Margin = new Padding(4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(27, 31);
+            pictureBox4.Size = new Size(26, 31);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 10;
             pictureBox4.TabStop = false;
@@ -273,7 +272,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(41, 128, 182);
-            label4.Location = new Point(19, 702);
+            label4.Location = new Point(18, 701);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(309, 19);
@@ -286,7 +285,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(42, 128, 182);
-            label5.Location = new Point(53, 645);
+            label5.Location = new Point(54, 644);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(72, 20);
@@ -299,7 +298,7 @@
             txtConfirmPass.BorderStyle = BorderStyle.None;
             txtConfirmPass.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtConfirmPass.Location = new Point(57, 769);
-            txtConfirmPass.Margin = new Padding(4, 5, 4, 5);
+            txtConfirmPass.Margin = new Padding(4);
             txtConfirmPass.Name = "txtConfirmPass";
             txtConfirmPass.Size = new Size(304, 27);
             txtConfirmPass.TabIndex = 15;
@@ -309,9 +308,9 @@
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(23, 769);
-            pictureBox5.Margin = new Padding(4, 5, 4, 5);
+            pictureBox5.Margin = new Padding(4);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(27, 31);
+            pictureBox5.Size = new Size(26, 31);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 14;
             pictureBox5.TabStop = false;
@@ -322,7 +321,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(41, 128, 182);
-            label6.Location = new Point(19, 794);
+            label6.Location = new Point(18, 794);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(309, 19);
@@ -335,7 +334,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(42, 128, 182);
-            label7.Location = new Point(53, 737);
+            label7.Location = new Point(54, 737);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(132, 20);
@@ -347,9 +346,9 @@
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
             pictureBox6.Location = new Point(23, 400);
-            pictureBox6.Margin = new Padding(4, 5, 4, 5);
+            pictureBox6.Margin = new Padding(4);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(27, 31);
+            pictureBox6.Size = new Size(26, 31);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 18;
             pictureBox6.TabStop = false;
@@ -360,7 +359,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(41, 128, 182);
-            label8.Location = new Point(19, 425);
+            label8.Location = new Point(18, 424);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(309, 19);
@@ -373,7 +372,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(42, 128, 182);
-            label9.Location = new Point(53, 368);
+            label9.Location = new Point(54, 368);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(77, 20);
@@ -386,7 +385,7 @@
             txtusername.BorderStyle = BorderStyle.None;
             txtusername.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtusername.Location = new Point(57, 400);
-            txtusername.Margin = new Padding(4, 5, 4, 5);
+            txtusername.Margin = new Padding(4);
             txtusername.Name = "txtusername";
             txtusername.Size = new Size(304, 27);
             txtusername.TabIndex = 21;
@@ -397,7 +396,7 @@
             txtphone.BorderStyle = BorderStyle.None;
             txtphone.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtphone.Location = new Point(57, 492);
-            txtphone.Margin = new Padding(4, 5, 4, 5);
+            txtphone.Margin = new Padding(4);
             txtphone.Name = "txtphone";
             txtphone.Size = new Size(304, 27);
             txtphone.TabIndex = 25;
@@ -407,9 +406,9 @@
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
             pictureBox7.Location = new Point(23, 492);
-            pictureBox7.Margin = new Padding(4, 5, 4, 5);
+            pictureBox7.Margin = new Padding(4);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(27, 31);
+            pictureBox7.Size = new Size(26, 31);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 22;
             pictureBox7.TabStop = false;
@@ -420,7 +419,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(41, 128, 182);
-            label10.Location = new Point(19, 517);
+            label10.Location = new Point(18, 517);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(309, 19);
@@ -433,7 +432,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.FromArgb(42, 128, 182);
-            label11.Location = new Point(53, 460);
+            label11.Location = new Point(54, 460);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(111, 20);
@@ -444,10 +443,10 @@
             // pictureBox8
             // 
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(23, 585);
-            pictureBox8.Margin = new Padding(4, 5, 4, 5);
+            pictureBox8.Location = new Point(23, 584);
+            pictureBox8.Margin = new Padding(4);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(27, 31);
+            pictureBox8.Size = new Size(26, 31);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 26;
             pictureBox8.TabStop = false;
@@ -458,7 +457,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.FromArgb(41, 128, 182);
-            label12.Location = new Point(19, 609);
+            label12.Location = new Point(18, 609);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
             label12.Size = new Size(309, 19);
@@ -471,7 +470,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.FromArgb(42, 128, 182);
-            label13.Location = new Point(53, 552);
+            label13.Location = new Point(54, 552);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
             label13.Size = new Size(62, 20);
@@ -483,22 +482,19 @@
             // 
             txtAddress.BorderStyle = BorderStyle.None;
             txtAddress.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtAddress.Location = new Point(57, 585);
-            txtAddress.Margin = new Padding(4, 5, 4, 5);
+            txtAddress.Location = new Point(57, 584);
+            txtAddress.Margin = new Padding(4);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(304, 27);
             txtAddress.TabIndex = 29;
             txtAddress.UseWaitCursor = true;
-            // 
-            // timer1
-            // 
             // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(377, 931);
+            ClientSize = new Size(377, 962);
             ControlBox = false;
             Controls.Add(txtAddress);
             Controls.Add(pictureBox8);
@@ -531,7 +527,7 @@
             Controls.Add(label1);
             Controls.Add(lbEmail);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(4);
             Name = "Registration";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registration";
@@ -585,6 +581,5 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Timer timer1;
     }
 }

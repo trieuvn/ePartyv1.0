@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
-namespace BOLayer.Repository.Models;
 
 [Table("Provider")]
 public partial class Provider
@@ -22,6 +17,6 @@ public partial class Provider
     [StringLength(15)]
     public string? PhoneNumber { get; set; }
 
-    [InverseProperty("Provider")]
-    public virtual ICollection<IngreSupplyProvider> IngreSupplyProviders { get; set; } = new List<IngreSupplyProvider>();
+    [InverseProperty("ProviderNavigation")] // Update to match the renamed property in Supply
+    public virtual ICollection<Supply> Supplies { get; set; } = new List<Supply>();
 }

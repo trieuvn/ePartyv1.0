@@ -75,6 +75,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(393, 179);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
             // 
             // btnExit
             // 
@@ -115,6 +116,7 @@
             lbRegistration.Size = new Size(286, 37);
             lbRegistration.TabIndex = 0;
             lbRegistration.Text = "Forgot your password";
+            lbRegistration.Click += lbRegistration_Click;
             // 
             // pictureBox2
             // 
@@ -160,6 +162,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(304, 27);
             txtEmail.TabIndex = 9;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtVerifyCode
             // 

@@ -11,17 +11,31 @@ namespace eParty
     {
         private string verificationCode;
         private string userEmail;
-
         public ForgotPassword()
         {
             InitializeComponent();
         }
 
+        private void lbRegistration_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Login login = new Login();
+            this.Hide();
             login.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,7 +71,6 @@ namespace eParty
                 MessageBox.Show($"Error checking email: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void SendVerificationCode(string email)
         {
             Random random = new Random();
@@ -101,13 +114,6 @@ namespace eParty
             {
                 MessageBox.Show("Invalid verification code!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnCancelcode_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Login login = new Login();
-            login.Show();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -155,6 +161,13 @@ namespace eParty
         }
 
         private void btncancelpass_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void btnCancelcode_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login login = new Login();

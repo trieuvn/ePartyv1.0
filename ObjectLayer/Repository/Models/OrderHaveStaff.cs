@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using BOLayer.Repository.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace BOLayer.Repository.Models;
-
+[PrimaryKey("OrderId", "StaffId")]
 [Table("OrderHaveStaff")]
 public partial class OrderHaveStaff
 {

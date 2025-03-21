@@ -64,8 +64,9 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(267, 503);
+            panel1.Size = new Size(233, 377);
             panel1.TabIndex = 0;
             // 
             // label3
@@ -73,9 +74,10 @@
             label3.AutoSize = true;
             label3.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(175, 289);
+            label3.Location = new Point(153, 217);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(78, 28);
+            label3.Size = new Size(63, 21);
             label3.TabIndex = 3;
             label3.Text = "System";
             // 
@@ -84,9 +86,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(51, 252);
+            label2.Location = new Point(44, 189);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(192, 28);
+            label2.Size = new Size(156, 21);
             label2.TabIndex = 2;
             label2.Text = "Party Management ";
             // 
@@ -95,18 +98,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(88, 217);
+            label1.Location = new Point(77, 163);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(160, 28);
+            label1.Size = new Size(131, 21);
             label1.TabIndex = 1;
             label1.Text = "Welcome to the";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(65, 49);
+            pictureBox1.Location = new Point(57, 37);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(131, 138);
+            pictureBox1.Size = new Size(114, 104);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -119,9 +124,10 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Verdana", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExit.ForeColor = Color.FromArgb(41, 128, 185);
-            btnExit.Location = new Point(416, 0);
+            btnExit.Location = new Point(364, 0);
+            btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(33, 40);
+            btnExit.Size = new Size(29, 30);
             btnExit.TabIndex = 4;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = true;
@@ -132,9 +138,10 @@
             lbLogin.AutoSize = true;
             lbLogin.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbLogin.ForeColor = Color.FromArgb(41, 128, 185);
-            lbLogin.Location = new Point(37, 152);
+            lbLogin.Location = new Point(33, 114);
+            lbLogin.Margin = new Padding(2, 0, 2, 0);
             lbLogin.Name = "lbLogin";
-            lbLogin.Size = new Size(215, 28);
+            lbLogin.Size = new Size(176, 21);
             lbLogin.TabIndex = 4;
             lbLogin.Text = "Login to your account";
             // 
@@ -143,9 +150,10 @@
             panel3.BackColor = Color.White;
             panel3.Controls.Add(txtLogin);
             panel3.Controls.Add(pictureBox2);
-            panel3.Location = new Point(0, 203);
+            panel3.Location = new Point(0, 152);
+            panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(449, 49);
+            panel3.Size = new Size(393, 37);
             panel3.TabIndex = 5;
             // 
             // txtLogin
@@ -153,9 +161,10 @@
             txtLogin.BorderStyle = BorderStyle.None;
             txtLogin.Font = new Font("Malgun Gothic", 10F);
             txtLogin.ForeColor = Color.FromArgb(41, 128, 141);
-            txtLogin.Location = new Point(43, 11);
+            txtLogin.Location = new Point(37, 8);
+            txtLogin.Margin = new Padding(2);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(407, 23);
+            txtLogin.Size = new Size(356, 18);
             txtLogin.TabIndex = 1;
             txtLogin.Click += txtLogin_Click;
             txtLogin.KeyPress += txtLogin_KeyPress;
@@ -163,9 +172,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(12, 8);
+            pictureBox2.Location = new Point(10, 6);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(27, 32);
+            pictureBox2.Size = new Size(23, 24);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -174,9 +184,10 @@
             // 
             panel4.Controls.Add(txtPass);
             panel4.Controls.Add(pictureBox3);
-            panel4.Location = new Point(0, 257);
+            panel4.Location = new Point(0, 193);
+            panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(449, 49);
+            panel4.Size = new Size(393, 37);
             panel4.TabIndex = 6;
             // 
             // txtPass
@@ -185,9 +196,10 @@
             txtPass.BorderStyle = BorderStyle.None;
             txtPass.Font = new Font("Malgun Gothic", 10F);
             txtPass.ForeColor = Color.FromArgb(41, 128, 181);
-            txtPass.Location = new Point(43, 11);
+            txtPass.Location = new Point(37, 8);
+            txtPass.Margin = new Padding(2);
             txtPass.Name = "txtPass";
-            txtPass.Size = new Size(407, 23);
+            txtPass.Size = new Size(356, 18);
             txtPass.TabIndex = 2;
             txtPass.UseSystemPasswordChar = true;
             txtPass.Click += txtPass_Click;
@@ -195,9 +207,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(12, 8);
+            pictureBox3.Location = new Point(10, 6);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(27, 32);
+            pictureBox3.Size = new Size(23, 24);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
@@ -211,9 +224,10 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Malgun Gothic", 10F);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(12, 378);
+            btnLogin.Location = new Point(10, 284);
+            btnLogin.Margin = new Padding(2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(191, 42);
+            btnLogin.Size = new Size(167, 31);
             btnLogin.TabIndex = 7;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -226,9 +240,10 @@
             btnRegistration.FlatStyle = FlatStyle.Flat;
             btnRegistration.Font = new Font("Malgun Gothic", 10F);
             btnRegistration.ForeColor = Color.White;
-            btnRegistration.Location = new Point(233, 378);
+            btnRegistration.Location = new Point(204, 284);
+            btnRegistration.Margin = new Padding(2);
             btnRegistration.Name = "btnRegistration";
-            btnRegistration.Size = new Size(191, 42);
+            btnRegistration.Size = new Size(167, 31);
             btnRegistration.TabIndex = 8;
             btnRegistration.Text = "Registration";
             btnRegistration.UseVisualStyleBackColor = false;
@@ -240,9 +255,10 @@
             lLforgot.AutoSize = true;
             lLforgot.ForeColor = Color.FromArgb(41, 128, 181);
             lLforgot.LinkColor = Color.FromArgb(41, 128, 181);
-            lLforgot.Location = new Point(144, 309);
+            lLforgot.Location = new Point(126, 232);
+            lLforgot.Margin = new Padding(2, 0, 2, 0);
             lLforgot.Name = "lLforgot";
-            lLforgot.Size = new Size(164, 20);
+            lLforgot.Size = new Size(130, 15);
             lLforgot.TabIndex = 9;
             lLforgot.TabStop = true;
             lLforgot.Text = "Forgot your password ?";
@@ -258,20 +274,22 @@
             panel2.Controls.Add(lbLogin);
             panel2.Controls.Add(btnExit);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(267, 0);
+            panel2.Location = new Point(233, 0);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(449, 503);
+            panel2.Size = new Size(393, 377);
             panel2.TabIndex = 1;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(716, 503);
+            ClientSize = new Size(626, 377);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -287,6 +305,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
+
         }
 
         #endregion

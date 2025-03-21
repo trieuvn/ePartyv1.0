@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using BOLayer.Repository.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
-namespace BOLayer.Repository.Models;
+using System.ComponentModel.DataAnnotations;
 
 [Table("Staff")]
 public partial class Staff
@@ -38,9 +34,8 @@ public partial class Staff
     public virtual Manager? ManagerNavigation { get; set; }
 
     [InverseProperty("Staff")]
-    public virtual ICollection<OutdatedStaff> OutdatedStaffs { get; set; } = new List<OutdatedStaff>();
+    public virtual ICollection<StaticStaff> StaticStaffs { get; set; } = new List<StaticStaff>();
 
-    // Add navigation property for OrderHaveStaff
     [InverseProperty("Staff")]
-    public virtual ICollection<OrderHaveStaff> OrderHaveStaffs { get; set; } = new List<OrderHaveStaff>();
+    public virtual ICollection<OrderHaveStaff> OrderHaveStaffs { get; set; } = new List<OrderHaveStaff>(); // Thêm mối quan hệ với OrderHaveStaff
 }

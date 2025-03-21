@@ -106,10 +106,7 @@ namespace eParty
 
                     MessageBox.Show("Registration successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Hide();
-                    LoginShortcut shortcutForm = new LoginShortcut(username, email);
-                    shortcutForm.ShowDialog();
-                    this.Close();
+                    
                 }
             }
             catch (Exception ex)
@@ -117,5 +114,7 @@ namespace eParty
                 MessageBox.Show($"Registration error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }

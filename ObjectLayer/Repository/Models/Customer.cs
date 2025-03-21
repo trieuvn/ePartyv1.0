@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace BOLayer.Repository.Models;
 
@@ -15,6 +16,6 @@ public partial class Customer
     [StringLength(50)]
     public string? Name { get; set; }
 
-    [InverseProperty("Customer")]
+    [InverseProperty("PhoneNumberNavigation")]
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }
