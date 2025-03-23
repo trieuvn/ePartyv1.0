@@ -455,6 +455,7 @@
             dataGridIngre.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridIngre.Size = new Size(556, 377);
             dataGridIngre.TabIndex = 21;
+            dataGridIngre.CellContentClick += dataGridIngre_CellContentClick;
             // 
             // Order
             // 

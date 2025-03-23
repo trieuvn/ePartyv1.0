@@ -29,196 +29,207 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientProvider));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel3 = new Panel();
-            artanButton1 = new ArtanButton();
-            artanButton37 = new ArtanButton();
-            textBox1 = new TextBox();
+            btnUpdate = new ArtanButton();
+            btnAdd = new ArtanButton();
+            btnDelete = new ArtanButton();
+            txtCost = new TextBox();
             label6 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            txtIngredient1 = new TextBox();
+            txtPhoneNumber = new TextBox();
+            txtLocation = new TextBox();
             txtFullname = new TextBox();
-            txtID = new TextBox();
             pictureBox1 = new PictureBox();
             label5 = new Label();
             label4 = new Label();
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             panel1 = new Panel();
-            artanButton2 = new ArtanButton();
+            btnBack = new ArtanButton();
             panel2 = new Panel();
-            dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
+            dataGridProvider = new DataGridView();
             Order = new DataGridViewTextBoxColumn();
             Location = new DataGridViewTextBoxColumn();
             PhoneNumber = new DataGridViewTextBoxColumn();
             Ingredient = new DataGridViewTextBoxColumn();
             Cost = new DataGridViewTextBoxColumn();
+            txtIngredient = new ComboBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridProvider).BeginInit();
             SuspendLayout();
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(227, 242, 253);
-            panel3.Controls.Add(artanButton1);
-            panel3.Controls.Add(artanButton37);
-            panel3.Controls.Add(textBox1);
+            panel3.Controls.Add(txtIngredient);
+            panel3.Controls.Add(btnUpdate);
+            panel3.Controls.Add(btnAdd);
+            panel3.Controls.Add(btnDelete);
+            panel3.Controls.Add(txtCost);
             panel3.Controls.Add(label6);
-            panel3.Controls.Add(textBox4);
-            panel3.Controls.Add(textBox3);
-            panel3.Controls.Add(textBox2);
+            panel3.Controls.Add(txtIngredient1);
+            panel3.Controls.Add(txtPhoneNumber);
+            panel3.Controls.Add(txtLocation);
             panel3.Controls.Add(txtFullname);
-            panel3.Controls.Add(txtID);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label4);
-            panel3.Controls.Add(label1);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label3);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(743, 0);
+            panel3.Location = new Point(849, 0);
             panel3.Margin = new Padding(2, 1, 2, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(201, 456);
+            panel3.Size = new Size(230, 608);
             panel3.TabIndex = 24;
             panel3.Paint += panel3_Paint;
             // 
-            // artanButton1
+            // btnUpdate
             // 
-            artanButton1.BackColor = Color.FromArgb(42, 128, 182);
-            artanButton1.BackgroundColor = Color.FromArgb(42, 128, 182);
-            artanButton1.BorderColor = Color.FromArgb(42, 128, 182);
-            artanButton1.BorderRadius = 29;
-            artanButton1.BorderSize = 0;
-            artanButton1.FlatAppearance.BorderSize = 0;
-            artanButton1.FlatStyle = FlatStyle.Flat;
-            artanButton1.ForeColor = Color.White;
-            artanButton1.Location = new Point(17, 378);
-            artanButton1.Margin = new Padding(2, 1, 2, 1);
-            artanButton1.Name = "artanButton1";
-            artanButton1.Size = new Size(78, 29);
-            artanButton1.TabIndex = 48;
-            artanButton1.Text = "Add";
-            artanButton1.TextColor = Color.White;
-            artanButton1.UseVisualStyleBackColor = false;
+            btnUpdate.BackColor = Color.FromArgb(42, 128, 182);
+            btnUpdate.BackgroundColor = Color.FromArgb(42, 128, 182);
+            btnUpdate.BorderColor = Color.FromArgb(42, 128, 182);
+            btnUpdate.BorderRadius = 29;
+            btnUpdate.BorderSize = 0;
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(82, 504);
+            btnUpdate.Margin = new Padding(2, 1, 2, 1);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(75, 39);
+            btnUpdate.TabIndex = 49;
+            btnUpdate.Text = "Update";
+            btnUpdate.TextColor = Color.White;
+            btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // artanButton37
+            // btnAdd
             // 
-            artanButton37.BackColor = Color.Red;
-            artanButton37.BackgroundColor = Color.Red;
-            artanButton37.BorderColor = Color.White;
-            artanButton37.BorderRadius = 29;
-            artanButton37.BorderSize = 0;
-            artanButton37.FlatAppearance.BorderSize = 0;
-            artanButton37.FlatStyle = FlatStyle.Flat;
-            artanButton37.ForeColor = Color.White;
-            artanButton37.Location = new Point(117, 378);
-            artanButton37.Margin = new Padding(2, 1, 2, 1);
-            artanButton37.Name = "artanButton37";
-            artanButton37.Size = new Size(78, 29);
-            artanButton37.TabIndex = 47;
-            artanButton37.Text = "Delete";
-            artanButton37.TextColor = Color.White;
-            artanButton37.UseVisualStyleBackColor = false;
+            btnAdd.BackColor = Color.FromArgb(42, 128, 182);
+            btnAdd.BackgroundColor = Color.FromArgb(42, 128, 182);
+            btnAdd.BorderColor = Color.FromArgb(42, 128, 182);
+            btnAdd.BorderRadius = 29;
+            btnAdd.BorderSize = 0;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(5, 504);
+            btnAdd.Margin = new Padding(2, 1, 2, 1);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(73, 39);
+            btnAdd.TabIndex = 48;
+            btnAdd.Text = "Add";
+            btnAdd.TextColor = Color.White;
+            btnAdd.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // btnDelete
             // 
-            textBox1.BackColor = Color.FromArgb(227, 242, 253);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(17, 305);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(181, 22);
-            textBox1.TabIndex = 45;
-            textBox1.Text = "Cost";
-            textBox1.UseWaitCursor = true;
+            btnDelete.BackColor = Color.Red;
+            btnDelete.BackgroundColor = Color.Red;
+            btnDelete.BorderColor = Color.White;
+            btnDelete.BorderRadius = 29;
+            btnDelete.BorderSize = 0;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(161, 504);
+            btnDelete.Margin = new Padding(2, 1, 2, 1);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(62, 39);
+            btnDelete.TabIndex = 47;
+            btnDelete.Text = "Delete";
+            btnDelete.TextColor = Color.White;
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // txtCost
+            // 
+            txtCost.BackColor = Color.FromArgb(227, 242, 253);
+            txtCost.BorderStyle = BorderStyle.None;
+            txtCost.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCost.Location = new Point(19, 407);
+            txtCost.Margin = new Padding(3, 4, 3, 4);
+            txtCost.Name = "txtCost";
+            txtCost.Size = new Size(207, 27);
+            txtCost.TabIndex = 45;
+            txtCost.Text = "Cost";
+            txtCost.UseWaitCursor = true;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(41, 128, 182);
-            label6.Location = new Point(17, 319);
+            label6.Location = new Point(19, 425);
             label6.Name = "label6";
-            label6.Size = new Size(187, 13);
+            label6.Size = new Size(225, 19);
             label6.TabIndex = 46;
             label6.Text = "____________________________________";
             label6.UseWaitCursor = true;
             // 
-            // textBox4
+            // txtIngredient1
             // 
-            textBox4.BackColor = Color.FromArgb(227, 242, 253);
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(17, 273);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(181, 22);
-            textBox4.TabIndex = 42;
-            textBox4.Text = "Ingredient";
-            textBox4.UseWaitCursor = true;
+            txtIngredient1.BackColor = Color.FromArgb(227, 242, 253);
+            txtIngredient1.BorderStyle = BorderStyle.None;
+            txtIngredient1.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtIngredient1.Location = new Point(19, 364);
+            txtIngredient1.Margin = new Padding(3, 4, 3, 4);
+            txtIngredient1.Name = "txtIngredient1";
+            txtIngredient1.Size = new Size(207, 27);
+            txtIngredient1.TabIndex = 42;
+            txtIngredient1.Text = "Ingredient";
+            txtIngredient1.UseWaitCursor = true;
             // 
-            // textBox3
+            // txtPhoneNumber
             // 
-            textBox3.BackColor = Color.FromArgb(227, 242, 253);
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(17, 240);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(181, 22);
-            textBox3.TabIndex = 40;
-            textBox3.Text = "Phone number";
-            textBox3.UseWaitCursor = true;
+            txtPhoneNumber.BackColor = Color.FromArgb(227, 242, 253);
+            txtPhoneNumber.BorderStyle = BorderStyle.None;
+            txtPhoneNumber.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPhoneNumber.Location = new Point(19, 320);
+            txtPhoneNumber.Margin = new Padding(3, 4, 3, 4);
+            txtPhoneNumber.Name = "txtPhoneNumber";
+            txtPhoneNumber.Size = new Size(207, 27);
+            txtPhoneNumber.TabIndex = 40;
+            txtPhoneNumber.Text = "Phone number";
+            txtPhoneNumber.UseWaitCursor = true;
             // 
-            // textBox2
+            // txtLocation
             // 
-            textBox2.BackColor = Color.FromArgb(227, 242, 253);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(17, 207);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(181, 22);
-            textBox2.TabIndex = 38;
-            textBox2.Text = "Location";
-            textBox2.UseWaitCursor = true;
-            textBox2.TextChanged += textBox2_TextChanged;
+            txtLocation.BackColor = Color.FromArgb(227, 242, 253);
+            txtLocation.BorderStyle = BorderStyle.None;
+            txtLocation.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtLocation.Location = new Point(19, 276);
+            txtLocation.Margin = new Padding(3, 4, 3, 4);
+            txtLocation.Name = "txtLocation";
+            txtLocation.Size = new Size(207, 27);
+            txtLocation.TabIndex = 38;
+            txtLocation.Text = "Location";
+            txtLocation.UseWaitCursor = true;
+            txtLocation.TextChanged += textBox2_TextChanged;
             // 
             // txtFullname
             // 
             txtFullname.BackColor = Color.FromArgb(227, 242, 253);
             txtFullname.BorderStyle = BorderStyle.None;
             txtFullname.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFullname.Location = new Point(17, 174);
+            txtFullname.Location = new Point(19, 232);
+            txtFullname.Margin = new Padding(3, 4, 3, 4);
             txtFullname.Name = "txtFullname";
-            txtFullname.Size = new Size(181, 22);
+            txtFullname.Size = new Size(207, 27);
             txtFullname.TabIndex = 36;
             txtFullname.Text = "Full name";
             txtFullname.UseWaitCursor = true;
             // 
-            // txtID
-            // 
-            txtID.BackColor = Color.FromArgb(227, 242, 253);
-            txtID.BorderStyle = BorderStyle.None;
-            txtID.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtID.Location = new Point(17, 142);
-            txtID.Name = "txtID";
-            txtID.Size = new Size(181, 22);
-            txtID.TabIndex = 34;
-            txtID.Text = "ID";
-            txtID.UseWaitCursor = true;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(40, 35);
+            pictureBox1.Location = new Point(46, 47);
             pictureBox1.Margin = new Padding(2, 1, 2, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(130, 93);
+            pictureBox1.Size = new Size(149, 124);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 44;
             pictureBox1.TabStop = false;
@@ -228,9 +239,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(41, 128, 182);
-            label5.Location = new Point(17, 287);
+            label5.Location = new Point(19, 383);
             label5.Name = "label5";
-            label5.Size = new Size(187, 13);
+            label5.Size = new Size(225, 19);
             label5.TabIndex = 43;
             label5.Text = "____________________________________";
             label5.UseWaitCursor = true;
@@ -240,33 +251,21 @@
             label4.AutoSize = true;
             label4.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(41, 128, 182);
-            label4.Location = new Point(17, 255);
+            label4.Location = new Point(19, 340);
             label4.Name = "label4";
-            label4.Size = new Size(187, 13);
+            label4.Size = new Size(225, 19);
             label4.TabIndex = 41;
             label4.Text = "____________________________________";
             label4.UseWaitCursor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(41, 128, 182);
-            label1.Location = new Point(17, 156);
-            label1.Name = "label1";
-            label1.Size = new Size(187, 13);
-            label1.TabIndex = 35;
-            label1.Text = "____________________________________";
-            label1.UseWaitCursor = true;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 182);
-            label2.Location = new Point(17, 189);
+            label2.Location = new Point(19, 252);
             label2.Name = "label2";
-            label2.Size = new Size(187, 13);
+            label2.Size = new Size(225, 19);
             label2.TabIndex = 37;
             label2.Text = "____________________________________";
             label2.UseWaitCursor = true;
@@ -276,97 +275,89 @@
             label3.AutoSize = true;
             label3.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(41, 128, 182);
-            label3.Location = new Point(17, 222);
+            label3.Location = new Point(19, 296);
             label3.Name = "label3";
-            label3.Size = new Size(187, 13);
+            label3.Size = new Size(225, 19);
             label3.TabIndex = 39;
             label3.Text = "____________________________________";
             label3.UseWaitCursor = true;
             // 
             // panel1
             // 
-            panel1.Controls.Add(artanButton2);
+            panel1.Controls.Add(btnBack);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2, 1, 2, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(743, 45);
+            panel1.Size = new Size(849, 60);
             panel1.TabIndex = 25;
             panel1.Paint += panel1_Paint;
             // 
-            // artanButton2
+            // btnBack
             // 
-            artanButton2.BackColor = Color.FromArgb(42, 128, 182);
-            artanButton2.BackgroundColor = Color.FromArgb(42, 128, 182);
-            artanButton2.BorderColor = Color.FromArgb(42, 128, 182);
-            artanButton2.BorderRadius = 29;
-            artanButton2.BorderSize = 0;
-            artanButton2.FlatAppearance.BorderSize = 0;
-            artanButton2.FlatStyle = FlatStyle.Flat;
-            artanButton2.ForeColor = Color.White;
-            artanButton2.Image = (Image)resources.GetObject("artanButton2.Image");
-            artanButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            artanButton2.Location = new Point(13, 7);
-            artanButton2.Margin = new Padding(2, 1, 2, 1);
-            artanButton2.Name = "artanButton2";
-            artanButton2.Size = new Size(73, 29);
-            artanButton2.TabIndex = 49;
-            artanButton2.Text = "Back";
-            artanButton2.TextAlign = ContentAlignment.MiddleRight;
-            artanButton2.TextColor = Color.White;
-            artanButton2.UseVisualStyleBackColor = false;
-            artanButton2.Click += artanButton2_Click;
+            btnBack.BackColor = Color.FromArgb(42, 128, 182);
+            btnBack.BackgroundColor = Color.FromArgb(42, 128, 182);
+            btnBack.BorderColor = Color.FromArgb(42, 128, 182);
+            btnBack.BorderRadius = 29;
+            btnBack.BorderSize = 0;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.ForeColor = Color.White;
+            btnBack.Image = (Image)resources.GetObject("btnBack.Image");
+            btnBack.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBack.Location = new Point(15, 9);
+            btnBack.Margin = new Padding(2, 1, 2, 1);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(83, 39);
+            btnBack.TabIndex = 49;
+            btnBack.Text = "Back";
+            btnBack.TextAlign = ContentAlignment.MiddleRight;
+            btnBack.TextColor = Color.White;
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += artanButton2_Click;
             // 
             // panel2
             // 
-            panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(dataGridProvider);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 45);
+            panel2.Location = new Point(0, 60);
             panel2.Margin = new Padding(2, 1, 2, 1);
             panel2.Name = "panel2";
-            panel2.Size = new Size(743, 411);
+            panel2.Size = new Size(849, 548);
             panel2.TabIndex = 26;
             // 
-            // dataGridView1
+            // dataGridProvider
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Order, Location, PhoneNumber, Ingredient, Cost });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = Color.LightGray;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 30;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(743, 411);
-            dataGridView1.TabIndex = 22;
-            // 
-            // ID
-            // 
-            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ID.FillWeight = 50F;
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 10;
-            ID.Name = "ID";
-            ID.ReadOnly = true;
+            dataGridProvider.AllowUserToAddRows = false;
+            dataGridProvider.AllowUserToDeleteRows = false;
+            dataGridProvider.AllowUserToResizeColumns = false;
+            dataGridProvider.AllowUserToResizeRows = false;
+            dataGridProvider.BackgroundColor = Color.White;
+            dataGridProvider.BorderStyle = BorderStyle.None;
+            dataGridProvider.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridProvider.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridProvider.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridProvider.Columns.AddRange(new DataGridViewColumn[] { Order, Location, PhoneNumber, Ingredient, Cost });
+            dataGridProvider.Dock = DockStyle.Fill;
+            dataGridProvider.EnableHeadersVisualStyles = false;
+            dataGridProvider.GridColor = Color.LightGray;
+            dataGridProvider.Location = new Point(0, 0);
+            dataGridProvider.Margin = new Padding(3, 4, 3, 4);
+            dataGridProvider.MultiSelect = false;
+            dataGridProvider.Name = "dataGridProvider";
+            dataGridProvider.ReadOnly = true;
+            dataGridProvider.RowHeadersVisible = false;
+            dataGridProvider.RowHeadersWidth = 30;
+            dataGridProvider.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridProvider.Size = new Size(849, 548);
+            dataGridProvider.TabIndex = 22;
             // 
             // Order
             // 
@@ -375,7 +366,7 @@
             Order.MinimumWidth = 10;
             Order.Name = "Order";
             Order.ReadOnly = true;
-            Order.Width = 61;
+            Order.Width = 76;
             // 
             // Location
             // 
@@ -409,12 +400,23 @@
             Cost.Name = "Cost";
             Cost.ReadOnly = true;
             // 
+            // txtIngredient
+            // 
+            txtIngredient.FlatStyle = FlatStyle.Flat;
+            txtIngredient.Font = new Font("Segoe UI", 8F);
+            txtIngredient.FormattingEnabled = true;
+            txtIngredient.Location = new Point(120, 370);
+            txtIngredient.Margin = new Padding(2, 3, 2, 3);
+            txtIngredient.Name = "txtIngredient";
+            txtIngredient.Size = new Size(110, 25);
+            txtIngredient.TabIndex = 52;
+            // 
             // IngredientProvider
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(944, 456);
+            ClientSize = new Size(1079, 608);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
@@ -427,37 +429,36 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridProvider).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel3;
-        private ArtanButton artanButton1;
-        private ArtanButton artanButton37;
-        private TextBox textBox1;
+        private ArtanButton btnAdd;
+        private ArtanButton btnDelete;
+        private TextBox txtCost;
         private Label label6;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox txtIngredient1;
+        private TextBox txtPhoneNumber;
+        private TextBox txtLocation;
         private TextBox txtFullname;
-        private TextBox txtID;
         private PictureBox pictureBox1;
         private Label label5;
         private Label label4;
-        private Label label1;
         private Label label2;
         private Label label3;
         private Panel panel1;
-        private ArtanButton artanButton2;
+        private ArtanButton btnBack;
         private Panel panel2;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
+        private DataGridView dataGridProvider;
+        private ArtanButton btnUpdate;
         private DataGridViewTextBoxColumn Order;
         private DataGridViewTextBoxColumn Location;
         private DataGridViewTextBoxColumn PhoneNumber;
         private DataGridViewTextBoxColumn Ingredient;
         private DataGridViewTextBoxColumn Cost;
+        private ComboBox txtIngredient;
     }
 }

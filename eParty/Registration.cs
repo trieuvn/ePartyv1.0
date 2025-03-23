@@ -105,7 +105,7 @@ namespace eParty
                     context.SaveChanges();
 
                     MessageBox.Show("Registration successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    
                     
                 }
             }

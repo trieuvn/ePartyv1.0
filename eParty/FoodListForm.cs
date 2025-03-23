@@ -14,7 +14,7 @@ namespace eParty
         public string username;
         public FoodListForm(string username)
         {
-            this.username = username;   
+            this.username = username;
             InitializeComponent();
             _context = new ePartyDbDbContext();
             ConfigureDataGridView();
@@ -45,7 +45,7 @@ namespace eParty
             dataGridFood.Columns["Description"].HeaderText = "Description";
             //dataGridFood.Columns["Image"].HeaderText = "Image";
             //dataGridFood.Columns["Manager"].HeaderText = "Manager";
-           // dataGridFood.Columns["Ingredients"].HeaderText = "Ingredients";
+            // dataGridFood.Columns["Ingredients"].HeaderText = "Ingredients";
 
             dataGridFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridFood.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -133,9 +133,9 @@ namespace eParty
                         f.Unit,
                         f.Cost,
                         f.Description,
-                       // f.Image,
-                       // f.Manager,
-                       // f.Ingredients
+                        // f.Image,
+                        // f.Manager,
+                        // f.Ingredients
                     })
                     .ToList();
 
@@ -148,9 +148,9 @@ namespace eParty
                         food.Unit,
                         food.Cost,
                         food.Description
-                        //food.Image ?? "N/A",
-                       // food.Manager ?? "None",
-                        //"View"
+                    //food.Image ?? "N/A",
+                    // food.Manager ?? "None",
+                    //"View"
                     );
                 }
 
@@ -221,9 +221,9 @@ namespace eParty
                     Amount = int.Parse(txtStock.Text.Trim()),
                     Unit = txtMeasure.Text.Trim(),
                     Cost = int.Parse(txtExpen.Text.Trim()),
-                  // Image = null,
-                  //  Manager = null,
-                   // Ingredients = null
+                    // Image = null,
+                    //  Manager = null,
+                    // Ingredients = null
                 };
 
                 _context.Foods.Add(newFood);
@@ -373,6 +373,11 @@ namespace eParty
         private void lbEmail_Click(object sender, EventArgs e)
         {
             // Có thể thêm logic khi nhấp vào nhãn "Food Information" nếu cần
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

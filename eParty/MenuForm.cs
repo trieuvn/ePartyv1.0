@@ -301,7 +301,7 @@ namespace eParty
         }
         private void ingreListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new IngredientListForm(uniqueusername)); // Remove the 'this' argument
+            OpenChildForm(new IngredientListForm(uniqueusername, this)); // Remove the 'this' argument
         }
 
         private void foodListToolStripMenuItem_Click(object sender, EventArgs e)

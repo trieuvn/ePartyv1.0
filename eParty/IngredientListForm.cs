@@ -11,10 +11,12 @@ namespace eParty
     {
         private ePartyDbDbContext _context;
         private Ingredient _selectedIngredient;
+        private MenuForm _menuForm; // Add MenuForm reference
         public string username;
-        public IngredientListForm(string username)
+        public IngredientListForm(string username, MenuForm menuForm)
         {
             this.username = username;
+            this._menuForm = menuForm;
             InitializeComponent();
             _context = new ePartyDbDbContext();
             try
@@ -32,9 +34,7 @@ namespace eParty
             ConfigureDataGridView();
             AttachEventHandlers();
 
-            // Attach the Shown event
             this.Shown += IngredientListForm_Shown;
-            this.username = username;
         }
 
         private void ConfigureDataGridView()
@@ -472,10 +472,22 @@ namespace eParty
 
         private void artanButton2_Click(object sender, EventArgs e)
         {
-            // Có thể thêm logic để hiển thị thông tin nhà cung cấp (Provider) nếu cần
+            if (_menuForm != null)
+            {
+                _menuForm.OpenForm(new IngredientProvider(_menuForm, this, username));
+            }
+            else
+            {
+                MessageBox.Show("MenuForm reference is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridIngre_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
