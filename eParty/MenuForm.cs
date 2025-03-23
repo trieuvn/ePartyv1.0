@@ -11,19 +11,64 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
+using BOLayer.Repository;
+using Azure.Identity;
 
 namespace eParty
 {
     public partial class MenuForm : Form
     {
+        private ePartyDbDbContext _context;
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-
-        public MenuForm()
+        public string uniqueusername="not null";
+        public MenuForm(string username)
         {
+            this.uniqueusername = username;
             InitializeComponent();
+            _context = new ePartyDbDbContext();
+            LoadManagerInfo();
+        }
+        private void LoadManagerInfo()
+        {
+            try
+            {
+                // Lấy username từ Properties.Settings
+                string username = Properties.Settings.Default.LastUsername;
+
+                if (string.IsNullOrEmpty(username))
+                {
+                    MessageBox.Show("No user is logged in!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Truy vấn thông tin Manager từ database
+                var manager = _context.Managers
+                    .AsNoTracking()
+                    .FirstOrDefault(m => m.UserName == username);
+
+                if (manager != null)
+                {
+                    // Hiển thị FullName và UserName lên các label
+                    lblName.Text = manager.FullName ?? "Unknown";
+                    lblID.Text = manager.UserName;
+                }
+                else
+                {
+                    MessageBox.Show("Manager not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblName.Text = "Unknown";
+                    lblID.Text = "N/A";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading manager info: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblName.Text = "Error";
+                lblID.Text = "Error";
+            }
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
@@ -99,8 +144,12 @@ namespace eParty
         {
 
         }
-
-
+        public void OpenForm(Form form)
+        {
+            if (form == null)
+                return;
+            OpenChildForm(form);
+        }
         private void MenuForm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -112,44 +161,51 @@ namespace eParty
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            PnlNavbar.Width = PnlNavbar.Width - 5;
+            PnlNavbar.Width = PnlNavbar.Width - 10;
 
 
             if (PnlNavbar.Width <= 65)
             {
-                BtnNavbar.Image = ByteArrayToImage(Resources.Next);
+
+
                 timer1.Stop();
 
+                BtnNavbar.Image = null;
+                BtnNavbar.Image = ByteArrayToImage(Resources.Next);
                 pbTitle.Visible = false;
                 BtnDashboard.Text = "";
                 BtnResource.Text = "";
                 BtnReport.Text = "";
                 BtnSchedule.Text = "";
-                lb1.Visible = false;
-                lb2.Visible = false;
+                lblName.Visible = false;
+                lblID.Visible = false;
                 BtnOut.Visible = false;
+
             }
+
         }
-        Dashboard db = new Dashboard();
+
         private void timer2_Tick(object sender, EventArgs e)
         {
             BtnDashboard.Text = "Dashboard";
             BtnResource.Text = "Resource";
             BtnReport.Text = "Report";
             BtnSchedule.Text = "Schedule";
-            lb1.Visible = true;
-            lb2.Visible = true;
+            lblName.Visible = true;
+            lblID.Visible = true;
 
             PnlNavbar.Width = PnlNavbar.Width + 5;
             if (PnlNavbar.Width >= 275)
             {
-                BtnNavbar.Image = ByteArrayToImage(Resources.previous);
-                timer2.Stop();
 
+                timer2.Stop();
+                BtnNavbar.Image = null;
+                BtnNavbar.Image = ByteArrayToImage(Resources.previous);
 
             }
             pbTitle.Visible = true;
             BtnOut.Visible = true;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -174,7 +230,11 @@ namespace eParty
         private void BtnNavbar_Click(object sender, EventArgs e)
         {
             if (PnlNavbar.Width == 275)
+            {
                 timer1.Start();
+
+            }
+
 
             else
                 timer2.Start();
@@ -203,7 +263,7 @@ namespace eParty
         private void BtnDashboard_Click_1(object sender, EventArgs e)
         {
             Origion(sender, e);
-            OpenChildForm(new Dashboard());
+            OpenChildForm(new Dashboard(uniqueusername));
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -237,26 +297,37 @@ namespace eParty
 
         private void staffListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new StaffListForm());
+            OpenChildForm(new StaffListForm(uniqueusername));
         }
         private void ingreListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new IngredientListForm());
+            OpenChildForm(new IngredientListForm(uniqueusername, this)); // Remove the 'this' argument
         }
 
         private void foodListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FoodListForm());
+            OpenChildForm(new FoodListForm(uniqueusername));
         }
 
         private void BtnSchedule_Click(object sender, EventArgs e)
         {
             Origion(sender, e);
+            OpenChildForm(new FormSchedule(uniqueusername));
         }
-
         private void BtnReport_Click(object sender, EventArgs e)
         {
             Origion(sender, e);
+            OpenChildForm(new AuthorizationForm(this, uniqueusername));
+        }
+
+        private void lb1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

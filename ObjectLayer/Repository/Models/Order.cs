@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using BOLayer.Repository.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
-namespace BOLayer.Repository.Models;
+using System.ComponentModel.DataAnnotations;
 
 [Table("Order")]
 public partial class Order
@@ -47,11 +43,10 @@ public partial class Order
     [InverseProperty("Order")]
     public virtual ICollection<OrderHaveFood> OrderHaveFoods { get; set; } = new List<OrderHaveFood>();
 
+    [InverseProperty("Order")]
+    public virtual ICollection<OrderHaveStaff> OrderHaveStaffs { get; set; } = new List<OrderHaveStaff>(); // Thêm mối quan hệ với OrderHaveStaff
+
     [ForeignKey("PhoneNumber")]
     [InverseProperty("Orders")]
     public virtual Customer? PhoneNumberNavigation { get; set; }
-
-    [ForeignKey("OrderId")]
-    [InverseProperty("Orders")]
-    public virtual ICollection<Staff> Staff { get; set; } = new List<Staff>();
 }

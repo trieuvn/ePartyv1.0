@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
-namespace BOLayer.Repository.Models;
-
-[PrimaryKey("IngredientId", "ProviderId")]
 [Table("Supply")]
 public partial class Supply
 {
@@ -22,9 +16,9 @@ public partial class Supply
 
     [ForeignKey("IngredientId")]
     [InverseProperty("Supplies")]
-    public virtual Ingredient Ingredient { get; set; } = null!;
+    public virtual Ingredient IngredientNavigation { get; set; } = null!; // Renamed to avoid ambiguity
 
     [ForeignKey("ProviderId")]
     [InverseProperty("Supplies")]
-    public virtual Provider Provider { get; set; } = null!;
+    public virtual Provider ProviderNavigation { get; set; } = null!; // Renamed to avoid ambiguity
 }

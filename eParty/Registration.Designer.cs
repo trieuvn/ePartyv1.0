@@ -28,500 +28,522 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbRegistration = new System.Windows.Forms.Label();
-            this.btnstarted = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.txtFullname = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtusername = new System.Windows.Forms.TextBox();
-            this.txtphone = new System.Windows.Forms.TextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            btnExit = new Button();
+            pictureBox1 = new PictureBox();
+            lbRegistration = new Label();
+            btnstarted = new Button();
+            pictureBox2 = new PictureBox();
+            txtEmail = new TextBox();
+            label1 = new Label();
+            lbEmail = new Label();
+            txtFullname = new TextBox();
+            pictureBox3 = new PictureBox();
+            label2 = new Label();
+            label3 = new Label();
+            txtPass = new TextBox();
+            pictureBox4 = new PictureBox();
+            label4 = new Label();
+            label5 = new Label();
+            txtConfirmPass = new TextBox();
+            pictureBox5 = new PictureBox();
+            label6 = new Label();
+            label7 = new Label();
+            pictureBox6 = new PictureBox();
+            label8 = new Label();
+            label9 = new Label();
+            txtusername = new TextBox();
+            txtphone = new TextBox();
+            pictureBox7 = new PictureBox();
+            label10 = new Label();
+            label11 = new Label();
+            pictureBox8 = new PictureBox();
+            label12 = new Label();
+            label13 = new Label();
+            txtAddress = new TextBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lbRegistration);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 116);
-            this.panel1.TabIndex = 0;
-            this.panel1.UseWaitCursor = true;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            panel1.BackColor = Color.FromArgb(41, 128, 182);
+            panel1.Controls.Add(btnExit);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(lbRegistration);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(377, 179);
+            panel1.TabIndex = 0;
+            panel1.UseWaitCursor = true;
             // 
             // btnExit
             // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Verdana", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(258, 2);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(25, 26);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.UseWaitCursor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            btnExit.Cursor = Cursors.WaitCursor;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatAppearance.MouseOverBackColor = Color.Red;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Verdana", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.White;
+            btnExit.Location = new Point(344, 3);
+            btnExit.Margin = new Padding(2, 3, 2, 3);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(33, 40);
+            btnExit.TabIndex = 5;
+            btnExit.Text = "X";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.UseWaitCursor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(54, 54);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(23, 60);
+            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(72, 83);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.UseWaitCursor = true;
             // 
             // lbRegistration
             // 
-            this.lbRegistration.AutoSize = true;
-            this.lbRegistration.Font = new System.Drawing.Font("Malgun Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegistration.ForeColor = System.Drawing.Color.White;
-            this.lbRegistration.Location = new System.Drawing.Point(77, 39);
-            this.lbRegistration.Name = "lbRegistration";
-            this.lbRegistration.Size = new System.Drawing.Size(163, 37);
-            this.lbRegistration.TabIndex = 0;
-            this.lbRegistration.Text = "Registration";
-            this.lbRegistration.UseWaitCursor = true;
+            lbRegistration.AutoSize = true;
+            lbRegistration.Font = new Font("Malgun Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbRegistration.ForeColor = Color.White;
+            lbRegistration.Location = new Point(103, 60);
+            lbRegistration.Margin = new Padding(4, 0, 4, 0);
+            lbRegistration.Name = "lbRegistration";
+            lbRegistration.Size = new Size(204, 46);
+            lbRegistration.TabIndex = 0;
+            lbRegistration.Text = "Registration";
+            lbRegistration.UseWaitCursor = true;
             // 
             // btnstarted
             // 
-            this.btnstarted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.btnstarted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnstarted.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnstarted.ForeColor = System.Drawing.Color.White;
-            this.btnstarted.Location = new System.Drawing.Point(17, 552);
-            this.btnstarted.Name = "btnstarted";
-            this.btnstarted.Size = new System.Drawing.Size(254, 41);
-            this.btnstarted.TabIndex = 1;
-            this.btnstarted.Text = "GET STARTED";
-            this.btnstarted.UseVisualStyleBackColor = false;
-            this.btnstarted.UseWaitCursor = true;
-            this.btnstarted.Click += new System.EventHandler(this.btnstarted_Click);
+            btnstarted.BackColor = Color.FromArgb(41, 128, 182);
+            btnstarted.FlatStyle = FlatStyle.Flat;
+            btnstarted.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnstarted.ForeColor = Color.White;
+            btnstarted.Location = new Point(23, 849);
+            btnstarted.Margin = new Padding(4);
+            btnstarted.Name = "btnstarted";
+            btnstarted.Size = new Size(338, 63);
+            btnstarted.TabIndex = 1;
+            btnstarted.Text = "GET STARTED";
+            btnstarted.UseVisualStyleBackColor = false;
+            btnstarted.UseWaitCursor = true;
+            btnstarted.Click += btnstarted_Click;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(17, 140);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.UseWaitCursor = true;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(23, 216);
+            pictureBox2.Margin = new Padding(4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(26, 31);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            pictureBox2.UseWaitCursor = true;
             // 
             // txtEmail
             // 
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(43, 140);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(228, 22);
-            this.txtEmail.TabIndex = 3;
-            this.txtEmail.UseWaitCursor = true;
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmail.Location = new Point(57, 216);
+            txtEmail.Margin = new Padding(4);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(304, 27);
+            txtEmail.TabIndex = 3;
+            txtEmail.UseWaitCursor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label1.Location = new System.Drawing.Point(14, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "__________________________________________________";
-            this.label1.UseWaitCursor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(41, 128, 182);
+            label1.Location = new Point(18, 240);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(309, 19);
+            label1.TabIndex = 4;
+            label1.Text = "__________________________________________________";
+            label1.UseWaitCursor = true;
             // 
             // lbEmail
             // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.lbEmail.Location = new System.Drawing.Point(40, 119);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(36, 15);
-            this.lbEmail.TabIndex = 5;
-            this.lbEmail.Text = "Email";
-            this.lbEmail.UseWaitCursor = true;
+            lbEmail.AutoSize = true;
+            lbEmail.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbEmail.ForeColor = Color.FromArgb(42, 128, 182);
+            lbEmail.Location = new Point(54, 183);
+            lbEmail.Margin = new Padding(4, 0, 4, 0);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new Size(46, 20);
+            lbEmail.TabIndex = 5;
+            lbEmail.Text = "Email";
+            lbEmail.UseWaitCursor = true;
             // 
             // txtFullname
             // 
-            this.txtFullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFullname.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullname.Location = new System.Drawing.Point(43, 200);
-            this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(228, 22);
-            this.txtFullname.TabIndex = 7;
-            this.txtFullname.UseWaitCursor = true;
+            txtFullname.BorderStyle = BorderStyle.None;
+            txtFullname.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFullname.Location = new Point(57, 308);
+            txtFullname.Margin = new Padding(4);
+            txtFullname.Name = "txtFullname";
+            txtFullname.Size = new Size(304, 27);
+            txtFullname.TabIndex = 7;
+            txtFullname.UseWaitCursor = true;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(17, 200);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.UseWaitCursor = true;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(23, 308);
+            pictureBox3.Margin = new Padding(4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(26, 31);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 6;
+            pictureBox3.TabStop = false;
+            pictureBox3.UseWaitCursor = true;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label2.Location = new System.Drawing.Point(14, 216);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(257, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "__________________________________________________";
-            this.label2.UseWaitCursor = true;
+            label2.AutoSize = true;
+            label2.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(41, 128, 182);
+            label2.Location = new Point(18, 332);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(309, 19);
+            label2.TabIndex = 8;
+            label2.Text = "__________________________________________________";
+            label2.UseWaitCursor = true;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label3.Location = new System.Drawing.Point(40, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Full name";
-            this.label3.UseWaitCursor = true;
+            label3.AutoSize = true;
+            label3.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(42, 128, 182);
+            label3.Location = new Point(54, 276);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 20);
+            label3.TabIndex = 9;
+            label3.Text = "Full name";
+            label3.UseWaitCursor = true;
             // 
             // txtPass
             // 
-            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPass.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(43, 440);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(228, 22);
-            this.txtPass.TabIndex = 11;
-            this.txtPass.UseWaitCursor = true;
+            txtPass.BorderStyle = BorderStyle.None;
+            txtPass.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPass.Location = new Point(57, 677);
+            txtPass.Margin = new Padding(4);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(304, 27);
+            txtPass.TabIndex = 11;
+            txtPass.UseWaitCursor = true;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(17, 440);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.UseWaitCursor = true;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(23, 677);
+            pictureBox4.Margin = new Padding(4);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(26, 31);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 10;
+            pictureBox4.TabStop = false;
+            pictureBox4.UseWaitCursor = true;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label4.Location = new System.Drawing.Point(14, 456);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(257, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "__________________________________________________";
-            this.label4.UseWaitCursor = true;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            label4.AutoSize = true;
+            label4.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(41, 128, 182);
+            label4.Location = new Point(18, 701);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(309, 19);
+            label4.TabIndex = 12;
+            label4.Text = "__________________________________________________";
+            label4.UseWaitCursor = true;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label5.Location = new System.Drawing.Point(40, 419);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 15);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Password";
-            this.label5.UseWaitCursor = true;
+            label5.AutoSize = true;
+            label5.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(42, 128, 182);
+            label5.Location = new Point(54, 644);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(72, 20);
+            label5.TabIndex = 13;
+            label5.Text = "Password";
+            label5.UseWaitCursor = true;
             // 
-            // textBox1
+            // txtConfirmPass
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(43, 500);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 22);
-            this.textBox1.TabIndex = 15;
-            this.textBox1.UseWaitCursor = true;
+            txtConfirmPass.BorderStyle = BorderStyle.None;
+            txtConfirmPass.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtConfirmPass.Location = new Point(57, 769);
+            txtConfirmPass.Margin = new Padding(4);
+            txtConfirmPass.Name = "txtConfirmPass";
+            txtConfirmPass.Size = new Size(304, 27);
+            txtConfirmPass.TabIndex = 15;
+            txtConfirmPass.UseWaitCursor = true;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(17, 500);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 14;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.UseWaitCursor = true;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(23, 769);
+            pictureBox5.Margin = new Padding(4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(26, 31);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 14;
+            pictureBox5.TabStop = false;
+            pictureBox5.UseWaitCursor = true;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label6.Location = new System.Drawing.Point(14, 516);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(257, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "__________________________________________________";
-            this.label6.UseWaitCursor = true;
+            label6.AutoSize = true;
+            label6.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.FromArgb(41, 128, 182);
+            label6.Location = new Point(18, 794);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(309, 19);
+            label6.TabIndex = 16;
+            label6.Text = "__________________________________________________";
+            label6.UseWaitCursor = true;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label7.Location = new System.Drawing.Point(40, 479);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 15);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Confirm password";
-            this.label7.UseWaitCursor = true;
+            label7.AutoSize = true;
+            label7.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(42, 128, 182);
+            label7.Location = new Point(54, 737);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(132, 20);
+            label7.TabIndex = 17;
+            label7.Text = "Confirm password";
+            label7.UseWaitCursor = true;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(17, 260);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 18;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.UseWaitCursor = true;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(23, 400);
+            pictureBox6.Margin = new Padding(4);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(26, 31);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 18;
+            pictureBox6.TabStop = false;
+            pictureBox6.UseWaitCursor = true;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label8.Location = new System.Drawing.Point(14, 276);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(257, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "__________________________________________________";
-            this.label8.UseWaitCursor = true;
+            label8.AutoSize = true;
+            label8.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.FromArgb(41, 128, 182);
+            label8.Location = new Point(18, 424);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(309, 19);
+            label8.TabIndex = 19;
+            label8.Text = "__________________________________________________";
+            label8.UseWaitCursor = true;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label9.Location = new System.Drawing.Point(40, 239);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 15);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Username";
-            this.label9.UseWaitCursor = true;
+            label9.AutoSize = true;
+            label9.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.FromArgb(42, 128, 182);
+            label9.Location = new Point(54, 368);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(77, 20);
+            label9.TabIndex = 20;
+            label9.Text = "Username";
+            label9.UseWaitCursor = true;
             // 
             // txtusername
             // 
-            this.txtusername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtusername.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusername.Location = new System.Drawing.Point(43, 260);
-            this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(228, 22);
-            this.txtusername.TabIndex = 21;
-            this.txtusername.UseWaitCursor = true;
+            txtusername.BorderStyle = BorderStyle.None;
+            txtusername.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtusername.Location = new Point(57, 400);
+            txtusername.Margin = new Padding(4);
+            txtusername.Name = "txtusername";
+            txtusername.Size = new Size(304, 27);
+            txtusername.TabIndex = 21;
+            txtusername.UseWaitCursor = true;
             // 
             // txtphone
             // 
-            this.txtphone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtphone.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtphone.Location = new System.Drawing.Point(43, 320);
-            this.txtphone.Name = "txtphone";
-            this.txtphone.Size = new System.Drawing.Size(228, 22);
-            this.txtphone.TabIndex = 25;
-            this.txtphone.UseWaitCursor = true;
+            txtphone.BorderStyle = BorderStyle.None;
+            txtphone.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtphone.Location = new Point(57, 492);
+            txtphone.Margin = new Padding(4);
+            txtphone.Name = "txtphone";
+            txtphone.Size = new Size(304, 27);
+            txtphone.TabIndex = 25;
+            txtphone.UseWaitCursor = true;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(17, 320);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 22;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.UseWaitCursor = true;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(23, 492);
+            pictureBox7.Margin = new Padding(4);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(26, 31);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 22;
+            pictureBox7.TabStop = false;
+            pictureBox7.UseWaitCursor = true;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label10.Location = new System.Drawing.Point(14, 336);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(257, 13);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "__________________________________________________";
-            this.label10.UseWaitCursor = true;
+            label10.AutoSize = true;
+            label10.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.FromArgb(41, 128, 182);
+            label10.Location = new Point(18, 517);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(309, 19);
+            label10.TabIndex = 23;
+            label10.Text = "__________________________________________________";
+            label10.UseWaitCursor = true;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label11.Location = new System.Drawing.Point(40, 299);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 15);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Phone number";
-            this.label11.UseWaitCursor = true;
+            label11.AutoSize = true;
+            label11.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.FromArgb(42, 128, 182);
+            label11.Location = new Point(54, 460);
+            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(111, 20);
+            label11.TabIndex = 24;
+            label11.Text = "Phone number";
+            label11.UseWaitCursor = true;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(17, 380);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 26;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.UseWaitCursor = true;
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(23, 584);
+            pictureBox8.Margin = new Padding(4);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(26, 31);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 26;
+            pictureBox8.TabStop = false;
+            pictureBox8.UseWaitCursor = true;
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label12.Location = new System.Drawing.Point(14, 396);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(257, 13);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "__________________________________________________";
-            this.label12.UseWaitCursor = true;
+            label12.AutoSize = true;
+            label12.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.FromArgb(41, 128, 182);
+            label12.Location = new Point(18, 609);
+            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(309, 19);
+            label12.TabIndex = 27;
+            label12.Text = "__________________________________________________";
+            label12.UseWaitCursor = true;
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(182)))));
-            this.label13.Location = new System.Drawing.Point(40, 359);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 15);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Address";
-            this.label13.UseWaitCursor = true;
+            label13.AutoSize = true;
+            label13.Font = new Font("Malgun Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.FromArgb(42, 128, 182);
+            label13.Location = new Point(54, 552);
+            label13.Margin = new Padding(4, 0, 4, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(62, 20);
+            label13.TabIndex = 28;
+            label13.Text = "Address";
+            label13.UseWaitCursor = true;
             // 
-            // textBox2
+            // txtAddress
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(43, 380);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 22);
-            this.textBox2.TabIndex = 29;
-            this.textBox2.UseWaitCursor = true;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            txtAddress.BorderStyle = BorderStyle.None;
+            txtAddress.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAddress.Location = new Point(57, 584);
+            txtAddress.Margin = new Padding(4);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(304, 27);
+            txtAddress.TabIndex = 29;
+            txtAddress.UseWaitCursor = true;
             // 
             // Registration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(283, 605);
-            this.ControlBox = false;
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtphone);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtusername);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtFullname);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnstarted);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbEmail);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Registration";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registration";
-            this.UseWaitCursor = true;
-            this.Load += new System.EventHandler(this.Registration_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(377, 962);
+            ControlBox = false;
+            Controls.Add(txtAddress);
+            Controls.Add(pictureBox8);
+            Controls.Add(label12);
+            Controls.Add(label13);
+            Controls.Add(txtphone);
+            Controls.Add(pictureBox7);
+            Controls.Add(label10);
+            Controls.Add(label11);
+            Controls.Add(txtusername);
+            Controls.Add(pictureBox6);
+            Controls.Add(label8);
+            Controls.Add(label9);
+            Controls.Add(txtConfirmPass);
+            Controls.Add(pictureBox5);
+            Controls.Add(label6);
+            Controls.Add(label7);
+            Controls.Add(txtPass);
+            Controls.Add(pictureBox4);
+            Controls.Add(label4);
+            Controls.Add(label5);
+            Controls.Add(txtFullname);
+            Controls.Add(pictureBox3);
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(txtEmail);
+            Controls.Add(pictureBox2);
+            Controls.Add(btnstarted);
+            Controls.Add(panel1);
+            Controls.Add(label1);
+            Controls.Add(lbEmail);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
+            Name = "Registration";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Registration";
+            UseWaitCursor = true;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -542,7 +564,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtConfirmPass;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -557,8 +579,7 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Timer timer1;
     }
 }

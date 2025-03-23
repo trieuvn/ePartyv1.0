@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using BOLayer.Repository.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
-namespace BOLayer.Repository.Models;
-
+[Table("Staff")]
 public partial class Staff
 {
     [Key]
@@ -39,7 +36,6 @@ public partial class Staff
     [InverseProperty("Staff")]
     public virtual ICollection<StaticStaff> StaticStaffs { get; set; } = new List<StaticStaff>();
 
-    [ForeignKey("StaffId")]
     [InverseProperty("Staff")]
-    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+    public virtual ICollection<OrderHaveStaff> OrderHaveStaffs { get; set; } = new List<OrderHaveStaff>(); // Thêm mối quan hệ với OrderHaveStaff
 }

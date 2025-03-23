@@ -44,9 +44,9 @@ namespace eParty
             BtnResource = new ArtanButton();
             BtnDashboard = new ArtanButton();
             panel2 = new Panel();
-            lb2 = new Label();
+            lblID = new Label();
             pBDefault = new PictureBox();
-            lb1 = new Label();
+            lblName = new Label();
             BtnOut = new ArtanButton();
             panel1 = new Panel();
             BtnNavbar = new ArtanButton();
@@ -63,6 +63,9 @@ namespace eParty
             staffListToolStripMenuItem = new ToolStripMenuItem();
             ingreListToolStripMenuItem = new ToolStripMenuItem();
             foodListToolStripMenuItem = new ToolStripMenuItem();
+            rjDropdownMenu2 = new RJDropdownMenu(components);
+            createOrderToolStripMenuItem = new ToolStripMenuItem();
+            orderDetailToolStripMenuItem = new ToolStripMenuItem();
             PnlNavbar.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pBDefault).BeginInit();
@@ -70,6 +73,7 @@ namespace eParty
             ((System.ComponentModel.ISupportInitialize)pbTitle).BeginInit();
             panel3.SuspendLayout();
             rjDropdownMenu1.SuspendLayout();
+            rjDropdownMenu2.SuspendLayout();
             SuspendLayout();
             // 
             // PnlNavbar
@@ -84,7 +88,7 @@ namespace eParty
             PnlNavbar.Location = new Point(10, 10);
             PnlNavbar.Margin = new Padding(0);
             PnlNavbar.Name = "PnlNavbar";
-            PnlNavbar.Size = new Size(275, 566);
+            PnlNavbar.Size = new Size(275, 860);
             PnlNavbar.TabIndex = 0;
             // 
             // BtnReport
@@ -181,26 +185,26 @@ namespace eParty
             // 
             // panel2
             // 
-            panel2.Controls.Add(lb2);
+            panel2.Controls.Add(lblID);
             panel2.Controls.Add(pBDefault);
-            panel2.Controls.Add(lb1);
+            panel2.Controls.Add(lblName);
             panel2.Controls.Add(BtnOut);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 517);
+            panel2.Location = new Point(0, 811);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
             panel2.Size = new Size(275, 49);
             panel2.TabIndex = 1;
             // 
-            // lb2
+            // lblID
             // 
-            lb2.AutoSize = true;
-            lb2.Font = new Font("Segoe UI Semibold", 4F, FontStyle.Bold);
-            lb2.Location = new Point(53, 29);
-            lb2.Name = "lb2";
-            lb2.Size = new Size(18, 13);
-            lb2.TabIndex = 2;
-            lb2.Text = "ID";
+            lblID.AutoSize = true;
+            lblID.Font = new Font("Segoe UI Semibold", 4F, FontStyle.Bold);
+            lblID.Location = new Point(53, 29);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(10, 8);
+            lblID.TabIndex = 2;
+            lblID.Text = "ID";
             // 
             // pBDefault
             // 
@@ -212,15 +216,16 @@ namespace eParty
             pBDefault.TabIndex = 1;
             pBDefault.TabStop = false;
             // 
-            // lb1
+            // lblName
             // 
-            lb1.AutoSize = true;
-            lb1.Font = new Font("Segoe UI Semibold", 6F, FontStyle.Bold);
-            lb1.Location = new Point(53, 8);
-            lb1.Name = "lb1";
-            lb1.Size = new Size(53, 21);
-            lb1.TabIndex = 0;
-            lb1.Text = "Name";
+            lblName.AutoSize = true;
+            lblName.Font = new Font("Segoe UI Semibold", 6F, FontStyle.Bold);
+            lblName.Location = new Point(53, 8);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(26, 11);
+            lblName.TabIndex = 0;
+            lblName.Text = "Name";
+            lblName.Click += lb1_Click;
             // 
             // BtnOut
             // 
@@ -301,8 +306,9 @@ namespace eParty
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(285, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(654, 23);
+            panel3.Size = new Size(1266, 23);
             panel3.TabIndex = 4;
+            panel3.Paint += panel3_Paint;
             // 
             // btnClose
             // 
@@ -318,7 +324,7 @@ namespace eParty
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.ForeColor = Color.White;
             btnClose.Image = (Image)resources.GetObject("btnClose.Image");
-            btnClose.Location = new Point(608, 0);
+            btnClose.Location = new Point(1220, 0);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(20, 20);
             btnClose.TabIndex = 2;
@@ -340,7 +346,7 @@ namespace eParty
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.ForeColor = Color.White;
             btnExit.Image = (Image)resources.GetObject("btnExit.Image");
-            btnExit.Location = new Point(634, 0);
+            btnExit.Location = new Point(1246, 0);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(20, 20);
             btnExit.TabIndex = 1;
@@ -354,7 +360,7 @@ namespace eParty
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(285, 33);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(654, 543);
+            panelContainer.Size = new Size(1266, 837);
             panelContainer.TabIndex = 5;
             // 
             // eclipseControl1
@@ -371,34 +377,57 @@ namespace eParty
             rjDropdownMenu1.MenuItemTextColor = Color.Empty;
             rjDropdownMenu1.Name = "rjDropdownMenu1";
             rjDropdownMenu1.PrimaryColor = Color.Empty;
-            rjDropdownMenu1.Size = new Size(186, 118);
+            rjDropdownMenu1.Size = new Size(123, 70);
             // 
             // staffListToolStripMenuItem
             // 
             staffListToolStripMenuItem.Name = "staffListToolStripMenuItem";
-            staffListToolStripMenuItem.Size = new Size(185, 38);
+            staffListToolStripMenuItem.Size = new Size(122, 22);
             staffListToolStripMenuItem.Text = "Staff List";
             staffListToolStripMenuItem.Click += staffListToolStripMenuItem_Click;
             // 
             // ingreListToolStripMenuItem
             // 
             ingreListToolStripMenuItem.Name = "ingreListToolStripMenuItem";
-            ingreListToolStripMenuItem.Size = new Size(185, 38);
+            ingreListToolStripMenuItem.Size = new Size(122, 22);
             ingreListToolStripMenuItem.Text = "Ingre List";
             ingreListToolStripMenuItem.Click += ingreListToolStripMenuItem_Click;
             // 
             // foodListToolStripMenuItem
             // 
             foodListToolStripMenuItem.Name = "foodListToolStripMenuItem";
-            foodListToolStripMenuItem.Size = new Size(185, 38);
+            foodListToolStripMenuItem.Size = new Size(122, 22);
             foodListToolStripMenuItem.Text = "Food List";
             foodListToolStripMenuItem.Click += foodListToolStripMenuItem_Click;
+            // 
+            // rjDropdownMenu2
+            // 
+            rjDropdownMenu2.ImageScalingSize = new Size(32, 32);
+            rjDropdownMenu2.IsMainMenu = false;
+            rjDropdownMenu2.Items.AddRange(new ToolStripItem[] { createOrderToolStripMenuItem, orderDetailToolStripMenuItem });
+            rjDropdownMenu2.MenuItemHeight = 25;
+            rjDropdownMenu2.MenuItemTextColor = Color.Empty;
+            rjDropdownMenu2.Name = "rjDropdownMenu2";
+            rjDropdownMenu2.PrimaryColor = Color.Empty;
+            rjDropdownMenu2.Size = new Size(142, 48);
+            // 
+            // createOrderToolStripMenuItem
+            // 
+            createOrderToolStripMenuItem.Name = "createOrderToolStripMenuItem";
+            createOrderToolStripMenuItem.Size = new Size(141, 22);
+            createOrderToolStripMenuItem.Text = "Create Order";
+            // 
+            // orderDetailToolStripMenuItem
+            // 
+            orderDetailToolStripMenuItem.Name = "orderDetailToolStripMenuItem";
+            orderDetailToolStripMenuItem.Size = new Size(141, 22);
+            orderDetailToolStripMenuItem.Text = "Order Detail";
             // 
             // MenuForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
-            ClientSize = new Size(949, 586);
+            ClientSize = new Size(1561, 880);
             Controls.Add(panelContainer);
             Controls.Add(panel3);
             Controls.Add(PnlNavbar);
@@ -408,6 +437,7 @@ namespace eParty
             Name = "MenuForm";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
             Load += MenuForm_Load_1;
             MouseDown += MenuForm_MouseDown;
             PnlNavbar.ResumeLayout(false);
@@ -418,8 +448,8 @@ namespace eParty
             ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             panel3.ResumeLayout(false);
             rjDropdownMenu1.ResumeLayout(false);
+            rjDropdownMenu2.ResumeLayout(false);
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -440,15 +470,18 @@ namespace eParty
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lb2;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.PictureBox pBDefault;
-        private System.Windows.Forms.Label lb1;
+        private System.Windows.Forms.Label lblName;
         private ArtanButton BtnOut;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private RJDropdownMenu rjDropdownMenu1;
         private System.Windows.Forms.ToolStripMenuItem staffListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingreListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem foodListToolStripMenuItem;
+        private RJDropdownMenu rjDropdownMenu2;
+        private ToolStripMenuItem createOrderToolStripMenuItem;
+        private ToolStripMenuItem orderDetailToolStripMenuItem;
     }
     #endregion
 }

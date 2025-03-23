@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using BOLayer.Repository.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
-namespace BOLayer.Repository.Models;
+using System.ComponentModel.DataAnnotations;
 
 [Table("Ingredient")]
 public partial class Ingredient
@@ -34,6 +30,6 @@ public partial class Ingredient
     [InverseProperty("Ingredients")]
     public virtual Manager? ManagerNavigation { get; set; }
 
-    [InverseProperty("Ingredient")]
+    [InverseProperty("IngredientNavigation")] // Update to match the renamed property in Supply
     public virtual ICollection<Supply> Supplies { get; set; } = new List<Supply>();
 }

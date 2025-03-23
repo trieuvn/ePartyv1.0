@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using BOLayer.Repository;
@@ -11,222 +9,428 @@ namespace eParty
 {
     public partial class FormSchedule : Form
     {
-        private void FormSchedule_Load(object sender, EventArgs e)
+        private ePartyDbDbContext _context;
+        private DateTime _startOfWeek;
+        private Order _selectedOrder;
+        private ArtanButton _selectedButton;
+        public string username;
+        public FormSchedule(string username)
         {
+            this.username = username;
+            InitializeComponent();
+            _context = new ePartyDbDbContext();
+            _startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
 
-        }
-        private DateTime currentWeek;
-        private TableLayoutPanel tableLayout;
-        private Label lblWeekTitle; // Thêm biến lưu tiêu đề tuần
+            // Tải danh sách Manager vào cboManager
+            LoadManagersIntoComboBox();
 
-        public FormSchedule(DateTime weekStart)
-        {
-           InitializeComponent();
-           currentWeek = weekStart;
-
-           InitializeUI();
-           LoadSchedule(currentWeek);
-        }
-
-        private void InitializeUI()
-        {
-           this.Text = "Thời Khóa Biểu Tuần";
-           this.Size = new Size(1000, 600);
-
-           // Cập nhật tiêu đề tuần theo ngày tháng
-           lblWeekTitle = new Label()
-           {
-               Text = $"Tuần ({currentWeek:dd/MM} - {currentWeek.AddDays(6):dd/MM})",
-               AutoSize = true,
-               Location = new Point(450, 25),
-               Font = new Font("Arial", 12, FontStyle.Bold)
-           };
-
-           Button btnPreviousWeek = new Button() { Text = "< Tuần trước", Location = new Point(20, 20) };
-           Button btnNextWeek = new Button() { Text = "Tuần sau >", Location = new Point(850, 20) };
-
-           btnPreviousWeek.Click += (s, e) =>
-           {
-               currentWeek = currentWeek.AddDays(-7);
-               LoadSchedule(currentWeek);
-               lblWeekTitle.Text = $"Tuần ({currentWeek:dd/MM} - {currentWeek.AddDays(6):dd/MM})";
-           };
-
-           btnNextWeek.Click += (s, e) =>
-           {
-               currentWeek = currentWeek.AddDays(7);
-               LoadSchedule(currentWeek);
-               lblWeekTitle.Text = $"Tuần ({currentWeek:dd/MM} - {currentWeek.AddDays(6):dd/MM})";
-           };
-
-           // Tạo bảng thời khóa biểu với 8 cột (Thứ) và 5 dòng (Sáng, Chiều, Tối, Khác)
-           tableLayout = new TableLayoutPanel()
-           {
-               Location = new Point(20, 60),
-               Size = new Size(950, 500),
-               ColumnCount = 8,
-               RowCount = 5,
-               CellBorderStyle = TableLayoutPanelCellBorderStyle.Single,
-               AutoSize = true
-           };
-
-           string[] headers = { "Buổi/Thứ", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ Nhật" };
-           string[] timeSlots = { "Sáng (6h - 11h30)", "Chiều (13h - 18h30)", "Tối (19h - 00h)", "Khác" };
-
-           for (int i = 0; i < headers.Length; i++)
-           {
-               tableLayout.Controls.Add(new Label()
-               {
-                   Text = headers[i],
-                   Font = new Font("Arial", 10, FontStyle.Bold),
-                   TextAlign = ContentAlignment.MiddleCenter
-               }, i, 0);
-           }
-
-           for (int i = 0; i < timeSlots.Length; i++)
-           {
-               Label lblTimeSlot = new Label()
-               {
-                   Text = timeSlots[i],
-                   Font = new Font("Arial", 10, FontStyle.Bold),
-                   TextAlign = ContentAlignment.MiddleCenter,
-                   AutoSize = false,
-                   Size = new Size(120, 50), // Tăng kích thước ngang & dọc để không bị cắt chữ
-                   BorderStyle = BorderStyle.FixedSingle // Tạo đường viền giúp dễ nhìn hơn
-               };
-               tableLayout.Controls.Add(lblTimeSlot, 0, i + 1);
-           }
-
-           this.Controls.Add(btnPreviousWeek);
-           this.Controls.Add(btnNextWeek);
-           this.Controls.Add(lblWeekTitle);
-           this.Controls.Add(tableLayout);
+            LoadSchedule();
+            RegisterButtonEvents();
+            this.username = username;
         }
 
-        public void LoadSchedule(DateTime weekStart)
+        private void LoadManagersIntoComboBox()
         {
-            using (var context = new ePartyDbDbContext())
+            // Thêm một mục "None" để cho phép không chọn Manager
+            cboManager.Items.Add("None");
+
+            // Tải danh sách UserName từ bảng dbo.Manager
+            var managers = _context.Managers
+                .Select(m => m.UserName)
+                .ToList();
+
+            // Thêm các UserName vào cboManager
+            cboManager.Items.AddRange(managers.ToArray());
+
+            // Chọn mục đầu tiên ("None") làm mặc định
+            cboManager.SelectedIndex = 0;
+        }
+
+        private void RegisterButtonEvents()
+        {
+            btnPre.Click += btnPre_Click;
+            btnNext.Click += btnNext_Click;
+            btnSave.Click += btnSave_Click;
+            btnDelete.Click += btnDelete_Click;
+
+            foreach (Control control in panel1.Controls)
             {
-                var startOfWeek = weekStart.Date;
-                var endOfWeek = startOfWeek.AddDays(6).Date.AddHours(23).AddMinutes(59).AddSeconds(59);
-
-                // Lấy danh sách đơn hàng trong tuần
-                var orders = context.Orders
-                    .Where(o => o.BeginTime >= startOfWeek && o.BeginTime <= endOfWeek)
-                    .OrderBy(o => o.BeginTime)
-                    .ToList();
-
-                // Nhóm đơn hàng theo khung giờ
-                Dictionary<string, List<Order>> schedule = new Dictionary<string, List<Order>>
-        {
-            { "Sáng", new List<Order>() },
-            { "Chiều", new List<Order>() },
-            { "Tối", new List<Order>() },
-            { "Khác", new List<Order>() }
-        };
-
-                foreach (var order in orders)
+                if (control is Panel panel)
                 {
-                    // Kiểm tra nếu BeginTime hoặc EndTime là null
-                    if (!order.BeginTime.HasValue || !order.EndTime.HasValue)
+                    foreach (Control subControl in panel.Controls)
                     {
-                        continue; // Bỏ qua đơn hàng nếu thời gian không hợp lệ
-                    }
-
-                    string timeSlot = GetTimeSlot(order.BeginTime, order.EndTime);
-                    schedule[timeSlot].Add(order);
-                }
-
-                // Xóa dữ liệu cũ trước khi cập nhật
-                for (int col = 1; col <= 7; col++)
-                {
-                    for (int row = 1; row <= 4; row++) // Xóa 4 dòng: Sáng, Chiều, Tối, Khác
-                    {
-                        Control existingControl = tableLayout.GetControlFromPosition(col, row);
-                        if (existingControl != null)
-                            tableLayout.Controls.Remove(existingControl);
-                    }
-                }
-
-                // Hiển thị dữ liệu mới
-                for (int col = 1; col <= 7; col++) // Lặp qua các cột từ Thứ 2 đến Chủ Nhật
-                {
-                    DateTime day = weekStart.AddDays(col - 1);
-                    HashSet<int> displayedEvents = new HashSet<int>(); // Tránh hiển thị sự kiện trùng
-
-                    List<Order> ordersOnDay = schedule.Values.SelectMany(list => list)
-                        .Where(o => o.BeginTime.HasValue && o.BeginTime.Value.Date == day.Date)
-                        .ToList();
-
-                    foreach (var order in ordersOnDay)
-                    {
-                        // Kiểm tra nếu BeginTime hoặc EndTime là null
-                        if (!order.BeginTime.HasValue || !order.EndTime.HasValue)
+                        if (subControl is Panel subPanel)
                         {
-                            continue; // Bỏ qua đơn hàng nếu thời gian không hợp lệ
-                        }
-
-                        string timeSlot = GetTimeSlot(order.BeginTime, order.EndTime);
-
-                        // Nếu sự kiện đã xuất hiện ở Sáng/Chiều/Tối thì chuyển sang cột "Khác"
-                        if (displayedEvents.Contains(order.Id))
-                        {
-                            timeSlot = "Khác";
-                        }
-
-                        int rowIndex = timeSlot == "Sáng" ? 1 :
-                                       timeSlot == "Chiều" ? 2 :
-                                       timeSlot == "Tối" ? 3 : 4; // Nếu không thuộc Sáng/Chiều/Tối -> Khác
-
-                        Label lblData = (Label)tableLayout.GetControlFromPosition(col, rowIndex);
-                        if (lblData == null)
-                        {
-                            lblData = new Label()
+                            foreach (Control button in subPanel.Controls)
                             {
-                                AutoSize = true,
-                                Font = new Font("Arial", 9, FontStyle.Regular),
-                                TextAlign = ContentAlignment.MiddleLeft,
-                                Text = ""
-                            };
-                            tableLayout.Controls.Add(lblData, col, rowIndex);
+                                if (button is ArtanButton artanButton)
+                                {
+                                    artanButton.Enabled = true;
+                                    artanButton.Click += ScheduleButton_Click;
+                                }
+                            }
                         }
-
-                        lblData.Text += $"{order.Description}\n" +
-                                        $"{order.NoTables} bàn\n" +
-                                        $"{order.BeginTime:HH:mm} - {order.EndTime:HH:mm}\n" +
-                                        $"{order.Manager}\n\n";
-
-                        displayedEvents.Add(order.Id); // Đánh dấu sự kiện đã hiển thị
                     }
                 }
             }
         }
 
-
-        private string GetTimeSlot(DateTime? startTime, DateTime? endTime)
+        private void LoadSchedule()
         {
-            // Kiểm tra nếu startTime hoặc endTime là null
-            if (!startTime.HasValue || !endTime.HasValue)
+            week.Text = $"Week: {_startOfWeek:dd/MM} - {_startOfWeek.AddDays(6):dd/MM}/{_startOfWeek.Year}";
+            ClearScheduleButtons();
+
+            var orders = _context.Orders
+                .Where(o => o.BeginTime >= _startOfWeek && o.BeginTime <= _startOfWeek.AddDays(6).AddHours(23).AddMinutes(59))
+                .ToList();
+
+            foreach (var order in orders)
             {
-                return "Khác"; // Trả về "Khác" nếu thời gian không hợp lệ
+                MarkOrderOnSchedule(order);
             }
-
-            // Ép kiểu về DateTime (non-nullable) sau khi đã kiểm tra null
-            DateTime start = startTime.Value;
-            DateTime end = endTime.Value;
-
-            bool isMorning = start.Hour >= 6 && end.Hour < 12
-                             || (end.Hour == 12 && end.Minute <= 30);
-            bool isAfternoon = start.Hour >= 13 && end.Hour < 18
-                               || (end.Hour == 18 && end.Minute <= 30);
-            bool isEvening = start.Hour >= 19 && end.Hour < 24;
-
-            if (isMorning) return "Sáng";
-            if (isAfternoon) return "Chiều";
-            if (isEvening) return "Tối";
-
-            return "Khác"; // Nếu sự kiện trải dài qua nhiều khung giờ, đưa vào "Khác"
         }
 
+        private void ClearScheduleButtons()
+        {
+            foreach (Control control in panel1.Controls)
+            {
+                if (control is Panel panel)
+                {
+                    foreach (Control subControl in panel.Controls)
+                    {
+                        if (subControl is Panel subPanel)
+                        {
+                            foreach (Control button in subPanel.Controls)
+                            {
+                                if (button is ArtanButton artanButton)
+                                {
+                                    artanButton.BackColor = Color.White;
+                                    artanButton.BackgroundColor = Color.White;
+                                    artanButton.BorderSize = 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void MarkOrderOnSchedule(Order order)
+        {
+            if (order.BeginTime == null || order.EndTime == null) return;
+
+            DateTime orderDate = order.BeginTime.Value.Date;
+            int dayIndex = (orderDate - _startOfWeek).Days;
+            if (dayIndex < 0 || dayIndex > 6) return;
+
+            int timeSlot = GetTimeSlot(order.BeginTime.Value, order.EndTime.Value);
+            if (timeSlot == -1) return;
+
+            string buttonName = $"cot{dayIndex + 1}dong{timeSlot + 1}";
+            var button = Controls.Find(buttonName, true).FirstOrDefault() as ArtanButton;
+
+            if (button != null)
+            {
+                button.BackColor = Color.LightGreen;
+                button.BackgroundColor = Color.LightGreen;
+            }
+        }
+
+        private int GetTimeSlot(DateTime start, DateTime end)
+        {
+            int startHour = start.Hour;
+            if (startHour >= 6 && startHour < 10) return 0;
+            if (startHour >= 10 && startHour < 14) return 1;
+            if (startHour >= 14 && startHour < 18) return 2;
+            if (startHour >= 18 && startHour < 22) return 3;
+            if (startHour >= 22 || startHour < 6) return 4;
+            return -1;
+        }
+
+        private void ScheduleButton_Click(object sender, EventArgs e)
+        {
+
+            var button = sender as ArtanButton;
+            if (button == null) return;
+
+            if (_selectedButton != null)
+            {
+                _selectedButton.BorderSize = 0;
+            }
+
+
+            button.BorderSize = 2;
+            _selectedButton = button;
+
+            string buttonName = button.Name;
+            int dayIndex = int.Parse(buttonName.Substring(3, 1)) - 1;
+            int timeSlot = int.Parse(buttonName.Substring(8, 1)) - 1;
+
+            DateTime selectedDate = _startOfWeek.AddDays(dayIndex);
+            DateTime startTime, endTime;
+            switch (timeSlot)
+            {
+                case 0:
+                    startTime = selectedDate.AddHours(6);
+                    endTime = selectedDate.AddHours(10);
+                    break;
+                case 1:
+                    startTime = selectedDate.AddHours(10);
+                    endTime = selectedDate.AddHours(14);
+                    break;
+                case 2:
+                    startTime = selectedDate.AddHours(14);
+                    endTime = selectedDate.AddHours(18);
+                    break;
+                case 3:
+                    startTime = selectedDate.AddHours(18);
+                    endTime = selectedDate.AddHours(22);
+                    break;
+                case 4:
+                    startTime = selectedDate.AddHours(22);
+                    endTime = selectedDate.AddDays(1).AddHours(6);
+                    break;
+                default:
+                    return;
+            }
+
+            _selectedOrder = _context.Orders
+                .FirstOrDefault(o => o.BeginTime >= startTime && o.BeginTime < endTime);
+
+            if (_selectedOrder != null)
+            {
+                txtDescription.Text = _selectedOrder.Description ?? "";
+                txtTableNumber.Text = _selectedOrder.NoTables?.ToString() ?? "";
+                timeStart.Value = _selectedOrder.BeginTime ?? startTime;
+                TimeEnd.Value = _selectedOrder.EndTime ?? endTime;
+                // Chọn Manager từ danh sách
+                cboManager.SelectedItem = _selectedOrder.Manager ?? "None";
+                txtAddress.Text = _selectedOrder.Address ?? "";
+                txtPhone.Text = _selectedOrder.PhoneNumber ?? "";
+                txtFeedBack.Text = _selectedOrder.Feedback ?? "";
+            }
+            else
+            {
+                txtDescription.Text = "";
+                txtTableNumber.Text = "";
+                timeStart.Value = startTime;
+                TimeEnd.Value = endTime;
+                cboManager.SelectedItem = "None";
+                txtAddress.Text = "";
+                txtPhone.Text = "";
+                txtFeedBack.Text = "";
+            }
+        }
+
+        private void btnPre_Click(object sender, EventArgs e)
+        {
+            _startOfWeek = _startOfWeek.AddDays(-7);
+            LoadSchedule();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            _startOfWeek = _startOfWeek.AddDays(7);
+            LoadSchedule();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtTableNumber.Text) || !int.TryParse(txtTableNumber.Text, out int noTables))
+                {
+                    MessageBox.Show("Please enter a valid table number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (timeStart.Value >= TimeEnd.Value)
+                {
+                    MessageBox.Show("End time must be greater than start time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPhone.Text))
+                {
+                    MessageBox.Show("Please enter a phone number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DateTime beginTime = timeStart.Value;
+                DateTime endTime = TimeEnd.Value;
+
+                if (!IsValidDate(endTime))
+                {
+                    endTime = new DateTime(endTime.Year, endTime.Month, DateTime.DaysInMonth(endTime.Year, endTime.Month), endTime.Hour, endTime.Minute, endTime.Second);
+                    TimeEnd.Value = endTime;
+                    MessageBox.Show($"Adjusted End Time to a valid date: {endTime:dd/MM/yyyy HH:mm}", "Date Adjusted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                string phoneNumber = txtPhone.Text.Trim();
+                var customer = _context.Customers.FirstOrDefault(c => c.PhoneNumber == phoneNumber);
+                if (customer == null)
+                {
+                    customer = new Customer
+                    {
+                        PhoneNumber = phoneNumber,
+                        Name = "Unknown",
+                    };
+                    _context.Customers.Add(customer);
+                    _context.SaveChanges();
+                    MessageBox.Show($"New customer with PhoneNumber {phoneNumber} has been added.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Lấy giá trị Manager từ ComboBox
+                string manager = cboManager.SelectedItem?.ToString() == "None" ? null : cboManager.SelectedItem?.ToString();
+
+                if (_selectedOrder == null)
+                {
+                    _selectedOrder = new Order
+                    {
+                        BeginTime = beginTime,
+                        EndTime = endTime,
+                        Description = string.IsNullOrWhiteSpace(txtDescription.Text) ? null : txtDescription.Text,
+                        NoTables = noTables,
+                        Manager = manager,
+                        Address = string.IsNullOrWhiteSpace(txtAddress.Text) ? null : txtAddress.Text,
+                        PhoneNumber = phoneNumber,
+                        Feedback = string.IsNullOrWhiteSpace(txtFeedBack.Text) ? null : txtFeedBack.Text,
+                        Status = true,
+                        ActualCost = 0
+                    };
+                    _context.Orders.Add(_selectedOrder);
+                }
+                else
+                {
+                    _selectedOrder.BeginTime = beginTime;
+                    _selectedOrder.EndTime = endTime;
+                    _selectedOrder.Description = string.IsNullOrWhiteSpace(txtDescription.Text) ? null : txtDescription.Text;
+                    _selectedOrder.NoTables = noTables;
+                    _selectedOrder.Manager = manager;
+                    _selectedOrder.Address = string.IsNullOrWhiteSpace(txtAddress.Text) ? null : txtAddress.Text;
+                    _selectedOrder.PhoneNumber = phoneNumber;
+                    _selectedOrder.Feedback = string.IsNullOrWhiteSpace(txtFeedBack.Text) ? null : txtFeedBack.Text;
+                }
+
+                _context.SaveChanges();
+                MessageBox.Show("Order saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadSchedule();
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = $"Error saving order: {ex.Message}";
+                if (ex.InnerException != null)
+                {
+                    errorMessage += $"\nInner Exception: {ex.InnerException.Message}";
+                }
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool IsValidDate(DateTime date)
+        {
+            try
+            {
+                DateTime testDate = new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_selectedOrder == null)
+            {
+                MessageBox.Show("Please select an order to delete!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var context = new ePartyDbDbContext())
+                {
+                    // Find the order to delete
+                    var orderToDelete = context.Orders.FirstOrDefault(o => o.Id == _selectedOrder.Id);
+                    if (orderToDelete == null)
+                    {
+                        MessageBox.Show("Order to delete not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Confirm deletion with the user
+                    if (MessageBox.Show("Are you sure you want to delete this order? This will also delete related OrderHaveFood and OrderHaveStaff records.",
+                        "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    {
+                        return;
+                    }
+
+                    // Delete related OrderHaveStaff entries
+                    var orderHaveStaffs = context.OrderHaveStaffs
+                        .Where(ohs => ohs.OrderId == _selectedOrder.Id)
+                        .ToList();
+                    if (orderHaveStaffs.Any())
+                    {
+                        context.OrderHaveStaffs.RemoveRange(orderHaveStaffs);
+                    }
+
+                    // Delete related OrderHaveFood entries
+                    var orderHaveFoods = context.OrderHaveFoods
+                        .Where(ohf => ohf.OrderId == _selectedOrder.Id)
+                        .ToList();
+                    if (orderHaveFoods.Any())
+                    {
+                        context.OrderHaveFoods.RemoveRange(orderHaveFoods);
+                    }
+
+                    // Delete the order
+                    context.Orders.Remove(orderToDelete);
+
+                    // Save changes
+                    context.SaveChanges();
+
+                    MessageBox.Show("Deleted successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Clear the form and reload the schedule
+                    LoadSchedule();
+                    LoadEmptyOrderForm(DateTime.Now, DateTime.Now.AddHours(1));
+                    _selectedOrder = null;
+                    _selectedButton = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = $"Error deleting order: {ex.Message}";
+                if (ex.InnerException != null)
+                {
+                    errorMessage += $"\nInner Exception: {ex.InnerException.Message}";
+                }
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadEmptyOrderForm(DateTime begin, DateTime end)
+        {
+            txtDescription.Text = "";
+            txtTableNumber.Text = "";
+            timeStart.Value = begin;
+            TimeEnd.Value = end;
+            cboManager.SelectedItem = "None";
+            txtAddress.Text = "";
+            txtPhone.Text = "";
+            txtFeedBack.Text = "";
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
