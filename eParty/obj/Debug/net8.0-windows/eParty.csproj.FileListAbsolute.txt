@@ -196,7 +196,6 @@ D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.ForgotPassword.res
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.FormSchedule.resources
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.Login.resources
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.LoginShortcut.resources
-D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.OrderListForm.resources
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.Registration.resources
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.csproj.GenerateResource.cache
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.GeneratedMSBuildEditorConfig.editorconfig

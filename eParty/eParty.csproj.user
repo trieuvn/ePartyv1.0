@@ -41,9 +41,6 @@
     <Compile Update="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="OrderListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Registration.cs">
       <SubType>Form</SubType>
     </Compile>

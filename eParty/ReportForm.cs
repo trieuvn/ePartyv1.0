@@ -150,6 +150,7 @@ namespace eParty
             {
                 // First, fetch the data without null-conditional operators
                 var orderData = _context.Orders
+                    .Where(o => o.Manager == username)
                     .GroupJoin(_context.OrderHaveFoods,
                         o => o.Id,
                         ohf => ohf.OrderId,
@@ -219,7 +220,7 @@ namespace eParty
             try
             {
                 var profitByMonth = _context.OrderHaveFoods
-                    .Where(ohf => ohf.Order.Status == true && ohf.Order.BeginTime.HasValue)
+                    .Where(ohf => ohf.Order.Status == true && ohf.Order.BeginTime.HasValue && ohf.Order.Manager == username)
                     .Join(_context.Foods,
                         ohf => ohf.FoodId,
                         f => f.Id,
@@ -265,6 +266,7 @@ namespace eParty
             try
             {
                 var staffList = _context.Staff
+                    .Where(s => s.Manager == username)
                     .GroupJoin(_context.OrderHaveStaffs,
                         s => s.Id,
                         ohs => ohs.StaffId,
@@ -303,6 +305,7 @@ namespace eParty
             {
                 // First, fetch the data without null-conditional operators
                 var foodData = _context.Foods
+                    .Where(f => f.Manager == username)
                     .GroupJoin(_context.FoodNeedIngres,
                         f => f.Id,
                         fni => fni.FoodId,

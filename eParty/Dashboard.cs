@@ -82,20 +82,20 @@ namespace eParty
         private void LoadLabels()
         {
             // Tổng số đơn hàng (Total Number of Orders)
-            int totalOrders = _context.Orders.Count();
+            int totalOrders = _context.Orders.Where(o => o.Manager == username).Count();
             lbTotalNumber.Text = totalOrders.ToString();
 
             // Tổng số nhân viên (Total Staff)
-            int totalStaff = _context.Staff.Count();
+            int totalStaff = _context.Staff.Where(o => o.Manager == username).Count();
             lbTotalStaff.Text = totalStaff.ToString();
 
             // Số lượng phản hồi (Feedback - đếm số Order có Feedback không null)
-            int feedbackCount = _context.Orders.Count(o => !string.IsNullOrEmpty(o.Feedback));
+            int feedbackCount = _context.Orders.Where(o => o.Manager == username).Count(o => !string.IsNullOrEmpty(o.Feedback));
             lbFeedBack.Text = feedbackCount.ToString();
 
             // Tổng lợi nhuận (Total Profit - tính từ Order và OrderHaveFood)
             decimal totalProfit = _context.OrderHaveFoods
-                .Where(ohf => ohf.Order.Status == true) // Chỉ tính đơn hàng đã hoàn thành
+                .Where(ohf => ohf.Order.Status == true && ohf.Order.Manager == username) // Chỉ tính đơn hàng đã hoàn thành
                 .Join(_context.Foods,
                     ohf => ohf.FoodId,
                     f => f.Id,
@@ -112,7 +112,7 @@ namespace eParty
                 DateTime startDate = today.AddDays(-30); 
 
                 var revenueData = _context.Orders
-                    .Where(o => o.Status == true && o.BeginTime.HasValue && o.BeginTime.Value >= startDate && o.BeginTime.Value <= today && o.ActualCost.HasValue)
+                    .Where(o => o.Status == true && o.BeginTime.HasValue && o.BeginTime.Value >= startDate && o.BeginTime.Value <= today && o.ActualCost.HasValue && o.Manager == username)
                     .GroupBy(o => o.BeginTime.Value.Date)
                     .Select(g => new
                     {
@@ -151,6 +151,7 @@ namespace eParty
 
             // Đếm số đơn hàng theo trạng thái (Status: true/false)
             var ordersByStatus = _context.Orders
+                .Where(o => o.Manager == username)
                 .GroupBy(o => o.Status)
                 .Select(g => new
                 {
@@ -173,7 +174,7 @@ namespace eParty
 
             // Lấy dữ liệu tổng giá trị đơn hàng theo tháng từ Order và OrderHaveFood
             var profitByMonth = _context.OrderHaveFoods
-                .Where(ohf => ohf.Order.Status == true && ohf.Order.BeginTime.HasValue)
+                .Where(ohf => ohf.Order.Status == true && ohf.Order.BeginTime.HasValue && ohf.Order.Manager == username)
                 .Join(_context.Foods,
                     ohf => ohf.FoodId,
                     f => f.Id,
@@ -209,6 +210,7 @@ namespace eParty
                 DataOrderStatus.Rows.Clear();
 
                 var orders = _context.Orders
+                    .Where(o => o.Manager == username)
                     .Select(o => new
                     {
                         o.Id,

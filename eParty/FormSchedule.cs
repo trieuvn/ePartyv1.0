@@ -21,30 +21,11 @@ namespace eParty
             _context = new ePartyDbDbContext();
             _startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
 
-            // Tải danh sách Manager vào cboManager
-            LoadManagersIntoComboBox();
-
             LoadSchedule();
             RegisterButtonEvents();
             this.username = username;
         }
 
-        private void LoadManagersIntoComboBox()
-        {
-            // Thêm một mục "None" để cho phép không chọn Manager
-            cboManager.Items.Add("None");
-
-            // Tải danh sách UserName từ bảng dbo.Manager
-            var managers = _context.Managers
-                .Select(m => m.UserName)
-                .ToList();
-
-            // Thêm các UserName vào cboManager
-            cboManager.Items.AddRange(managers.ToArray());
-
-            // Chọn mục đầu tiên ("None") làm mặc định
-            cboManager.SelectedIndex = 0;
-        }
 
         private void RegisterButtonEvents()
         {
@@ -81,7 +62,7 @@ namespace eParty
             ClearScheduleButtons();
 
             var orders = _context.Orders
-                .Where(o => o.BeginTime >= _startOfWeek && o.BeginTime <= _startOfWeek.AddDays(6).AddHours(23).AddMinutes(59))
+                .Where(o => o.BeginTime >= _startOfWeek && o.BeginTime <= _startOfWeek.AddDays(6).AddHours(23).AddMinutes(59) && o.Manager == username)
                 .ToList();
 
             foreach (var order in orders)
@@ -429,6 +410,11 @@ namespace eParty
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cot2dong1_Click(object sender, EventArgs e)
         {
 
         }

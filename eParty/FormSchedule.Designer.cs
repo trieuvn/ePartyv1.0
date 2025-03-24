@@ -1373,6 +1373,7 @@
             cot2dong1.TabIndex = 1;
             cot2dong1.TextColor = Color.White;
             cot2dong1.UseVisualStyleBackColor = false;
+            cot2dong1.Click += cot2dong1_Click;
             // 
             // panel17
             // 
