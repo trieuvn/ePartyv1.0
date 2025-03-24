@@ -14,7 +14,8 @@ eParty is a digital catering and event management system designed to streamline 
 
 ## Key Features
 - Dashboard: Provides an overview of ongoing events, orders, and resource status.
-- ![image](https://github.com/user-attachments/assets/bcb6cedc-2b18-4c16-a1bf-e3147fdd678f)
+- ![image](https://github.com/user-attachments/assets/64755d29-aadc-4ef0-8fc1-1e65d178f86f)
+
 
 - Order Schedule: Manage and track event orders with ease.
 - ![image](https://github.com/user-attachments/assets/2c87982c-69a2-4835-afe7-75b097415c70)
