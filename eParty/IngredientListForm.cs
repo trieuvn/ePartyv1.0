@@ -157,9 +157,7 @@ namespace eParty
         }
 
         private void LoadManagersIntoComboBox()
-        {
-            cboManager.Items.Clear();
-            cboManager.Items.Add("None");
+        {           
             try
             {
                 var managers = _context.Managers
@@ -169,20 +167,12 @@ namespace eParty
                 {
                     MessageBox.Show("No managers found in the database. Please add a manager.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                cboManager.Items.AddRange(managers.ToArray());
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading managers: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (cboManager.Items.Count > 0)
-            {
-                cboManager.SelectedIndex = 0;
-            }
-            else
-            {
-                cboManager.SelectedIndex = -1;
-            }
+            
         }
 
         private void LoadIngredientData(string searchText = "")
@@ -289,7 +279,6 @@ namespace eParty
                         txtCost.ForeColor = System.Drawing.Color.Black;
                         txtDescription.Text = _selectedIngredient.Description ?? "Description";
                         txtDescription.ForeColor = System.Drawing.Color.Black;
-                        cboManager.SelectedItem = _selectedIngredient.Manager ?? "None";
                     }
                     else
                     {
@@ -325,7 +314,7 @@ namespace eParty
                     Unit = txtUnit.Text.Trim(),
                     Cost = int.Parse(txtCost.Text.Trim()),
                     Description = txtDescription.Text.Trim(),
-                    Manager = cboManager.SelectedItem?.ToString() == "None" ? null : cboManager.SelectedItem?.ToString()
+                    Manager = username
                 };
 
                 _context.Ingredients.Add(newIngredient);
@@ -357,7 +346,7 @@ namespace eParty
                 _selectedIngredient.Unit = txtUnit.Text.Trim();
                 _selectedIngredient.Cost = int.Parse(txtCost.Text.Trim());
                 _selectedIngredient.Description = txtDescription.Text.Trim();
-                _selectedIngredient.Manager = cboManager.SelectedItem?.ToString() == "None" ? null : cboManager.SelectedItem?.ToString();
+                _selectedIngredient.Manager = username;
 
                 _context.SaveChanges();
 
@@ -458,14 +447,7 @@ namespace eParty
             txtCost.ForeColor = System.Drawing.Color.Gray;
             txtDescription.Text = "Description";
             txtDescription.ForeColor = System.Drawing.Color.Gray;
-            if (cboManager.Items.Count > 0)
-            {
-                cboManager.SelectedIndex = 0;
-            }
-            else
-            {
-                cboManager.SelectedIndex = -1;
-            }
+            
             _selectedIngredient = null;
             dataGridIngre.ClearSelection();
         }
@@ -488,6 +470,11 @@ namespace eParty
         }
 
         private void dataGridIngre_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
 
         }

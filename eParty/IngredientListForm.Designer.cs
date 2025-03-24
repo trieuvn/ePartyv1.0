@@ -33,11 +33,8 @@
             panel1 = new Panel();
             panel4 = new Panel();
             btnUpdate = new ArtanButton();
-            cboManager = new ComboBox();
             btnAdd = new ArtanButton();
             btnDelete = new ArtanButton();
-            Manager = new TextBox();
-            label6 = new Label();
             txtDescription = new TextBox();
             txtCost = new TextBox();
             txtUnit = new TextBox();
@@ -59,7 +56,6 @@
             Amount = new DataGridViewTextBoxColumn();
             Unit = new DataGridViewTextBoxColumn();
             Cost = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -86,11 +82,8 @@
             // 
             panel4.BackColor = Color.FromArgb(227, 242, 253);
             panel4.Controls.Add(btnUpdate);
-            panel4.Controls.Add(cboManager);
             panel4.Controls.Add(btnAdd);
             panel4.Controls.Add(btnDelete);
-            panel4.Controls.Add(Manager);
-            panel4.Controls.Add(label6);
             panel4.Controls.Add(txtDescription);
             panel4.Controls.Add(txtCost);
             panel4.Controls.Add(txtUnit);
@@ -127,17 +120,6 @@
             btnUpdate.TextColor = Color.White;
             btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // cboManager
-            // 
-            cboManager.FlatStyle = FlatStyle.Flat;
-            cboManager.Font = new Font("Segoe UI", 8F);
-            cboManager.FormattingEnabled = true;
-            cboManager.Location = new Point(93, 309);
-            cboManager.Margin = new Padding(2);
-            cboManager.Name = "cboManager";
-            cboManager.Size = new Size(109, 21);
-            cboManager.TabIndex = 51;
-            // 
             // btnAdd
             // 
             btnAdd.BackColor = Color.FromArgb(42, 128, 182);
@@ -156,6 +138,7 @@
             btnAdd.Text = "Add";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click_1;
             // 
             // btnDelete
             // 
@@ -175,32 +158,6 @@
             btnDelete.Text = "Delete";
             btnDelete.TextColor = Color.White;
             btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // Manager
-            // 
-            Manager.BackColor = Color.FromArgb(227, 242, 253);
-            Manager.BorderStyle = BorderStyle.None;
-            Manager.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Manager.Location = new Point(18, 304);
-            Manager.Margin = new Padding(4, 3, 4, 3);
-            Manager.Name = "Manager";
-            Manager.Size = new Size(181, 22);
-            Manager.TabIndex = 45;
-            Manager.Text = "Manager";
-            Manager.UseWaitCursor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(41, 128, 182);
-            label6.Location = new Point(18, 320);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(187, 13);
-            label6.TabIndex = 46;
-            label6.Text = "____________________________________";
-            label6.UseWaitCursor = true;
             // 
             // txtDescription
             // 
@@ -441,7 +398,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridIngre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridIngre.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridIngre.Columns.AddRange(new DataGridViewColumn[] { Order, Amount, Unit, Cost, Description });
+            dataGridIngre.Columns.AddRange(new DataGridViewColumn[] { Order, Amount, Unit, Cost });
             dataGridIngre.Dock = DockStyle.Fill;
             dataGridIngre.EnableHeadersVisualStyles = false;
             dataGridIngre.GridColor = Color.LightGray;
@@ -490,14 +447,6 @@
             Cost.Name = "Cost";
             Cost.ReadOnly = true;
             // 
-            // Description
-            // 
-            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Description.HeaderText = "Manager";
-            Description.MinimumWidth = 10;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            // 
             // IngredientListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -537,8 +486,6 @@
         private Panel panel4;
         private ArtanButton btnAdd;
         private ArtanButton btnDelete;
-        private TextBox Manager;
-        private Label label6;
         private TextBox txtDescription;
         private TextBox txtCost;
         private TextBox txtUnit;
@@ -549,12 +496,10 @@
         private Label label2;
         private Label label3;
         private ArtanButton artanButton2;
+        private ArtanButton btnUpdate;
         private DataGridViewTextBoxColumn Order;
         private DataGridViewTextBoxColumn Amount;
         private DataGridViewTextBoxColumn Unit;
         private DataGridViewTextBoxColumn Cost;
-        private DataGridViewTextBoxColumn Description;
-        private ComboBox cboManager;
-        private ArtanButton btnUpdate;
     }
 }
