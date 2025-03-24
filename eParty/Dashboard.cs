@@ -10,8 +10,17 @@ namespace eParty
 {
     public partial class Dashboard : Form
     {
+        public struct RevenueByDate
+        {
+            public string Date { get; set; }
+            public decimal TotalAmount { get; set; }
+        }
+
+
         private ePartyDbDbContext _context;
         public string username;
+        public List<RevenueByDate> GrossRevenueList { get; private set; }
+
         public Dashboard(string username)
         {
             this.username = username;   
@@ -99,111 +108,42 @@ namespace eParty
         {
             try
             {
-                // Xóa dữ liệu cũ
-                chartAnnual.Series.Clear();
-                chartAnnual.ChartAreas[0].AxisX.Title = "Month/Year";
-                chartAnnual.ChartAreas[0].AxisY.Title = "Total Profit (VND)";
-                chartAnnual.ChartAreas[0].AxisY.LabelStyle.Format = "#,##0 VND";
+                DateTime today = DateTime.Now;
+                DateTime startDate = today.AddDays(-30); 
 
-                // Tạo series cho Total Profit
-                Series profitSeries = new Series("Total Profit")
-                {
-                    ChartType = SeriesChartType.Column, // Sử dụng cột để dễ nhìn hơn
-                    Color = Color.DodgerBlue,
-                    IsValueShownAsLabel = true, // Hiển thị giá trị trên cột
-                    LabelFormat = "#,##0 VND"
-                };
-
-                // Tạo series cho số lượng đơn hàng (để so sánh)
-                Series orderCountSeries = new Series("Order Count")
-                {
-                    ChartType = SeriesChartType.Line, // Dùng đường để phân biệt với cột
-                    Color = Color.Orange,
-                    YAxisType = AxisType.Secondary, // Sử dụng trục Y phụ
-                    MarkerStyle = MarkerStyle.Circle,
-                    MarkerSize = 8
-                };
-
-                // Thêm các series vào chart
-                chartAnnual.Series.Add(profitSeries);
-                chartAnnual.Series.Add(orderCountSeries);
-
-                // Tạo trục Y phụ cho số lượng đơn hàng
-                chartAnnual.ChartAreas[0].AxisY2.Title = "Number of Orders";
-                chartAnnual.ChartAreas[0].AxisY2.LabelStyle.Format = "0";
-                chartAnnual.ChartAreas[0].AxisY2.Enabled = AxisEnabled.True;
-
-                // Lấy dữ liệu tổng giá trị đơn hàng và số lượng đơn hàng theo tháng từ Order và OrderHaveFood
-                var profitByMonth = _context.OrderHaveFoods
-                    .Where(ohf => ohf.Order.Status == true && ohf.Order.BeginTime.HasValue)
-                    .Join(_context.Foods,
-                        ohf => ohf.FoodId,
-                        f => f.Id,
-                        (ohf, f) => new { ohf, f })
-                    .GroupBy(x => new { x.ohf.Order.BeginTime.Value.Year, x.ohf.Order.BeginTime.Value.Month })
+                var revenueData = _context.Orders
+                    .Where(o => o.Status == true && o.BeginTime.HasValue && o.BeginTime.Value >= startDate && o.BeginTime.Value <= today && o.ActualCost.HasValue)
+                    .GroupBy(o => o.BeginTime.Value.Date)
                     .Select(g => new
                     {
-                        Month = g.Key.Month,
-                        Year = g.Key.Year,
-                        TotalProfit = g.Sum(x => x.ohf.Amount * x.f.Cost),
-                        OrderCount = g.Select(x => x.ohf.OrderId).Distinct().Count(), // Đếm số đơn hàng duy nhất
-                        OrderIds = g.Select(x => x.ohf.OrderId).Distinct().ToList() // Lưu danh sách OrderId để tooltip
+                        Date = g.Key, 
+                        TotalAmount = g.Sum(o => o.ActualCost.Value)
                     })
-                    .OrderBy(g => g.Year).ThenBy(g => g.Month)
-                    .ToList();
+                    .ToList() 
+                    .Select(g => new RevenueByDate
+                    {
+                        Date = g.Date.ToString("dd MMM"), 
+                        TotalAmount = g.TotalAmount
+                    })
+                    .OrderBy(r => r.Date)
+                    .ToList();            
 
-                // Thêm dữ liệu vào chart
-                foreach (var item in profitByMonth)
+                GrossRevenueList = revenueData;
+
+                int index = 0;
+                foreach (var item in GrossRevenueList)
                 {
-                    string monthYearLabel = $"{item.Month}/{item.Year}";
-
-                    // Thêm điểm cho Total Profit
-                    int profitPointIndex = profitSeries.Points.AddXY(monthYearLabel, item.TotalProfit);
-                    DataPoint profitPoint = profitSeries.Points[profitPointIndex];
-
-                    // Thêm điểm cho Order Count
-                    int orderPointIndex = orderCountSeries.Points.AddXY(monthYearLabel, item.OrderCount);
-                    DataPoint orderPoint = orderCountSeries.Points[orderPointIndex];
-
-                    // Tính lợi nhuận trung bình mỗi đơn hàng
-                    decimal avgProfitPerOrder = (decimal)(item.OrderCount > 0 ? item.TotalProfit / item.OrderCount : 0);
-
-                    // Thêm tooltip chi tiết cho điểm Total Profit
-                    profitPoint.ToolTip = $"Month/Year: {monthYearLabel}\n" +
-                                          $"Total Profit: {item.TotalProfit:#,##0 VND}\n" +
-                                          $"Number of Orders: {item.OrderCount}\n" +
-                                          $"Average Profit per Order: {avgProfitPerOrder:#,##0 VND}\n" +
-                                          $"Order IDs: {string.Join(", ", item.OrderIds)}";
-
-                    // Thêm tooltip cho điểm Order Count
-                    orderPoint.ToolTip = $"Month/Year: {monthYearLabel}\n" +
-                                         $"Number of Orders: {item.OrderCount}\n" +
-                                         $"Total Profit: {item.TotalProfit:#,##0 VND}\n" +
-                                         $"Average Profit per Order: {avgProfitPerOrder:#,##0 VND}";
+                    int pointIndex = chartAnnual.Series[0].Points.AddXY(index, item.TotalAmount);
+                    chartAnnual.Series[0].Points[pointIndex].AxisLabel = item.Date; 
+                    index++;
                 }
-
-                // Tùy chỉnh giao diện chart
-                chartAnnual.ChartAreas[0].AxisX.Interval = 1; // Đảm bảo hiển thị tất cả các nhãn
-                chartAnnual.ChartAreas[0].AxisX.LabelStyle.Angle = -45; // Xoay nhãn để dễ đọc
-                chartAnnual.ChartAreas[0].AxisX.MajorGrid.Enabled = false; // Tắt lưới trục X
-                chartAnnual.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray; // Lưới trục Y nhẹ hơn
-                chartAnnual.ChartAreas[0].AxisY2.MajorGrid.Enabled = false; // Tắt lưới trục Y phụ
-
-                // Thêm legend (chú thích)
-                chartAnnual.Legends.Clear();
-                Legend legend = new Legend
-                {
-                    Docking = Docking.Top,
-                    Alignment = StringAlignment.Center
-                };
-                chartAnnual.Legends.Add(legend);
+                                     
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading Annual Growth chart: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error loading chart: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void LoadChartTotalOrder()
         {
             // Xóa dữ liệu cũ

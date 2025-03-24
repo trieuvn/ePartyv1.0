@@ -49,6 +49,7 @@ namespace eParty
             lblName = new Label();
             BtnOut = new ArtanButton();
             panel1 = new Panel();
+            pbTitle = new PictureBox();
             BtnNavbar = new ArtanButton();
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
@@ -65,15 +66,14 @@ namespace eParty
             rjDropdownMenu2 = new RJDropdownMenu(components);
             createOrderToolStripMenuItem = new ToolStripMenuItem();
             orderDetailToolStripMenuItem = new ToolStripMenuItem();
-            pbTitle = new PictureBox();
             PnlNavbar.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pBDefault).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbTitle).BeginInit();
             panel3.SuspendLayout();
             rjDropdownMenu1.SuspendLayout();
             rjDropdownMenu2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbTitle).BeginInit();
             SuspendLayout();
             // 
             // PnlNavbar
@@ -257,6 +257,16 @@ namespace eParty
             panel1.Size = new Size(275, 137);
             panel1.TabIndex = 0;
             // 
+            // pbTitle
+            // 
+            pbTitle.Image = (Image)resources.GetObject("pbTitle.Image");
+            pbTitle.Location = new Point(3, 23);
+            pbTitle.Name = "pbTitle";
+            pbTitle.Size = new Size(234, 86);
+            pbTitle.SizeMode = PictureBoxSizeMode.AutoSize;
+            pbTitle.TabIndex = 7;
+            pbTitle.TabStop = false;
+            // 
             // BtnNavbar
             // 
             BtnNavbar.BackColor = Color.White;
@@ -412,16 +422,6 @@ namespace eParty
             orderDetailToolStripMenuItem.Size = new Size(141, 22);
             orderDetailToolStripMenuItem.Text = "Order Detail";
             // 
-            // pbTitle
-            // 
-            pbTitle.Image = (Image)resources.GetObject("pbTitle.Image");
-            pbTitle.Location = new Point(0, 14);
-            pbTitle.Name = "pbTitle";
-            pbTitle.Size = new Size(234, 117);
-            pbTitle.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbTitle.TabIndex = 7;
-            pbTitle.TabStop = false;
-            // 
             // MenuForm
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -444,10 +444,11 @@ namespace eParty
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pBDefault).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             panel3.ResumeLayout(false);
             rjDropdownMenu1.ResumeLayout(false);
             rjDropdownMenu2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             ResumeLayout(false);
         }
 
