@@ -24,7 +24,7 @@ namespace eParty
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-        public string uniqueusername="not null";
+        public string uniqueusername = "not null";
         public MenuForm(string username)
         {
             this.uniqueusername = username;
@@ -326,6 +326,11 @@ namespace eParty
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pbTitle_Click(object sender, EventArgs e)
         {
 
         }

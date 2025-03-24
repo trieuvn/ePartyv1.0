@@ -50,7 +50,6 @@ namespace eParty
             BtnOut = new ArtanButton();
             panel1 = new Panel();
             BtnNavbar = new ArtanButton();
-            pbTitle = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
             panel3 = new Panel();
@@ -66,14 +65,15 @@ namespace eParty
             rjDropdownMenu2 = new RJDropdownMenu(components);
             createOrderToolStripMenuItem = new ToolStripMenuItem();
             orderDetailToolStripMenuItem = new ToolStripMenuItem();
+            pbTitle = new PictureBox();
             PnlNavbar.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pBDefault).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbTitle).BeginInit();
             panel3.SuspendLayout();
             rjDropdownMenu1.SuspendLayout();
             rjDropdownMenu2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbTitle).BeginInit();
             SuspendLayout();
             // 
             // PnlNavbar
@@ -248,8 +248,8 @@ namespace eParty
             // 
             // panel1
             // 
-            panel1.Controls.Add(BtnNavbar);
             panel1.Controls.Add(pbTitle);
+            panel1.Controls.Add(BtnNavbar);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(0);
@@ -276,17 +276,6 @@ namespace eParty
             BtnNavbar.TextColor = Color.FromArgb(69, 69, 74);
             BtnNavbar.UseVisualStyleBackColor = false;
             BtnNavbar.Click += BtnNavbar_Click;
-            // 
-            // pbTitle
-            // 
-            pbTitle.Dock = DockStyle.Left;
-            pbTitle.Image = (Image)resources.GetObject("pbTitle.Image");
-            pbTitle.Location = new Point(0, 0);
-            pbTitle.Name = "pbTitle";
-            pbTitle.Size = new Size(232, 137);
-            pbTitle.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbTitle.TabIndex = 3;
-            pbTitle.TabStop = false;
             // 
             // timer1
             // 
@@ -423,6 +412,16 @@ namespace eParty
             orderDetailToolStripMenuItem.Size = new Size(141, 22);
             orderDetailToolStripMenuItem.Text = "Order Detail";
             // 
+            // pbTitle
+            // 
+            pbTitle.Image = (Image)resources.GetObject("pbTitle.Image");
+            pbTitle.Location = new Point(0, 14);
+            pbTitle.Name = "pbTitle";
+            pbTitle.Size = new Size(234, 117);
+            pbTitle.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbTitle.TabIndex = 7;
+            pbTitle.TabStop = false;
+            // 
             // MenuForm
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -445,10 +444,10 @@ namespace eParty
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pBDefault).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             panel3.ResumeLayout(false);
             rjDropdownMenu1.ResumeLayout(false);
             rjDropdownMenu2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             ResumeLayout(false);
         }
 
@@ -466,7 +465,6 @@ namespace eParty
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private ArtanButton BtnNavbar;
-        private System.Windows.Forms.PictureBox pbTitle;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panel3;
@@ -482,6 +480,7 @@ namespace eParty
         private RJDropdownMenu rjDropdownMenu2;
         private ToolStripMenuItem createOrderToolStripMenuItem;
         private ToolStripMenuItem orderDetailToolStripMenuItem;
+        private PictureBox pbTitle;
     }
     #endregion
 }

@@ -5,6 +5,9 @@
     <Compile Update="ArtanButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="AuthorizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,10 +20,16 @@
     <Compile Update="ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="IngredientListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="IngredientProvider.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">
@@ -36,6 +45,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="StaffListForm.cs">

@@ -218,3 +218,15 @@ D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.Properties.Resourc
 D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.StaffListForm.resources
 D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\WinForms.DataVisualization.Utilities.dll
 D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\WinForms.DataVisualization.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\eParty.dll.config
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\ClosedXML.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\ClosedXML.Parser.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\DocumentFormat.OpenXml.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\DocumentFormat.OpenXml.Framework.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\ExcelNumberFormat.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\RBush.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\SixLabors.Fonts.dll
+D:\aProjectInit\eParty\eParty\bin\Debug\net8.0-windows\System.IO.Packaging.dll
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.AuthorizationForm.resources
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.FormPrint.resources
+D:\aProjectInit\eParty\eParty\obj\Debug\net8.0-windows\eParty.IngredientProvider.resources
