@@ -31,11 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffListForm));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel3 = new Panel();
-            cboManager = new ComboBox();
             btnUpdate = new ArtanButton();
             btnAdd = new ArtanButton();
             btnDelete = new ArtanButton();
-            Manager = new TextBox();
             txtCost = new TextBox();
             label6 = new Label();
             txtLocation = new TextBox();
@@ -47,7 +45,6 @@
             label4 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label7 = new Label();
             panel1 = new Panel();
             artanPanel3 = new ArtanPanel();
             txtSearch = new TextBox();
@@ -59,7 +56,6 @@
             Phone = new DataGridViewTextBoxColumn();
             Location = new DataGridViewTextBoxColumn();
             Cost = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -71,11 +67,9 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(227, 242, 253);
-            panel3.Controls.Add(cboManager);
             panel3.Controls.Add(btnUpdate);
             panel3.Controls.Add(btnAdd);
             panel3.Controls.Add(btnDelete);
-            panel3.Controls.Add(Manager);
             panel3.Controls.Add(txtCost);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(txtLocation);
@@ -87,7 +81,6 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(label7);
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(556, 0);
             panel3.Margin = new Padding(2);
@@ -95,17 +88,6 @@
             panel3.Size = new Size(201, 412);
             panel3.TabIndex = 22;
             panel3.Paint += panel3_Paint;
-            // 
-            // cboManager
-            // 
-            cboManager.FlatStyle = FlatStyle.Flat;
-            cboManager.Font = new Font("Segoe UI", 8F);
-            cboManager.FormattingEnabled = true;
-            cboManager.Location = new Point(93, 341);
-            cboManager.Margin = new Padding(2);
-            cboManager.Name = "cboManager";
-            cboManager.Size = new Size(109, 21);
-            cboManager.TabIndex = 50;
             // 
             // btnUpdate
             // 
@@ -144,6 +126,7 @@
             btnAdd.Text = "Add";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click_1;
             // 
             // btnDelete
             // 
@@ -163,19 +146,6 @@
             btnDelete.Text = "Delete";
             btnDelete.TextColor = Color.White;
             btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // Manager
-            // 
-            Manager.BackColor = Color.FromArgb(227, 242, 253);
-            Manager.BorderStyle = BorderStyle.None;
-            Manager.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Manager.Location = new Point(18, 337);
-            Manager.Margin = new Padding(4, 3, 4, 3);
-            Manager.Name = "Manager";
-            Manager.Size = new Size(181, 22);
-            Manager.TabIndex = 42;
-            Manager.Text = "Manager";
-            Manager.UseWaitCursor = true;
             // 
             // txtCost
             // 
@@ -318,19 +288,6 @@
             label3.Text = "____________________________________";
             label3.UseWaitCursor = true;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(41, 128, 182);
-            label7.Location = new Point(18, 351);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(187, 13);
-            label7.TabIndex = 43;
-            label7.Text = "____________________________________";
-            label7.UseWaitCursor = true;
-            // 
             // panel1
             // 
             panel1.Controls.Add(artanPanel3);
@@ -419,7 +376,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridStaff.Columns.AddRange(new DataGridViewColumn[] { Order, Role, Phone, Location, Cost, Description });
+            dataGridStaff.Columns.AddRange(new DataGridViewColumn[] { Order, Role, Phone, Location, Cost });
             dataGridStaff.Dock = DockStyle.Fill;
             dataGridStaff.EnableHeadersVisualStyles = false;
             dataGridStaff.GridColor = Color.LightGray;
@@ -475,14 +432,6 @@
             Cost.Name = "Cost";
             Cost.ReadOnly = true;
             // 
-            // Description
-            // 
-            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Description.HeaderText = "Manager";
-            Description.MinimumWidth = 10;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            // 
             // StaffListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -520,7 +469,6 @@
         private Label label4;
         private Label label2;
         private Label label3;
-        private Label label7;
         private TextBox txtCost;
         private Label label6;
         private ArtanButton btnAdd;
@@ -532,13 +480,10 @@
         private ArtanButton artanButton4;
         private DataGridView dataGridStaff;
         private ArtanButton btnUpdate;
-        private ComboBox cboManager;
-        private TextBox Manager;
         private DataGridViewTextBoxColumn Order;
         private DataGridViewTextBoxColumn Role;
         private DataGridViewTextBoxColumn Phone;
         private DataGridViewTextBoxColumn Location;
         private DataGridViewTextBoxColumn Cost;
-        private DataGridViewTextBoxColumn Description;
     }
 }

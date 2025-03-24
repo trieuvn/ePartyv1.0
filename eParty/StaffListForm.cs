@@ -23,7 +23,6 @@ namespace eParty
 
         private void StaffListForm_Load(object sender, EventArgs e)
         {
-            LoadManagersIntoComboBox();
             LoadStaffData();
             ClearForm();
         }
@@ -35,7 +34,6 @@ namespace eParty
             dataGridStaff.Columns["Phone"].HeaderText = "Phone";
             dataGridStaff.Columns["Location"].HeaderText = "Location";
             dataGridStaff.Columns["Cost"].HeaderText = "Cost";
-            dataGridStaff.Columns["Description"].HeaderText = "Manager";
 
             dataGridStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridStaff.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -71,16 +69,6 @@ namespace eParty
             };
         }
 
-        private void LoadManagersIntoComboBox()
-        {
-            cboManager.Items.Add("None");
-            var managers = _context.Managers
-                .Select(m => m.UserName)
-                .ToList();
-            cboManager.Items.AddRange(managers.ToArray());
-            cboManager.SelectedIndex = 0;
-        }
-
         private void LoadStaffData(string searchText = "")
         {
             try
@@ -91,7 +79,7 @@ namespace eParty
 
                 if (!string.IsNullOrWhiteSpace(searchText) && searchText != "Search by staff name...")
                 {
-                    staffQuery = staffQuery.Where(s => s.FullName.Contains(searchText));
+                    staffQuery = staffQuery.Where(s => s.FullName.Contains(searchText)).Where(f => f.Manager == username);
                 }
 
                 var staffList = staffQuery
@@ -105,7 +93,7 @@ namespace eParty
                         s.Cost,
                         s.Manager
                     })
-                    .ToList();
+                    .ToList().Where(f => f.Manager == username);
 
                 foreach (var staff in staffList)
                 {
@@ -114,8 +102,7 @@ namespace eParty
                         staff.Role,
                         staff.PhoneNumber,
                         staff.Location,
-                        staff.Cost,
-                        staff.Manager ?? "None"
+                        staff.Cost
                     );
                 }
 
@@ -143,7 +130,6 @@ namespace eParty
                     txtPhoneNumber.Text = _selectedStaff.PhoneNumber ?? "";
                     txtLocation.Text = _selectedStaff.Location ?? "";
                     txtCost.Text = _selectedStaff.Cost?.ToString() ?? "";
-                    cboManager.SelectedItem = _selectedStaff.Manager ?? "None";
                 }
             }
         }
@@ -166,7 +152,7 @@ namespace eParty
                     PhoneNumber = txtPhoneNumber.Text.Trim(),
                     Location = txtLocation.Text.Trim(),
                     Cost = int.Parse(txtCost.Text.Trim()),
-                    Manager = cboManager.SelectedItem?.ToString() == "None" ? null : cboManager.SelectedItem?.ToString()
+                    Manager = username
                 };
 
                 _context.Staff.Add(newStaff);
@@ -199,7 +185,7 @@ namespace eParty
                 _selectedStaff.PhoneNumber = txtPhoneNumber.Text.Trim();
                 _selectedStaff.Location = txtLocation.Text.Trim();
                 _selectedStaff.Cost = int.Parse(txtCost.Text.Trim());
-                _selectedStaff.Manager = cboManager.SelectedItem?.ToString() == "None" ? null : cboManager.SelectedItem?.ToString();
+                _selectedStaff.Manager = username;
 
                 _context.SaveChanges();
 
@@ -308,12 +294,16 @@ namespace eParty
             txtPhoneNumber.Text = "Phone number";
             txtLocation.Text = "Location";
             txtCost.Text = "Cost";
-            cboManager.SelectedItem = "None";
             _selectedStaff = null;
             dataGridStaff.ClearSelection();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
 
         }

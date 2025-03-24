@@ -7,6 +7,11 @@ namespace BOLayer.Repository;
 
 public partial class ePartyDbDbContext : DbContext
 {
+    public string manager;
+    public ePartyDbDbContext(string manager)
+    {
+        this.manager = manager; 
+    }
     public ePartyDbDbContext()
     {
     }

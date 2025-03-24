@@ -90,7 +90,7 @@
             artanPanel2.GradientBottomColor = Color.FromArgb(227, 242, 253);
             artanPanel2.GradientTopColor = Color.FromArgb(227, 242, 253);
             artanPanel2.Location = new Point(649, 0);
-            artanPanel2.Margin = new Padding(2);
+            artanPanel2.Margin = new Padding(2, 2, 2, 2);
             artanPanel2.Name = "artanPanel2";
             artanPanel2.Size = new Size(243, 368);
             artanPanel2.TabIndex = 1;
@@ -107,7 +107,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.ForeColor = Color.White;
             btnDelete.Location = new Point(170, 308);
-            btnDelete.Margin = new Padding(2);
+            btnDelete.Margin = new Padding(2, 2, 2, 2);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(64, 29);
             btnDelete.TabIndex = 48;
@@ -126,7 +126,7 @@
             btnModify.FlatStyle = FlatStyle.Flat;
             btnModify.ForeColor = Color.White;
             btnModify.Location = new Point(2, 308);
-            btnModify.Margin = new Padding(2);
+            btnModify.Margin = new Padding(2, 2, 2, 2);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(78, 29);
             btnModify.TabIndex = 19;
@@ -145,19 +145,20 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = Color.White;
             btnAdd.Location = new Point(83, 308);
-            btnAdd.Margin = new Padding(2);
+            btnAdd.Margin = new Padding(2, 2, 2, 2);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(78, 29);
             btnAdd.TabIndex = 18;
             btnAdd.Text = "Add Food";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click_1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(57, 37);
-            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(130, 93);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -174,7 +175,7 @@
             txtExpen.Name = "txtExpen";
             txtExpen.Size = new Size(181, 22);
             txtExpen.TabIndex = 15;
-            txtExpen.Text = "Expense";
+            txtExpen.Text = "Cost";
             txtExpen.UseWaitCursor = true;
             // 
             // label5
@@ -200,7 +201,7 @@
             txtMeasure.Name = "txtMeasure";
             txtMeasure.Size = new Size(181, 22);
             txtMeasure.TabIndex = 13;
-            txtMeasure.Text = "Measurement";
+            txtMeasure.Text = "Unit";
             txtMeasure.UseWaitCursor = true;
             // 
             // txtStock
@@ -213,7 +214,7 @@
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(181, 22);
             txtStock.TabIndex = 11;
-            txtStock.Text = "Stock";
+            txtStock.Text = "Amount";
             txtStock.UseWaitCursor = true;
             // 
             // label3
@@ -239,7 +240,7 @@
             txtNote.Name = "txtNote";
             txtNote.Size = new Size(181, 22);
             txtNote.TabIndex = 9;
-            txtNote.Text = "Notes";
+            txtNote.Text = "Description";
             txtNote.UseWaitCursor = true;
             // 
             // txtFoodName
@@ -313,7 +314,7 @@
             panel1.Controls.Add(artanPanel3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(649, 35);
             panel1.TabIndex = 2;
@@ -330,7 +331,7 @@
             artanPanel3.GradientBottomColor = Color.Silver;
             artanPanel3.GradientTopColor = Color.Silver;
             artanPanel3.Location = new Point(12, 6);
-            artanPanel3.Margin = new Padding(2);
+            artanPanel3.Margin = new Padding(2, 2, 2, 2);
             artanPanel3.Name = "artanPanel3";
             artanPanel3.Size = new Size(229, 26);
             artanPanel3.TabIndex = 21;
@@ -362,7 +363,7 @@
             artanButton4.ForeColor = Color.White;
             artanButton4.Image = (Image)resources.GetObject("artanButton4.Image");
             artanButton4.Location = new Point(200, 0);
-            artanButton4.Margin = new Padding(2);
+            artanButton4.Margin = new Padding(2, 2, 2, 2);
             artanButton4.Name = "artanButton4";
             artanButton4.Size = new Size(29, 26);
             artanButton4.TabIndex = 17;
@@ -374,7 +375,7 @@
             panel2.Controls.Add(dataGridFood);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 35);
-            panel2.Margin = new Padding(2);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
             panel2.Size = new Size(649, 333);
             panel2.TabIndex = 3;
@@ -462,7 +463,7 @@
             Controls.Add(panel1);
             Controls.Add(artanPanel2);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "FoodListForm";
             Text = "FoodListForm";
             Load += FoodListForm_Load;

@@ -83,14 +83,14 @@ namespace eParty
             // Xử lý placeholder cho các trường nhập liệu
             txtFoodName.Enter += (s, e) => ClearPlaceholder(txtFoodName, "Food Name");
             txtFoodName.Leave += (s, e) => SetPlaceholder(txtFoodName, "Food Name");
-            txtNote.Enter += (s, e) => ClearPlaceholder(txtNote, "Notes");
-            txtNote.Leave += (s, e) => SetPlaceholder(txtNote, "Notes");
-            txtStock.Enter += (s, e) => ClearPlaceholder(txtStock, "Stock");
-            txtStock.Leave += (s, e) => SetPlaceholder(txtStock, "Stock");
-            txtMeasure.Enter += (s, e) => ClearPlaceholder(txtMeasure, "Measurement");
-            txtMeasure.Leave += (s, e) => SetPlaceholder(txtMeasure, "Measurement");
-            txtExpen.Enter += (s, e) => ClearPlaceholder(txtExpen, "Expense");
-            txtExpen.Leave += (s, e) => SetPlaceholder(txtExpen, "Expense");
+            txtNote.Enter += (s, e) => ClearPlaceholder(txtNote, "Description");
+            txtNote.Leave += (s, e) => SetPlaceholder(txtNote, "Description");
+            txtStock.Enter += (s, e) => ClearPlaceholder(txtStock, "Amount");
+            txtStock.Leave += (s, e) => SetPlaceholder(txtStock, "Amount");
+            txtMeasure.Enter += (s, e) => ClearPlaceholder(txtMeasure, "Unit");
+            txtMeasure.Leave += (s, e) => SetPlaceholder(txtMeasure, "Unit");
+            txtExpen.Enter += (s, e) => ClearPlaceholder(txtExpen, "Cost");
+            txtExpen.Leave += (s, e) => SetPlaceholder(txtExpen, "Cost");
         }
 
         private void ClearPlaceholder(TextBox textBox, string placeholder)
@@ -121,7 +121,7 @@ namespace eParty
 
                 if (!string.IsNullOrWhiteSpace(searchText) && searchText != "Search by food name...")
                 {
-                    foodQuery = foodQuery.Where(f => f.Name.Contains(searchText));
+                    foodQuery = foodQuery.Where(f => f.Name.Contains(searchText)).Where(f => f.Manager == username);
                 }
 
                 var foodList = foodQuery
@@ -134,10 +134,10 @@ namespace eParty
                         f.Cost,
                         f.Description,
                         // f.Image,
-                        // f.Manager,
+                        f.Manager,
                         // f.Ingredients
                     })
-                    .ToList();
+                    .ToList().Where(f => f.Manager == username);
 
                 foreach (var food in foodList)
                 {
@@ -177,13 +177,13 @@ namespace eParty
                     {
                         txtFoodName.Text = _selectedFood.Name ?? "Food Name";
                         txtFoodName.ForeColor = System.Drawing.Color.Black;
-                        txtNote.Text = _selectedFood.Description ?? "Notes";
+                        txtNote.Text = _selectedFood.Description ?? "Description";
                         txtNote.ForeColor = System.Drawing.Color.Black;
-                        txtStock.Text = _selectedFood.Amount?.ToString() ?? "Stock";
+                        txtStock.Text = _selectedFood.Amount?.ToString() ?? "Amount";
                         txtStock.ForeColor = System.Drawing.Color.Black;
-                        txtMeasure.Text = _selectedFood.Unit ?? "Measurement";
+                        txtMeasure.Text = _selectedFood.Unit ?? "Unit";
                         txtMeasure.ForeColor = System.Drawing.Color.Black;
-                        txtExpen.Text = _selectedFood.Cost?.ToString() ?? "Expense";
+                        txtExpen.Text = _selectedFood.Cost?.ToString() ?? "Cost";
                         txtExpen.ForeColor = System.Drawing.Color.Black;
                     }
                     else
@@ -222,7 +222,7 @@ namespace eParty
                     Unit = txtMeasure.Text.Trim(),
                     Cost = int.Parse(txtExpen.Text.Trim()),
                     // Image = null,
-                    //  Manager = null,
+                    Manager = username
                     // Ingredients = null
                 };
 
@@ -353,13 +353,13 @@ namespace eParty
         {
             txtFoodName.Text = "Food Name";
             txtFoodName.ForeColor = System.Drawing.Color.Gray;
-            txtNote.Text = "Notes";
+            txtNote.Text = "Description";
             txtNote.ForeColor = System.Drawing.Color.Gray;
-            txtStock.Text = "Stock";
+            txtStock.Text = "Amount";
             txtStock.ForeColor = System.Drawing.Color.Gray;
-            txtMeasure.Text = "Measurement";
+            txtMeasure.Text = "Unit";
             txtMeasure.ForeColor = System.Drawing.Color.Gray;
-            txtExpen.Text = "Expense";
+            txtExpen.Text = "Cost";
             txtExpen.ForeColor = System.Drawing.Color.Gray;
             _selectedFood = null;
             dataGridFood.ClearSelection();
@@ -376,6 +376,11 @@ namespace eParty
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -104,8 +104,9 @@ namespace eParty
             try
             {
                 var ingredients = _context.Ingredients
-                    .Select(i => i.Name)
-                    .ToList();
+                                    .Where(i => i.Manager == username) 
+                                    .Select(i => i.Name)              
+                                    .ToList();
                 if (!ingredients.Any())
                 {
                     MessageBox.Show("No ingredients found in the database. Please add an ingredient first.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -152,9 +153,10 @@ namespace eParty
                             Location = ps.Provider.Location,
                             PhoneNumber = ps.Provider.PhoneNumber,
                             Ingredient = i.Name,
-                            Cost = ps.Supply.Cost
+                            Cost = ps.Supply.Cost,
+                            Manager = i.Manager
                         })
-                    .ToList();
+                    .ToList().Where(f => f.Manager == username);
 
                 if (!providerList.Any())
                 {
@@ -547,6 +549,11 @@ namespace eParty
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
             // Placeholder for panel3 paint event
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

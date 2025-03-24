@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientProvider));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel3 = new Panel();
+            txtIngredient = new ComboBox();
             btnUpdate = new ArtanButton();
             btnAdd = new ArtanButton();
             btnDelete = new ArtanButton();
@@ -54,7 +55,6 @@
             PhoneNumber = new DataGridViewTextBoxColumn();
             Ingredient = new DataGridViewTextBoxColumn();
             Cost = new DataGridViewTextBoxColumn();
-            txtIngredient = new ComboBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -81,12 +81,23 @@
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label3);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(849, 0);
+            panel3.Location = new Point(743, 0);
             panel3.Margin = new Padding(2, 1, 2, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(230, 608);
+            panel3.Size = new Size(201, 456);
             panel3.TabIndex = 24;
             panel3.Paint += panel3_Paint;
+            // 
+            // txtIngredient
+            // 
+            txtIngredient.FlatStyle = FlatStyle.Flat;
+            txtIngredient.Font = new Font("Segoe UI", 8F);
+            txtIngredient.FormattingEnabled = true;
+            txtIngredient.Location = new Point(105, 278);
+            txtIngredient.Margin = new Padding(2, 2, 2, 2);
+            txtIngredient.Name = "txtIngredient";
+            txtIngredient.Size = new Size(97, 21);
+            txtIngredient.TabIndex = 52;
             // 
             // btnUpdate
             // 
@@ -98,10 +109,10 @@
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(82, 504);
+            btnUpdate.Location = new Point(72, 378);
             btnUpdate.Margin = new Padding(2, 1, 2, 1);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(75, 39);
+            btnUpdate.Size = new Size(66, 29);
             btnUpdate.TabIndex = 49;
             btnUpdate.Text = "Update";
             btnUpdate.TextColor = Color.White;
@@ -117,14 +128,15 @@
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(5, 504);
+            btnAdd.Location = new Point(4, 378);
             btnAdd.Margin = new Padding(2, 1, 2, 1);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(73, 39);
+            btnAdd.Size = new Size(64, 29);
             btnAdd.TabIndex = 48;
             btnAdd.Text = "Add";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click_1;
             // 
             // btnDelete
             // 
@@ -136,10 +148,10 @@
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(161, 504);
+            btnDelete.Location = new Point(141, 378);
             btnDelete.Margin = new Padding(2, 1, 2, 1);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(62, 39);
+            btnDelete.Size = new Size(54, 29);
             btnDelete.TabIndex = 47;
             btnDelete.Text = "Delete";
             btnDelete.TextColor = Color.White;
@@ -150,10 +162,9 @@
             txtCost.BackColor = Color.FromArgb(227, 242, 253);
             txtCost.BorderStyle = BorderStyle.None;
             txtCost.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCost.Location = new Point(19, 407);
-            txtCost.Margin = new Padding(3, 4, 3, 4);
+            txtCost.Location = new Point(17, 305);
             txtCost.Name = "txtCost";
-            txtCost.Size = new Size(207, 27);
+            txtCost.Size = new Size(181, 22);
             txtCost.TabIndex = 45;
             txtCost.Text = "Cost";
             txtCost.UseWaitCursor = true;
@@ -163,9 +174,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(41, 128, 182);
-            label6.Location = new Point(19, 425);
+            label6.Location = new Point(17, 319);
             label6.Name = "label6";
-            label6.Size = new Size(225, 19);
+            label6.Size = new Size(187, 13);
             label6.TabIndex = 46;
             label6.Text = "____________________________________";
             label6.UseWaitCursor = true;
@@ -175,10 +186,9 @@
             txtIngredient1.BackColor = Color.FromArgb(227, 242, 253);
             txtIngredient1.BorderStyle = BorderStyle.None;
             txtIngredient1.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtIngredient1.Location = new Point(19, 364);
-            txtIngredient1.Margin = new Padding(3, 4, 3, 4);
+            txtIngredient1.Location = new Point(17, 273);
             txtIngredient1.Name = "txtIngredient1";
-            txtIngredient1.Size = new Size(207, 27);
+            txtIngredient1.Size = new Size(181, 22);
             txtIngredient1.TabIndex = 42;
             txtIngredient1.Text = "Ingredient";
             txtIngredient1.UseWaitCursor = true;
@@ -188,10 +198,9 @@
             txtPhoneNumber.BackColor = Color.FromArgb(227, 242, 253);
             txtPhoneNumber.BorderStyle = BorderStyle.None;
             txtPhoneNumber.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPhoneNumber.Location = new Point(19, 320);
-            txtPhoneNumber.Margin = new Padding(3, 4, 3, 4);
+            txtPhoneNumber.Location = new Point(17, 240);
             txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(207, 27);
+            txtPhoneNumber.Size = new Size(181, 22);
             txtPhoneNumber.TabIndex = 40;
             txtPhoneNumber.Text = "Phone number";
             txtPhoneNumber.UseWaitCursor = true;
@@ -201,10 +210,9 @@
             txtLocation.BackColor = Color.FromArgb(227, 242, 253);
             txtLocation.BorderStyle = BorderStyle.None;
             txtLocation.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtLocation.Location = new Point(19, 276);
-            txtLocation.Margin = new Padding(3, 4, 3, 4);
+            txtLocation.Location = new Point(17, 207);
             txtLocation.Name = "txtLocation";
-            txtLocation.Size = new Size(207, 27);
+            txtLocation.Size = new Size(181, 22);
             txtLocation.TabIndex = 38;
             txtLocation.Text = "Location";
             txtLocation.UseWaitCursor = true;
@@ -215,10 +223,9 @@
             txtFullname.BackColor = Color.FromArgb(227, 242, 253);
             txtFullname.BorderStyle = BorderStyle.None;
             txtFullname.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFullname.Location = new Point(19, 232);
-            txtFullname.Margin = new Padding(3, 4, 3, 4);
+            txtFullname.Location = new Point(17, 174);
             txtFullname.Name = "txtFullname";
-            txtFullname.Size = new Size(207, 27);
+            txtFullname.Size = new Size(181, 22);
             txtFullname.TabIndex = 36;
             txtFullname.Text = "Full name";
             txtFullname.UseWaitCursor = true;
@@ -226,10 +233,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(46, 47);
+            pictureBox1.Location = new Point(40, 35);
             pictureBox1.Margin = new Padding(2, 1, 2, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(149, 124);
+            pictureBox1.Size = new Size(130, 93);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 44;
             pictureBox1.TabStop = false;
@@ -239,9 +246,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(41, 128, 182);
-            label5.Location = new Point(19, 383);
+            label5.Location = new Point(17, 287);
             label5.Name = "label5";
-            label5.Size = new Size(225, 19);
+            label5.Size = new Size(187, 13);
             label5.TabIndex = 43;
             label5.Text = "____________________________________";
             label5.UseWaitCursor = true;
@@ -251,9 +258,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(41, 128, 182);
-            label4.Location = new Point(19, 340);
+            label4.Location = new Point(17, 255);
             label4.Name = "label4";
-            label4.Size = new Size(225, 19);
+            label4.Size = new Size(187, 13);
             label4.TabIndex = 41;
             label4.Text = "____________________________________";
             label4.UseWaitCursor = true;
@@ -263,9 +270,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 182);
-            label2.Location = new Point(19, 252);
+            label2.Location = new Point(17, 189);
             label2.Name = "label2";
-            label2.Size = new Size(225, 19);
+            label2.Size = new Size(187, 13);
             label2.TabIndex = 37;
             label2.Text = "____________________________________";
             label2.UseWaitCursor = true;
@@ -275,9 +282,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(41, 128, 182);
-            label3.Location = new Point(19, 296);
+            label3.Location = new Point(17, 222);
             label3.Name = "label3";
-            label3.Size = new Size(225, 19);
+            label3.Size = new Size(187, 13);
             label3.TabIndex = 39;
             label3.Text = "____________________________________";
             label3.UseWaitCursor = true;
@@ -289,7 +296,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2, 1, 2, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(849, 60);
+            panel1.Size = new Size(743, 45);
             panel1.TabIndex = 25;
             panel1.Paint += panel1_Paint;
             // 
@@ -305,10 +312,10 @@
             btnBack.ForeColor = Color.White;
             btnBack.Image = (Image)resources.GetObject("btnBack.Image");
             btnBack.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBack.Location = new Point(15, 9);
+            btnBack.Location = new Point(13, 7);
             btnBack.Margin = new Padding(2, 1, 2, 1);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(83, 39);
+            btnBack.Size = new Size(73, 29);
             btnBack.TabIndex = 49;
             btnBack.Text = "Back";
             btnBack.TextAlign = ContentAlignment.MiddleRight;
@@ -320,10 +327,10 @@
             // 
             panel2.Controls.Add(dataGridProvider);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 60);
+            panel2.Location = new Point(0, 45);
             panel2.Margin = new Padding(2, 1, 2, 1);
             panel2.Name = "panel2";
-            panel2.Size = new Size(849, 548);
+            panel2.Size = new Size(743, 411);
             panel2.TabIndex = 26;
             // 
             // dataGridProvider
@@ -335,28 +342,27 @@
             dataGridProvider.BackgroundColor = Color.White;
             dataGridProvider.BorderStyle = BorderStyle.None;
             dataGridProvider.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(42, 128, 182);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridProvider.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(42, 128, 182);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridProvider.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridProvider.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridProvider.Columns.AddRange(new DataGridViewColumn[] { Order, Location, PhoneNumber, Ingredient, Cost });
             dataGridProvider.Dock = DockStyle.Fill;
             dataGridProvider.EnableHeadersVisualStyles = false;
             dataGridProvider.GridColor = Color.LightGray;
             dataGridProvider.Location = new Point(0, 0);
-            dataGridProvider.Margin = new Padding(3, 4, 3, 4);
             dataGridProvider.MultiSelect = false;
             dataGridProvider.Name = "dataGridProvider";
             dataGridProvider.ReadOnly = true;
             dataGridProvider.RowHeadersVisible = false;
             dataGridProvider.RowHeadersWidth = 30;
             dataGridProvider.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridProvider.Size = new Size(849, 548);
+            dataGridProvider.Size = new Size(743, 411);
             dataGridProvider.TabIndex = 22;
             // 
             // Order
@@ -366,7 +372,7 @@
             Order.MinimumWidth = 10;
             Order.Name = "Order";
             Order.ReadOnly = true;
-            Order.Width = 76;
+            Order.Width = 61;
             // 
             // Location
             // 
@@ -400,23 +406,12 @@
             Cost.Name = "Cost";
             Cost.ReadOnly = true;
             // 
-            // txtIngredient
-            // 
-            txtIngredient.FlatStyle = FlatStyle.Flat;
-            txtIngredient.Font = new Font("Segoe UI", 8F);
-            txtIngredient.FormattingEnabled = true;
-            txtIngredient.Location = new Point(120, 370);
-            txtIngredient.Margin = new Padding(2, 3, 2, 3);
-            txtIngredient.Name = "txtIngredient";
-            txtIngredient.Size = new Size(110, 25);
-            txtIngredient.TabIndex = 52;
-            // 
             // IngredientProvider
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1079, 608);
+            ClientSize = new Size(944, 456);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);

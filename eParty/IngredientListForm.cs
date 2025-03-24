@@ -85,14 +85,7 @@ namespace eParty
                 dataGridIngre.Columns["Cost"].HeaderText = "Description";
             }
 
-            if (dataGridIngre.Columns["Description"] == null)
-            {
-                dataGridIngre.Columns.Add("Description", "Manager");
-            }
-            else
-            {
-                dataGridIngre.Columns["Description"].HeaderText = "Manager";
-            }
+            
 
             dataGridIngre.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridIngre.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -156,24 +149,6 @@ namespace eParty
             }
         }
 
-        private void LoadManagersIntoComboBox()
-        {           
-            try
-            {
-                var managers = _context.Managers
-                    .Select(m => m.UserName)
-                    .ToList();
-                if (!managers.Any())
-                {
-                    MessageBox.Show("No managers found in the database. Please add a manager.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading managers: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
 
         private void LoadIngredientData(string searchText = "")
         {
@@ -185,7 +160,7 @@ namespace eParty
 
                 if (!string.IsNullOrWhiteSpace(searchText) && searchText != "Search by ingredient name...")
                 {
-                    ingredientQuery = ingredientQuery.Where(i => i.Name.Contains(searchText));
+                    ingredientQuery = ingredientQuery.Where(i => i.Name.Contains(searchText)).Where(f => f.Manager == username);
                 }
 
                 var ingredientList = ingredientQuery
@@ -198,7 +173,7 @@ namespace eParty
                         i.Description,
                         i.Manager
                     })
-                    .ToList();
+                    .ToList().Where(f => f.Manager == username);
 
                 if (!ingredientList.Any())
                 {
@@ -248,7 +223,6 @@ namespace eParty
         {
             try
             {
-                LoadManagersIntoComboBox();
                 LoadIngredientData();
                 ClearForm();
             }
