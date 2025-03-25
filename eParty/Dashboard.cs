@@ -16,14 +16,13 @@ namespace eParty
             public decimal TotalAmount { get; set; }
         }
 
-
         private ePartyDbDbContext _context;
         public string username;
         public List<RevenueByDate> GrossRevenueList { get; private set; }
 
         public Dashboard(string username)
         {
-            this.username = username;   
+            this.username = username;
             InitializeComponent();
             _context = new ePartyDbDbContext();
 
@@ -109,24 +108,24 @@ namespace eParty
             try
             {
                 DateTime today = DateTime.Now;
-                DateTime startDate = today.AddDays(-30); 
+                DateTime startDate = today.AddDays(-30);
 
                 var revenueData = _context.Orders
                     .Where(o => o.Status == true && o.BeginTime.HasValue && o.BeginTime.Value >= startDate && o.BeginTime.Value <= today && o.ActualCost.HasValue && o.Manager == username)
                     .GroupBy(o => o.BeginTime.Value.Date)
                     .Select(g => new
                     {
-                        Date = g.Key, 
+                        Date = g.Key,
                         TotalAmount = g.Sum(o => o.ActualCost.Value)
                     })
-                    .ToList() 
+                    .ToList()
                     .Select(g => new RevenueByDate
                     {
-                        Date = g.Date.ToString("dd MMM"), 
+                        Date = g.Date.ToString("dd MMM"),
                         TotalAmount = g.TotalAmount
                     })
                     .OrderBy(r => r.Date)
-                    .ToList();            
+                    .ToList();
 
                 GrossRevenueList = revenueData;
 
@@ -134,16 +133,16 @@ namespace eParty
                 foreach (var item in GrossRevenueList)
                 {
                     int pointIndex = chartAnnual.Series[0].Points.AddXY(index, item.TotalAmount);
-                    chartAnnual.Series[0].Points[pointIndex].AxisLabel = item.Date; 
+                    chartAnnual.Series[0].Points[pointIndex].AxisLabel = item.Date;
                     index++;
                 }
-                                     
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading chart: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void LoadChartTotalOrder()
         {
             // Xóa dữ liệu cũ
@@ -172,27 +171,43 @@ namespace eParty
             // Xóa dữ liệu cũ
             chartTotalProfit.Series["Series1"].Points.Clear();
 
-            // Lấy dữ liệu tổng giá trị đơn hàng theo tháng từ Order và OrderHaveFood
-            var profitByMonth = _context.OrderHaveFoods
-                .Where(ohf => ohf.Order.Status == true && ohf.Order.BeginTime.HasValue && ohf.Order.Manager == username)
+            // Đảm bảo chart là loại Doughnut
+            chartTotalProfit.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+            // Tính tổng lợi nhuận từ Food (Food Profit)
+            decimal foodProfit = _context.OrderHaveFoods
+                .Where(ohf => ohf.Order.Status == true && ohf.Order.Manager == username)
                 .Join(_context.Foods,
                     ohf => ohf.FoodId,
                     f => f.Id,
                     (ohf, f) => new { ohf, f })
-                .GroupBy(x => x.ohf.Order.BeginTime.Value.Month)
-                .Select(g => new
-                {
-                    Month = g.Key,
-                    TotalProfit = g.Sum(x => x.ohf.Amount * x.f.Cost)
-                })
-                .OrderBy(g => g.Month)
-                .ToList();
+                .Sum(x => (decimal?)(x.ohf.Amount * x.f.Cost)) ?? 0;
+
+            // Giả định: Ingredient Profit là 30% của Food Profit, Staff Profit là 20% của Food Profit
+            decimal ingredientCostPercentage = 0.30m; // 30%
+            decimal staffCostPercentage = 0.20m; // 20%
+
+            // Tính Ingredient Profit (lợi nhuận sau khi trừ chi phí nguyên liệu)
+            decimal ingredientCost = foodProfit * ingredientCostPercentage;
+            decimal ingredientProfit = foodProfit - ingredientCost;
+
+            // Tính Staff Profit (lợi nhuận sau khi trừ chi phí nhân viên)
+            decimal staffCost = foodProfit * staffCostPercentage;
+            decimal staffProfit = foodProfit - staffCost;
+
+            // Food Profit là lợi nhuận còn lại sau khi trừ Ingredient Profit và Staff Profit
+            decimal adjustedFoodProfit = foodProfit - ingredientProfit - staffProfit;
 
             // Thêm dữ liệu vào chart
-            foreach (var item in profitByMonth)
-            {
-                chartTotalProfit.Series["Series1"].Points.AddXY(item.Month, item.TotalProfit);
-            }
+            chartTotalProfit.Series["Series1"].Points.AddXY("Staff Profit", staffProfit);
+            chartTotalProfit.Series["Series1"].Points.AddXY("Food Profit", adjustedFoodProfit);
+            chartTotalProfit.Series["Series1"].Points.AddXY("Ingredient Profit", ingredientProfit);
+
+            // Hiển thị giá trị tổng lợi nhuận ở giữa donut chart
+            chartTotalProfit.Series["Series1"]["PieLabelStyle"] = "Outside"; // Hiển thị nhãn bên ngoài
+            chartTotalProfit.Series["Series1"]["DoughnutRadius"] = "60"; // Điều chỉnh kích thước vòng tròn giữa
+            chartTotalProfit.Titles.Clear();
+            chartTotalProfit.Titles.Add(new Title($"Total Profit\n{foodProfit:#,##0}", Docking.Top, new System.Drawing.Font("Arial", 12), System.Drawing.Color.Black));
         }
 
         private void LoadDataOrderStatus()
@@ -241,6 +256,11 @@ namespace eParty
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataOrderStatus_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

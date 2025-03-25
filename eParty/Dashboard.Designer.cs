@@ -83,8 +83,8 @@
             chart2.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart2.Legends.Add(legend1);
-            chart2.Location = new Point(458, 211);
-            chart2.Margin = new Padding(4, 3, 4, 3);
+            chart2.Location = new Point(523, 281);
+            chart2.Margin = new Padding(5, 4, 5, 4);
             chart2.Name = "chart2";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -104,8 +104,8 @@
             legend2.ForeColor = Color.FromArgb(42, 128, 182);
             legend2.Name = "Legend1";
             chartTotalOrder.Legends.Add(legend2);
-            chartTotalOrder.Location = new Point(504, -1);
-            chartTotalOrder.Margin = new Padding(4, 3, 4, 3);
+            chartTotalOrder.Location = new Point(830, 7);
+            chartTotalOrder.Margin = new Padding(5, 4, 5, 4);
             chartTotalOrder.Name = "chartTotalOrder";
             chartTotalOrder.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             chartTotalOrder.PaletteCustomColors = new Color[]
@@ -129,7 +129,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             chartTotalOrder.Series.Add(series2);
-            chartTotalOrder.Size = new Size(189, 196);
+            chartTotalOrder.Size = new Size(448, 362);
             chartTotalOrder.TabIndex = 7;
             chartTotalOrder.Text = "chart3";
             title1.Alignment = ContentAlignment.TopLeft;
@@ -142,10 +142,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(14, 28);
-            pictureBox1.Margin = new Padding(4, 3, 4, 3);
+            pictureBox1.Location = new Point(16, 37);
+            pictureBox1.Margin = new Padding(5, 4, 5, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(22, 19);
+            pictureBox1.Size = new Size(25, 25);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -153,10 +153,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(14, 73);
-            pictureBox2.Margin = new Padding(4, 3, 4, 3);
+            pictureBox2.Location = new Point(16, 97);
+            pictureBox2.Margin = new Padding(5, 4, 5, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(22, 19);
+            pictureBox2.Size = new Size(25, 25);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -164,10 +164,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(14, 120);
-            pictureBox3.Margin = new Padding(4, 3, 4, 3);
+            pictureBox3.Location = new Point(16, 160);
+            pictureBox3.Margin = new Padding(5, 4, 5, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(22, 19);
+            pictureBox3.Size = new Size(25, 25);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -175,10 +175,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(14, 160);
-            pictureBox4.Margin = new Padding(4, 3, 4, 3);
+            pictureBox4.Location = new Point(16, 213);
+            pictureBox4.Margin = new Padding(5, 4, 5, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(22, 19);
+            pictureBox4.Size = new Size(25, 25);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
@@ -197,10 +197,10 @@
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(0, 202);
-            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Location = new Point(0, 424);
+            panel1.Margin = new Padding(5, 4, 5, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(146, 196);
+            panel1.Size = new Size(243, 362);
             panel1.TabIndex = 6;
             // 
             // lbProfit
@@ -208,10 +208,10 @@
             lbProfit.AutoSize = true;
             lbProfit.Font = new Font("Segoe UI", 8F);
             lbProfit.ForeColor = Color.FromArgb(42, 128, 182);
-            lbProfit.Location = new Point(43, 166);
+            lbProfit.Location = new Point(49, 221);
             lbProfit.Margin = new Padding(2, 0, 2, 0);
             lbProfit.Name = "lbProfit";
-            lbProfit.Size = new Size(43, 13);
+            lbProfit.Size = new Size(52, 19);
             lbProfit.TabIndex = 12;
             lbProfit.Text = "NProfit";
             // 
@@ -220,10 +220,10 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 8F);
             label5.ForeColor = Color.FromArgb(42, 128, 182);
-            label5.Location = new Point(10, 143);
+            label5.Location = new Point(11, 191);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(35, 13);
+            label5.Size = new Size(42, 19);
             label5.TabIndex = 11;
             label5.Text = "Profit";
             // 
@@ -232,10 +232,10 @@
             lbFeedBack.AutoSize = true;
             lbFeedBack.Font = new Font("Segoe UI", 8F);
             lbFeedBack.ForeColor = Color.FromArgb(42, 128, 182);
-            lbFeedBack.Location = new Point(43, 120);
+            lbFeedBack.Location = new Point(49, 160);
             lbFeedBack.Margin = new Padding(2, 0, 2, 0);
             lbFeedBack.Name = "lbFeedBack";
-            lbFeedBack.Size = new Size(62, 13);
+            lbFeedBack.Size = new Size(73, 19);
             lbFeedBack.TabIndex = 10;
             lbFeedBack.Text = "Nfeedback";
             // 
@@ -244,10 +244,10 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 8F);
             label3.ForeColor = Color.FromArgb(42, 128, 182);
-            label3.Location = new Point(10, 97);
+            label3.Location = new Point(11, 129);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(56, 13);
+            label3.Size = new Size(66, 19);
             label3.TabIndex = 9;
             label3.Text = "Feedback";
             // 
@@ -256,10 +256,10 @@
             lbTotalStaff.AutoSize = true;
             lbTotalStaff.Font = new Font("Segoe UI", 9F);
             lbTotalStaff.ForeColor = Color.FromArgb(42, 128, 182);
-            lbTotalStaff.Location = new Point(43, 73);
+            lbTotalStaff.Location = new Point(49, 97);
             lbTotalStaff.Margin = new Padding(2, 0, 2, 0);
             lbTotalStaff.Name = "lbTotalStaff";
-            lbTotalStaff.Size = new Size(76, 15);
+            lbTotalStaff.Size = new Size(95, 20);
             lbTotalStaff.TabIndex = 8;
             lbTotalStaff.Text = "Staff number";
             // 
@@ -268,10 +268,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 8F);
             label1.ForeColor = Color.FromArgb(42, 128, 182);
-            label1.Location = new Point(10, 52);
+            label1.Location = new Point(11, 69);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(31, 13);
+            label1.Size = new Size(36, 19);
             label1.TabIndex = 7;
             label1.Text = "Staff";
             // 
@@ -280,10 +280,10 @@
             lbTotalNumber.AutoSize = true;
             lbTotalNumber.Font = new Font("Segoe UI", 9F);
             lbTotalNumber.ForeColor = Color.FromArgb(42, 128, 182);
-            lbTotalNumber.Location = new Point(43, 32);
+            lbTotalNumber.Location = new Point(49, 43);
             lbTotalNumber.Margin = new Padding(2, 0, 2, 0);
             lbTotalNumber.Name = "lbTotalNumber";
-            lbTotalNumber.Size = new Size(82, 15);
+            lbTotalNumber.Size = new Size(103, 20);
             lbTotalNumber.TabIndex = 6;
             lbTotalNumber.Text = "Number order";
             // 
@@ -292,10 +292,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 8F);
             label2.ForeColor = Color.FromArgb(42, 128, 182);
-            label2.Location = new Point(10, 7);
+            label2.Location = new Point(11, 9);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(65, 13);
+            label2.Size = new Size(78, 19);
             label2.TabIndex = 5;
             label2.Text = "Total Order";
             // 
@@ -323,8 +323,8 @@
             legend3.IsTextAutoFit = false;
             legend3.Name = "Legend1";
             chartAnnual.Legends.Add(legend3);
-            chartAnnual.Location = new Point(0, -1);
-            chartAnnual.Margin = new Padding(4, 3, 4, 3);
+            chartAnnual.Location = new Point(0, -2);
+            chartAnnual.Margin = new Padding(5, 4, 5, 4);
             chartAnnual.Name = "chartAnnual";
             series3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
             series3.BackSecondaryColor = Color.FromArgb(50, 200, 100);
@@ -337,7 +337,7 @@
             series3.MarkerSize = 8;
             series3.Name = "Series1";
             chartAnnual.Series.Add(series3);
-            chartAnnual.Size = new Size(497, 196);
+            chartAnnual.Size = new Size(766, 418);
             chartAnnual.TabIndex = 10;
             chartAnnual.Text = "chart1";
             title2.Alignment = ContentAlignment.TopLeft;
@@ -358,8 +358,8 @@
             legend4.ForeColor = Color.FromArgb(42, 128, 182);
             legend4.Name = "Legend1";
             chartTotalProfit.Legends.Add(legend4);
-            chartTotalProfit.Location = new Point(504, 202);
-            chartTotalProfit.Margin = new Padding(4, 3, 4, 3);
+            chartTotalProfit.Location = new Point(830, 424);
+            chartTotalProfit.Margin = new Padding(5, 4, 5, 4);
             chartTotalProfit.Name = "chartTotalProfit";
             chartTotalProfit.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             chartTotalProfit.PaletteCustomColors = new Color[]
@@ -383,7 +383,7 @@
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             chartTotalProfit.Series.Add(series4);
-            chartTotalProfit.Size = new Size(189, 196);
+            chartTotalProfit.Size = new Size(448, 362);
             chartTotalProfit.TabIndex = 12;
             chartTotalProfit.Text = "chart4";
             title3.Alignment = ContentAlignment.TopLeft;
@@ -414,16 +414,17 @@
             DataOrderStatus.Columns.AddRange(new DataGridViewColumn[] { ID, Order });
             DataOrderStatus.EnableHeadersVisualStyles = false;
             DataOrderStatus.GridColor = Color.LightGray;
-            DataOrderStatus.Location = new Point(166, 202);
-            DataOrderStatus.Margin = new Padding(4, 3, 4, 3);
+            DataOrderStatus.Location = new Point(271, 424);
+            DataOrderStatus.Margin = new Padding(5, 4, 5, 4);
             DataOrderStatus.MultiSelect = false;
             DataOrderStatus.Name = "DataOrderStatus";
             DataOrderStatus.ReadOnly = true;
             DataOrderStatus.RowHeadersVisible = false;
             DataOrderStatus.RowHeadersWidth = 30;
             DataOrderStatus.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DataOrderStatus.Size = new Size(331, 196);
+            DataOrderStatus.Size = new Size(513, 362);
             DataOrderStatus.TabIndex = 13;
+            DataOrderStatus.CellContentClick += DataOrderStatus_CellContentClick;
             // 
             // ID
             // 
@@ -444,10 +445,10 @@
             // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(944, 456);
+            ClientSize = new Size(1415, 788);
             Controls.Add(DataOrderStatus);
             Controls.Add(chartTotalProfit);
             Controls.Add(chartAnnual);
@@ -455,7 +456,7 @@
             Controls.Add(panel1);
             Controls.Add(chart2);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(5, 4, 5, 4);
             Name = "Dashboard";
             Text = "DashboardForm";
             WindowState = FormWindowState.Maximized;
