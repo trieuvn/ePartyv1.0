@@ -188,7 +188,6 @@ namespace eParty
                 txtPhone.Text = _selectedOrder.PhoneNumber ?? "";
                 txtFeedBack.Text = _selectedOrder.Feedback ?? "";
 
-                // Thêm dòng này để hiển thị danh sách Staff và Food
                 LoadOrderDetails(_selectedOrder.Id);
             }
             else
@@ -202,7 +201,11 @@ namespace eParty
                 txtPhone.Text = "";
                 txtFeedBack.Text = "";
 
-                // Xóa dữ liệu trong DataGridView nếu không có Order được chọn
+                // Reset labels khi không có order
+                lbSoLuongStaff.Text = "Số lượng Staff: 0";
+                lbSoLuongMon.Text = "Số lượng Món: 0";
+                lbTongTien.Text = "Tổng tiền: 0 VND";
+
                 dataGridStaff.Rows.Clear();
                 dataGridFood.Rows.Clear();
             }
@@ -252,6 +255,19 @@ namespace eParty
                 {
                     dataGridFood.Rows.Add(food.Name, food.Amount, food.Cost);
                 }
+
+                // Cập nhật các label
+                int staffCount = staffList.Count;
+                int foodCount = foodList.Count;
+
+                // Tính tổng chi phí với ép kiểu rõ ràng sang decimal
+                decimal totalFoodCost = foodList.Sum(f => (decimal)(f.Amount ?? 0) * (f.Cost ?? 0));
+                decimal totalStaffCost = staffList.Sum(s => (decimal)(s.Cost ?? 0));
+                decimal totalCost = totalFoodCost + totalStaffCost;
+
+                lbSoLuongStaff.Text = $"Staff Count: {staffCount}";
+                lbSoLuongMon.Text = $"Food Count: {foodCount}";
+                lbTongTien.Text = $"Total Cost: {totalCost:N0} VND";
 
                 // Làm mới DataGridView
                 dataGridStaff.Refresh();

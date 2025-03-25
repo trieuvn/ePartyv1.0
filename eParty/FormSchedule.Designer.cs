@@ -156,8 +156,11 @@
             btnNext = new ArtanButton();
             week = new Label();
             panel3 = new Panel();
+            lbTongTien = new Label();
             TimeEnd = new DateTimePicker();
+            lbSoLuongMon = new Label();
             timeStart = new DateTimePicker();
+            lbSoLuongStaff = new Label();
             cboManager = new ComboBox();
             txtFeedBack = new TextBox();
             txtPhone = new TextBox();
@@ -2028,8 +2031,11 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(lbTongTien);
             panel3.Controls.Add(TimeEnd);
+            panel3.Controls.Add(lbSoLuongMon);
             panel3.Controls.Add(timeStart);
+            panel3.Controls.Add(lbSoLuongStaff);
             panel3.Controls.Add(cboManager);
             panel3.Controls.Add(txtFeedBack);
             panel3.Controls.Add(txtPhone);
@@ -2061,6 +2067,18 @@
             panel3.Size = new Size(233, 609);
             panel3.TabIndex = 2;
             // 
+            // lbTongTien
+            // 
+            lbTongTien.AutoSize = true;
+            lbTongTien.Font = new Font("Segoe UI", 9F);
+            lbTongTien.ForeColor = Color.FromArgb(42, 128, 182);
+            lbTongTien.Location = new Point(7, 524);
+            lbTongTien.Margin = new Padding(2, 0, 2, 0);
+            lbTongTien.Name = "lbTongTien";
+            lbTongTien.Size = new Size(78, 20);
+            lbTongTien.TabIndex = 11;
+            lbTongTien.Text = "Total Cost:";
+            // 
             // TimeEnd
             // 
             TimeEnd.Font = new Font("Segoe UI", 8F);
@@ -2071,6 +2089,18 @@
             TimeEnd.Size = new Size(89, 25);
             TimeEnd.TabIndex = 27;
             // 
+            // lbSoLuongMon
+            // 
+            lbSoLuongMon.AutoSize = true;
+            lbSoLuongMon.Font = new Font("Segoe UI", 9F);
+            lbSoLuongMon.ForeColor = Color.FromArgb(42, 128, 182);
+            lbSoLuongMon.Location = new Point(5, 463);
+            lbSoLuongMon.Margin = new Padding(2, 0, 2, 0);
+            lbSoLuongMon.Name = "lbSoLuongMon";
+            lbSoLuongMon.Size = new Size(101, 20);
+            lbSoLuongMon.TabIndex = 10;
+            lbSoLuongMon.Text = "Food number:";
+            // 
             // timeStart
             // 
             timeStart.Font = new Font("Segoe UI", 8F);
@@ -2080,6 +2110,18 @@
             timeStart.Name = "timeStart";
             timeStart.Size = new Size(89, 25);
             timeStart.TabIndex = 26;
+            // 
+            // lbSoLuongStaff
+            // 
+            lbSoLuongStaff.AutoSize = true;
+            lbSoLuongStaff.Font = new Font("Segoe UI", 9F);
+            lbSoLuongStaff.ForeColor = Color.FromArgb(42, 128, 182);
+            lbSoLuongStaff.Location = new Point(4, 403);
+            lbSoLuongStaff.Margin = new Padding(2, 0, 2, 0);
+            lbSoLuongStaff.Name = "lbSoLuongStaff";
+            lbSoLuongStaff.Size = new Size(102, 20);
+            lbSoLuongStaff.TabIndex = 9;
+            lbSoLuongStaff.Text = "Staff number: ";
             // 
             // cboManager
             // 
@@ -2611,5 +2653,8 @@
         private ArtanButton btnAddFood;
         private ArtanButton btnEditStaff;
         private ArtanButton btnEditFood;
+        private Label lbTongTien;
+        private Label lbSoLuongMon;
+        private Label lbSoLuongStaff;
     }
 }
