@@ -11,6 +11,16 @@ namespace eParty
         public Registration()
         {
             InitializeComponent();
+
+            // Set TabIndex for each control in the desired order
+            txtEmail.TabIndex = 0;
+            txtFullname.TabIndex = 1;
+            txtusername.TabIndex = 2;
+            txtphone.TabIndex = 3;
+            txtAddress.TabIndex = 4;
+            txtPass.TabIndex = 5;
+            txtConfirmPass.TabIndex = 6;
+            btnstarted.TabIndex = 7;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -106,9 +116,8 @@ namespace eParty
 
                     MessageBox.Show("Registration successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    Login loginForm= new Login();
+                    Login loginForm = new Login();
                     loginForm.Show();
-                    
                 }
             }
             catch (Exception ex)
@@ -116,7 +125,5 @@ namespace eParty
                 MessageBox.Show($"Registration error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
     }
 }
