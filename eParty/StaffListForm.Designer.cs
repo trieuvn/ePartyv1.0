@@ -82,10 +82,10 @@
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label3);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(556, 0);
-            panel3.Margin = new Padding(2);
+            panel3.Location = new Point(635, 0);
+            panel3.Margin = new Padding(2, 3, 2, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(201, 412);
+            panel3.Size = new Size(230, 549);
             panel3.TabIndex = 22;
             panel3.Paint += panel3_Paint;
             // 
@@ -99,12 +99,12 @@
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(72, 378);
-            btnUpdate.Margin = new Padding(2);
+            btnUpdate.Location = new Point(65, 504);
+            btnUpdate.Margin = new Padding(2, 3, 2, 3);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(63, 29);
+            btnUpdate.Size = new Size(66, 39);
             btnUpdate.TabIndex = 49;
-            btnUpdate.Text = "Update";
+            btnUpdate.Text = "Edit";
             btnUpdate.TextColor = Color.White;
             btnUpdate.UseVisualStyleBackColor = false;
             // 
@@ -118,10 +118,10 @@
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(2, 378);
-            btnAdd.Margin = new Padding(2);
+            btnAdd.Location = new Point(2, 504);
+            btnAdd.Margin = new Padding(2, 3, 2, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(66, 29);
+            btnAdd.Size = new Size(59, 39);
             btnAdd.TabIndex = 48;
             btnAdd.Text = "Add";
             btnAdd.TextColor = Color.White;
@@ -138,10 +138,10 @@
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(137, 378);
-            btnDelete.Margin = new Padding(2);
+            btnDelete.Location = new Point(133, 504);
+            btnDelete.Margin = new Padding(2, 3, 2, 3);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(64, 29);
+            btnDelete.Size = new Size(93, 39);
             btnDelete.TabIndex = 47;
             btnDelete.Text = "Delete";
             btnDelete.TextColor = Color.White;
@@ -152,10 +152,10 @@
             txtCost.BackColor = Color.FromArgb(227, 242, 253);
             txtCost.BorderStyle = BorderStyle.None;
             txtCost.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCost.Location = new Point(18, 304);
-            txtCost.Margin = new Padding(4, 3, 4, 3);
+            txtCost.Location = new Point(21, 405);
+            txtCost.Margin = new Padding(5, 4, 5, 4);
             txtCost.Name = "txtCost";
-            txtCost.Size = new Size(181, 22);
+            txtCost.Size = new Size(207, 27);
             txtCost.TabIndex = 45;
             txtCost.Text = "Cost";
             txtCost.UseWaitCursor = true;
@@ -165,10 +165,10 @@
             label6.AutoSize = true;
             label6.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(41, 128, 182);
-            label6.Location = new Point(18, 320);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(21, 427);
+            label6.Margin = new Padding(5, 0, 5, 0);
             label6.Name = "label6";
-            label6.Size = new Size(187, 13);
+            label6.Size = new Size(225, 19);
             label6.TabIndex = 46;
             label6.Text = "____________________________________";
             label6.UseWaitCursor = true;
@@ -178,10 +178,10 @@
             txtLocation.BackColor = Color.FromArgb(227, 242, 253);
             txtLocation.BorderStyle = BorderStyle.None;
             txtLocation.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtLocation.Location = new Point(18, 273);
-            txtLocation.Margin = new Padding(4, 3, 4, 3);
+            txtLocation.Location = new Point(21, 364);
+            txtLocation.Margin = new Padding(5, 4, 5, 4);
             txtLocation.Name = "txtLocation";
-            txtLocation.Size = new Size(181, 22);
+            txtLocation.Size = new Size(207, 27);
             txtLocation.TabIndex = 42;
             txtLocation.Text = "Location";
             txtLocation.UseWaitCursor = true;
@@ -191,10 +191,10 @@
             txtPhoneNumber.BackColor = Color.FromArgb(227, 242, 253);
             txtPhoneNumber.BorderStyle = BorderStyle.None;
             txtPhoneNumber.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPhoneNumber.Location = new Point(18, 240);
-            txtPhoneNumber.Margin = new Padding(4, 3, 4, 3);
+            txtPhoneNumber.Location = new Point(21, 320);
+            txtPhoneNumber.Margin = new Padding(5, 4, 5, 4);
             txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(181, 22);
+            txtPhoneNumber.Size = new Size(207, 27);
             txtPhoneNumber.TabIndex = 40;
             txtPhoneNumber.Text = "Phone number";
             txtPhoneNumber.UseWaitCursor = true;
@@ -204,10 +204,10 @@
             txtRole.BackColor = Color.FromArgb(227, 242, 253);
             txtRole.BorderStyle = BorderStyle.None;
             txtRole.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRole.Location = new Point(18, 207);
-            txtRole.Margin = new Padding(4, 3, 4, 3);
+            txtRole.Location = new Point(21, 276);
+            txtRole.Margin = new Padding(5, 4, 5, 4);
             txtRole.Name = "txtRole";
-            txtRole.Size = new Size(181, 22);
+            txtRole.Size = new Size(207, 27);
             txtRole.TabIndex = 38;
             txtRole.Text = "Role ";
             txtRole.UseWaitCursor = true;
@@ -217,10 +217,10 @@
             txtFullname.BackColor = Color.FromArgb(227, 242, 253);
             txtFullname.BorderStyle = BorderStyle.None;
             txtFullname.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFullname.Location = new Point(18, 174);
-            txtFullname.Margin = new Padding(4, 3, 4, 3);
+            txtFullname.Location = new Point(21, 232);
+            txtFullname.Margin = new Padding(5, 4, 5, 4);
             txtFullname.Name = "txtFullname";
-            txtFullname.Size = new Size(181, 22);
+            txtFullname.Size = new Size(207, 27);
             txtFullname.TabIndex = 36;
             txtFullname.Text = "Full name";
             txtFullname.UseWaitCursor = true;
@@ -228,10 +228,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(40, 35);
-            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Location = new Point(46, 47);
+            pictureBox1.Margin = new Padding(2, 3, 2, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(130, 93);
+            pictureBox1.Size = new Size(149, 124);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 44;
             pictureBox1.TabStop = false;
@@ -241,10 +241,10 @@
             label5.AutoSize = true;
             label5.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(41, 128, 182);
-            label5.Location = new Point(18, 287);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(21, 383);
+            label5.Margin = new Padding(5, 0, 5, 0);
             label5.Name = "label5";
-            label5.Size = new Size(187, 13);
+            label5.Size = new Size(225, 19);
             label5.TabIndex = 43;
             label5.Text = "____________________________________";
             label5.UseWaitCursor = true;
@@ -254,10 +254,10 @@
             label4.AutoSize = true;
             label4.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(41, 128, 182);
-            label4.Location = new Point(18, 254);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(21, 339);
+            label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(187, 13);
+            label4.Size = new Size(225, 19);
             label4.TabIndex = 41;
             label4.Text = "____________________________________";
             label4.UseWaitCursor = true;
@@ -267,10 +267,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 182);
-            label2.Location = new Point(18, 189);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(21, 252);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(187, 13);
+            label2.Size = new Size(225, 19);
             label2.TabIndex = 37;
             label2.Text = "____________________________________";
             label2.UseWaitCursor = true;
@@ -280,10 +280,10 @@
             label3.AutoSize = true;
             label3.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(41, 128, 182);
-            label3.Location = new Point(18, 222);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(21, 296);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(187, 13);
+            label3.Size = new Size(225, 19);
             label3.TabIndex = 39;
             label3.Text = "____________________________________";
             label3.UseWaitCursor = true;
@@ -293,9 +293,9 @@
             panel1.Controls.Add(artanPanel3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2);
+            panel1.Margin = new Padding(2, 3, 2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(556, 35);
+            panel1.Size = new Size(635, 47);
             panel1.TabIndex = 23;
             // 
             // artanPanel3
@@ -308,10 +308,10 @@
             artanPanel3.GradientAngle = 90F;
             artanPanel3.GradientBottomColor = Color.Silver;
             artanPanel3.GradientTopColor = Color.Silver;
-            artanPanel3.Location = new Point(12, 6);
-            artanPanel3.Margin = new Padding(2);
+            artanPanel3.Location = new Point(14, 8);
+            artanPanel3.Margin = new Padding(2, 3, 2, 3);
             artanPanel3.Name = "artanPanel3";
-            artanPanel3.Size = new Size(229, 26);
+            artanPanel3.Size = new Size(262, 35);
             artanPanel3.TabIndex = 20;
             // 
             // txtSearch
@@ -320,10 +320,10 @@
             txtSearch.BorderStyle = BorderStyle.None;
             txtSearch.Font = new Font("Segoe UI", 10F);
             txtSearch.ForeColor = Color.White;
-            txtSearch.Location = new Point(16, 4);
-            txtSearch.Margin = new Padding(4, 3, 4, 3);
+            txtSearch.Location = new Point(18, 5);
+            txtSearch.Margin = new Padding(5, 4, 5, 4);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(184, 18);
+            txtSearch.Size = new Size(210, 23);
             txtSearch.TabIndex = 20;
             txtSearch.Text = "Search by staff name...";
             txtSearch.UseWaitCursor = true;
@@ -340,10 +340,10 @@
             artanButton4.FlatStyle = FlatStyle.Flat;
             artanButton4.ForeColor = Color.White;
             artanButton4.Image = (Image)resources.GetObject("artanButton4.Image");
-            artanButton4.Location = new Point(200, 0);
-            artanButton4.Margin = new Padding(2);
+            artanButton4.Location = new Point(229, 0);
+            artanButton4.Margin = new Padding(2, 3, 2, 3);
             artanButton4.Name = "artanButton4";
-            artanButton4.Size = new Size(29, 26);
+            artanButton4.Size = new Size(33, 35);
             artanButton4.TabIndex = 17;
             artanButton4.TextColor = Color.White;
             artanButton4.UseVisualStyleBackColor = false;
@@ -352,10 +352,10 @@
             // 
             panel2.Controls.Add(dataGridStaff);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 35);
-            panel2.Margin = new Padding(2);
+            panel2.Location = new Point(0, 47);
+            panel2.Margin = new Padding(2, 3, 2, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(556, 377);
+            panel2.Size = new Size(635, 502);
             panel2.TabIndex = 24;
             // 
             // dataGridStaff
@@ -381,14 +381,14 @@
             dataGridStaff.EnableHeadersVisualStyles = false;
             dataGridStaff.GridColor = Color.LightGray;
             dataGridStaff.Location = new Point(0, 0);
-            dataGridStaff.Margin = new Padding(4, 3, 4, 3);
+            dataGridStaff.Margin = new Padding(5, 4, 5, 4);
             dataGridStaff.MultiSelect = false;
             dataGridStaff.Name = "dataGridStaff";
             dataGridStaff.ReadOnly = true;
             dataGridStaff.RowHeadersVisible = false;
             dataGridStaff.RowHeadersWidth = 30;
             dataGridStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridStaff.Size = new Size(556, 377);
+            dataGridStaff.Size = new Size(635, 502);
             dataGridStaff.TabIndex = 22;
             // 
             // Order
@@ -398,7 +398,7 @@
             Order.MinimumWidth = 10;
             Order.Name = "Order";
             Order.ReadOnly = true;
-            Order.Width = 61;
+            Order.Width = 76;
             // 
             // Role
             // 
@@ -434,15 +434,15 @@
             // 
             // StaffListForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(757, 412);
+            ClientSize = new Size(865, 549);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "StaffListForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ItemListForm";

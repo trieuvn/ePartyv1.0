@@ -202,9 +202,9 @@ namespace eParty
                 txtFeedBack.Text = "";
 
                 // Reset labels khi không có order
-                lbSoLuongStaff.Text = "Số lượng Staff: 0";
-                lbSoLuongMon.Text = "Số lượng Món: 0";
-                lbTongTien.Text = "Tổng tiền: 0 VND";
+                lbSoLuongStaff.Text = "Staff Count: 0";
+                lbSoLuongMon.Text = "Food Count: 0";
+                lbTongTien.Text = "Total Cost: 0 VND";
 
                 dataGridStaff.Rows.Clear();
                 dataGridFood.Rows.Clear();
