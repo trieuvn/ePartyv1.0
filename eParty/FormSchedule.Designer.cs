@@ -161,7 +161,6 @@
             lbSoLuongMon = new Label();
             timeStart = new DateTimePicker();
             lbSoLuongStaff = new Label();
-            cboManager = new ComboBox();
             txtFeedBack = new TextBox();
             txtPhone = new TextBox();
             txtAddress = new TextBox();
@@ -170,7 +169,6 @@
             label21 = new Label();
             label20 = new Label();
             label19 = new Label();
-            label18 = new Label();
             label17 = new Label();
             label16 = new Label();
             label15 = new Label();
@@ -180,7 +178,6 @@
             label22 = new Label();
             label23 = new Label();
             label24 = new Label();
-            label25 = new Label();
             label26 = new Label();
             label27 = new Label();
             label28 = new Label();
@@ -2036,7 +2033,6 @@
             panel3.Controls.Add(lbSoLuongMon);
             panel3.Controls.Add(timeStart);
             panel3.Controls.Add(lbSoLuongStaff);
-            panel3.Controls.Add(cboManager);
             panel3.Controls.Add(txtFeedBack);
             panel3.Controls.Add(txtPhone);
             panel3.Controls.Add(txtAddress);
@@ -2045,7 +2041,6 @@
             panel3.Controls.Add(label21);
             panel3.Controls.Add(label20);
             panel3.Controls.Add(label19);
-            panel3.Controls.Add(label18);
             panel3.Controls.Add(label17);
             panel3.Controls.Add(label16);
             panel3.Controls.Add(label15);
@@ -2055,7 +2050,6 @@
             panel3.Controls.Add(label22);
             panel3.Controls.Add(label23);
             panel3.Controls.Add(label24);
-            panel3.Controls.Add(label25);
             panel3.Controls.Add(label26);
             panel3.Controls.Add(label27);
             panel3.Controls.Add(label28);
@@ -2123,22 +2117,11 @@
             lbSoLuongStaff.TabIndex = 9;
             lbSoLuongStaff.Text = "Staff number: ";
             // 
-            // cboManager
-            // 
-            cboManager.FlatStyle = FlatStyle.Flat;
-            cboManager.Font = new Font("Segoe UI", 8F);
-            cboManager.FormattingEnabled = true;
-            cboManager.Location = new Point(99, 128);
-            cboManager.Margin = new Padding(2, 3, 2, 3);
-            cboManager.Name = "cboManager";
-            cboManager.Size = new Size(124, 25);
-            cboManager.TabIndex = 25;
-            // 
             // txtFeedBack
             // 
             txtFeedBack.BorderStyle = BorderStyle.None;
             txtFeedBack.Font = new Font("Segoe UI", 8F);
-            txtFeedBack.Location = new Point(79, 229);
+            txtFeedBack.Location = new Point(79, 202);
             txtFeedBack.Margin = new Padding(2, 3, 2, 3);
             txtFeedBack.Name = "txtFeedBack";
             txtFeedBack.Size = new Size(147, 18);
@@ -2148,7 +2131,7 @@
             // 
             txtPhone.BorderStyle = BorderStyle.None;
             txtPhone.Font = new Font("Segoe UI", 8F);
-            txtPhone.Location = new Point(63, 197);
+            txtPhone.Location = new Point(63, 170);
             txtPhone.Margin = new Padding(2, 3, 2, 3);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(163, 18);
@@ -2158,7 +2141,7 @@
             // 
             txtAddress.BorderStyle = BorderStyle.None;
             txtAddress.Font = new Font("Segoe UI", 8F);
-            txtAddress.Location = new Point(73, 165);
+            txtAddress.Location = new Point(73, 138);
             txtAddress.Margin = new Padding(2, 3, 2, 3);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(153, 18);
@@ -2188,7 +2171,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 8F);
-            label21.Location = new Point(10, 229);
+            label21.Location = new Point(10, 202);
             label21.Margin = new Padding(2, 0, 2, 0);
             label21.Name = "label21";
             label21.Size = new Size(69, 19);
@@ -2199,7 +2182,7 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 8F);
-            label20.Location = new Point(10, 197);
+            label20.Location = new Point(10, 170);
             label20.Margin = new Padding(2, 0, 2, 0);
             label20.Name = "label20";
             label20.Size = new Size(51, 19);
@@ -2210,23 +2193,12 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 8F);
-            label19.Location = new Point(10, 165);
+            label19.Location = new Point(10, 138);
             label19.Margin = new Padding(2, 0, 2, 0);
             label19.Name = "label19";
             label19.Size = new Size(61, 19);
             label19.TabIndex = 17;
             label19.Text = "Address:";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 8F);
-            label18.Location = new Point(10, 133);
-            label18.Margin = new Padding(2, 0, 2, 0);
-            label18.Name = "label18";
-            label18.Size = new Size(67, 19);
-            label18.TabIndex = 16;
-            label18.Text = "Manager:";
             // 
             // label17
             // 
@@ -2282,7 +2254,7 @@
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(137, 259);
+            btnDelete.Location = new Point(137, 232);
             btnDelete.Margin = new Padding(2, 3, 2, 3);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(89, 39);
@@ -2301,7 +2273,7 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(10, 259);
+            btnSave.Location = new Point(10, 232);
             btnSave.Margin = new Padding(2, 3, 2, 3);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(89, 39);
@@ -2316,7 +2288,7 @@
             label22.AutoSize = true;
             label22.BackColor = Color.White;
             label22.ForeColor = Color.Silver;
-            label22.Location = new Point(7, 232);
+            label22.Location = new Point(7, 205);
             label22.Margin = new Padding(2, 0, 2, 0);
             label22.Name = "label22";
             label22.Size = new Size(219, 20);
@@ -2328,7 +2300,7 @@
             label23.AutoSize = true;
             label23.BackColor = Color.White;
             label23.ForeColor = Color.Silver;
-            label23.Location = new Point(7, 203);
+            label23.Location = new Point(7, 176);
             label23.Margin = new Padding(2, 0, 2, 0);
             label23.Name = "label23";
             label23.Size = new Size(219, 20);
@@ -2340,24 +2312,12 @@
             label24.AutoSize = true;
             label24.BackColor = Color.White;
             label24.ForeColor = Color.Silver;
-            label24.Location = new Point(7, 171);
+            label24.Location = new Point(7, 144);
             label24.Margin = new Padding(2, 0, 2, 0);
             label24.Name = "label24";
             label24.Size = new Size(219, 20);
             label24.TabIndex = 30;
             label24.Text = "___________________________________";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.BackColor = Color.White;
-            label25.ForeColor = Color.Silver;
-            label25.Location = new Point(7, 139);
-            label25.Margin = new Padding(2, 0, 2, 0);
-            label25.Name = "label25";
-            label25.Size = new Size(219, 20);
-            label25.TabIndex = 31;
-            label25.Text = "___________________________________";
             // 
             // label26
             // 
@@ -2623,7 +2583,6 @@
         private Label label14;
         private Label label17;
         private Label label16;
-        private Label label18;
         private Label label21;
         private Label label20;
         private Label label19;
@@ -2632,14 +2591,12 @@
         private TextBox txtDescription;
         private DateTimePicker TimeEnd;
         private DateTimePicker timeStart;
-        private ComboBox cboManager;
         private TextBox txtFeedBack;
         private TextBox txtPhone;
         private Label label26;
         private Label label22;
         private Label label23;
         private Label label24;
-        private Label label25;
         private Label label27;
         private Label label28;
         private Label label29;

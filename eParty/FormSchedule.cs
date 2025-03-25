@@ -183,7 +183,6 @@ namespace eParty
                 txtTableNumber.Text = _selectedOrder.NoTables?.ToString() ?? "";
                 timeStart.Value = _selectedOrder.BeginTime ?? startTime;
                 TimeEnd.Value = _selectedOrder.EndTime ?? endTime;
-                cboManager.SelectedItem = _selectedOrder.Manager ?? "None";
                 txtAddress.Text = _selectedOrder.Address ?? "";
                 txtPhone.Text = _selectedOrder.PhoneNumber ?? "";
                 txtFeedBack.Text = _selectedOrder.Feedback ?? "";
@@ -196,7 +195,6 @@ namespace eParty
                 txtTableNumber.Text = "";
                 timeStart.Value = startTime;
                 TimeEnd.Value = endTime;
-                cboManager.SelectedItem = "None";
                 txtAddress.Text = "";
                 txtPhone.Text = "";
                 txtFeedBack.Text = "";
@@ -338,7 +336,6 @@ namespace eParty
                 }
 
                 // Lấy giá trị Manager từ ComboBox
-                string manager = cboManager.SelectedItem?.ToString() == "None" ? null : cboManager.SelectedItem?.ToString();
 
                 if (_selectedOrder == null)
                 {
@@ -348,7 +345,7 @@ namespace eParty
                         EndTime = endTime,
                         Description = string.IsNullOrWhiteSpace(txtDescription.Text) ? null : txtDescription.Text,
                         NoTables = noTables,
-                        Manager = manager,
+                        Manager = username,
                         Address = string.IsNullOrWhiteSpace(txtAddress.Text) ? null : txtAddress.Text,
                         PhoneNumber = phoneNumber,
                         Feedback = string.IsNullOrWhiteSpace(txtFeedBack.Text) ? null : txtFeedBack.Text,
@@ -363,7 +360,7 @@ namespace eParty
                     _selectedOrder.EndTime = endTime;
                     _selectedOrder.Description = string.IsNullOrWhiteSpace(txtDescription.Text) ? null : txtDescription.Text;
                     _selectedOrder.NoTables = noTables;
-                    _selectedOrder.Manager = manager;
+                    _selectedOrder.Manager = username;
                     _selectedOrder.Address = string.IsNullOrWhiteSpace(txtAddress.Text) ? null : txtAddress.Text;
                     _selectedOrder.PhoneNumber = phoneNumber;
                     _selectedOrder.Feedback = string.IsNullOrWhiteSpace(txtFeedBack.Text) ? null : txtFeedBack.Text;
@@ -481,7 +478,6 @@ namespace eParty
             txtTableNumber.Text = "";
             timeStart.Value = begin;
             TimeEnd.Value = end;
-            cboManager.SelectedItem = "None";
             txtAddress.Text = "";
             txtPhone.Text = "";
             txtFeedBack.Text = "";
