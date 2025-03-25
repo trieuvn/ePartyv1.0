@@ -50,7 +50,7 @@ namespace eParty
             btnDelete.Click += btnDelete_Click;
             dataGridStaff.SelectionChanged += DataGridStaff_SelectionChanged;
 
-            // Xử lý khi người dùng nhấp vào ô tìm kiếm để xóa placeholder
+            // Xử lý placeholder cho txtSearch
             txtSearch.Enter += (s, e) =>
             {
                 if (txtSearch.Text == "Search by staff name...")
@@ -67,6 +67,36 @@ namespace eParty
                     txtSearch.ForeColor = System.Drawing.Color.Gray;
                 }
             };
+
+            // Xử lý placeholder cho các trường nhập liệu
+            txtFullname.Enter += (s, e) => ClearPlaceholder(txtFullname, "Full name");
+            txtFullname.Leave += (s, e) => SetPlaceholder(txtFullname, "Full name");
+            txtRole.Enter += (s, e) => ClearPlaceholder(txtRole, "Role");
+            txtRole.Leave += (s, e) => SetPlaceholder(txtRole, "Role");
+            txtPhoneNumber.Enter += (s, e) => ClearPlaceholder(txtPhoneNumber, "Phone number");
+            txtPhoneNumber.Leave += (s, e) => SetPlaceholder(txtPhoneNumber, "Phone number");
+            txtLocation.Enter += (s, e) => ClearPlaceholder(txtLocation, "Location");
+            txtLocation.Leave += (s, e) => SetPlaceholder(txtLocation, "Location");
+            txtCost.Enter += (s, e) => ClearPlaceholder(txtCost, "Cost");
+            txtCost.Leave += (s, e) => SetPlaceholder(txtCost, "Cost");
+        }
+
+        private void ClearPlaceholder(TextBox textBox, string placeholder)
+        {
+            if (textBox.Text == placeholder)
+            {
+                textBox.Text = "";
+                textBox.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = placeholder;
+                textBox.ForeColor = System.Drawing.Color.Gray;
+            }
         }
 
         private void LoadStaffData(string searchText = "")
@@ -125,11 +155,16 @@ namespace eParty
 
                 if (_selectedStaff != null)
                 {
-                    txtFullname.Text = _selectedStaff.FullName ?? "";
-                    txtRole.Text = _selectedStaff.Role ?? "";
-                    txtPhoneNumber.Text = _selectedStaff.PhoneNumber ?? "";
-                    txtLocation.Text = _selectedStaff.Location ?? "";
-                    txtCost.Text = _selectedStaff.Cost?.ToString() ?? "";
+                    txtFullname.Text = _selectedStaff.FullName ?? "Full name";
+                    txtFullname.ForeColor = _selectedStaff.FullName != null ? System.Drawing.Color.Black : System.Drawing.Color.Gray;
+                    txtRole.Text = _selectedStaff.Role ?? "Role";
+                    txtRole.ForeColor = _selectedStaff.Role != null ? System.Drawing.Color.Black : System.Drawing.Color.Gray;
+                    txtPhoneNumber.Text = _selectedStaff.PhoneNumber ?? "Phone number";
+                    txtPhoneNumber.ForeColor = _selectedStaff.PhoneNumber != null ? System.Drawing.Color.Black : System.Drawing.Color.Gray;
+                    txtLocation.Text = _selectedStaff.Location ?? "Location";
+                    txtLocation.ForeColor = _selectedStaff.Location != null ? System.Drawing.Color.Black : System.Drawing.Color.Gray;
+                    txtCost.Text = _selectedStaff.Cost?.ToString() ?? "Cost";
+                    txtCost.ForeColor = _selectedStaff.Cost != null ? System.Drawing.Color.Black : System.Drawing.Color.Gray;
                 }
             }
         }
@@ -290,22 +325,25 @@ namespace eParty
         private void ClearForm()
         {
             txtFullname.Text = "Full name";
+            txtFullname.ForeColor = System.Drawing.Color.Gray;
             txtRole.Text = "Role";
+            txtRole.ForeColor = System.Drawing.Color.Gray;
             txtPhoneNumber.Text = "Phone number";
+            txtPhoneNumber.ForeColor = System.Drawing.Color.Gray;
             txtLocation.Text = "Location";
+            txtLocation.ForeColor = System.Drawing.Color.Gray;
             txtCost.Text = "Cost";
+            txtCost.ForeColor = System.Drawing.Color.Gray;
             _selectedStaff = null;
             dataGridStaff.ClearSelection();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-
         }
     }
 }
