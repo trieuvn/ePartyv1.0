@@ -87,15 +87,15 @@ namespace eParty
                 return;
             }
 
-            if (username.Length < 3 || username.Length > 32)
+            if (username.Length < 3 || username.Length > 50)
             {
-                MessageBox.Show("Username must be between 6 and 32 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Username must be between 3 and 50 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (password.Length < 2 || password.Length > 32)
+            if (password.Length < 3 || password.Length > 32)
             {
-                MessageBox.Show("Password must be between 8 and 32 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password must be between 3 and 50 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

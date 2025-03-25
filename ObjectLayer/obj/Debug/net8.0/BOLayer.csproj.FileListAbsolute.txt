@@ -58,3 +58,18 @@ C:\Users\Phuc\Documents\epartyv1.0\ObjectLayer\obj\Debug\net8.0\refint\BOLayer.d
 C:\Users\Phuc\Documents\epartyv1.0\ObjectLayer\obj\Debug\net8.0\BOLayer.pdb
 C:\Users\Phuc\Documents\epartyv1.0\ObjectLayer\obj\Debug\net8.0\BOLayer.genruntimeconfig.cache
 C:\Users\Phuc\Documents\epartyv1.0\ObjectLayer\obj\Debug\net8.0\ref\BOLayer.dll
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\bin\Debug\net8.0\BOLayer.deps.json
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\bin\Debug\net8.0\BOLayer.runtimeconfig.json
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\bin\Debug\net8.0\BOLayer.dll
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\bin\Debug\net8.0\BOLayer.pdb
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.csproj.AssemblyReference.cache
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.AssemblyInfoInputs.cache
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.AssemblyInfo.cs
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.csproj.CoreCompileInputs.cache
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.sourcelink.json
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.dll
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\refint\BOLayer.dll
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.pdb
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\BOLayer.genruntimeconfig.cache
+C:\Users\sang\OneDrive\Máy tính\eParty c# Sang\ObjectLayer\obj\Debug\net8.0\ref\BOLayer.dll

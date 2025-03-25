@@ -37,15 +37,15 @@ namespace eParty
                 return;
             }
 
-            if (username.Length < 6 || username.Length > 32 || !System.Text.RegularExpressions.Regex.IsMatch(username, @"^[a-z0-9]+$"))
+            if (username.Length < 6 || username.Length > 50 || !System.Text.RegularExpressions.Regex.IsMatch(username, @"^[a-z0-9]+$"))
             {
-                MessageBox.Show("Username must be 6-32 characters and contain only lowercase letters and numbers!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Username must be 6-50 characters and contain only lowercase letters and numbers!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (password.Length < 8 || password.Length > 32 || !System.Text.RegularExpressions.Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,32}$"))
+            if (password.Length < 8 || password.Length > 50 || !System.Text.RegularExpressions.Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,32}$"))
             {
-                MessageBox.Show("Password must be 8-32 characters with at least 1 lowercase, 1 uppercase, 1 number, and 1 special character!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password must be 8-50 characters with at least 1 lowercase, 1 uppercase, 1 number, and 1 special character!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -105,7 +105,9 @@ namespace eParty
                     context.SaveChanges();
 
                     MessageBox.Show("Registration successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    this.Hide();
+                    Login loginForm= new Login();
+                    loginForm.Show();
                     
                 }
             }

@@ -202,7 +202,7 @@ namespace eParty
             lblID.Font = new Font("Segoe UI Semibold", 4F, FontStyle.Bold);
             lblID.Location = new Point(53, 29);
             lblID.Name = "lblID";
-            lblID.Size = new Size(10, 8);
+            lblID.Size = new Size(12, 10);
             lblID.TabIndex = 2;
             lblID.Text = "ID";
             // 
@@ -222,7 +222,7 @@ namespace eParty
             lblName.Font = new Font("Segoe UI Semibold", 6F, FontStyle.Bold);
             lblName.Location = new Point(53, 8);
             lblName.Name = "lblName";
-            lblName.Size = new Size(26, 11);
+            lblName.Size = new Size(32, 12);
             lblName.TabIndex = 0;
             lblName.Text = "Name";
             lblName.Click += lb1_Click;
@@ -245,6 +245,7 @@ namespace eParty
             BtnOut.TabIndex = 3;
             BtnOut.TextColor = Color.White;
             BtnOut.UseVisualStyleBackColor = false;
+            BtnOut.Click += BtnOut_Click;
             // 
             // panel1
             // 
@@ -279,9 +280,9 @@ namespace eParty
             BtnNavbar.FlatStyle = FlatStyle.Flat;
             BtnNavbar.ForeColor = Color.FromArgb(69, 69, 74);
             BtnNavbar.Image = (Image)resources.GetObject("BtnNavbar.Image");
-            BtnNavbar.Location = new Point(228, 0);
+            BtnNavbar.Location = new Point(243, 0);
             BtnNavbar.Name = "BtnNavbar";
-            BtnNavbar.Size = new Size(47, 137);
+            BtnNavbar.Size = new Size(32, 137);
             BtnNavbar.TabIndex = 6;
             BtnNavbar.TextColor = Color.FromArgb(69, 69, 74);
             BtnNavbar.UseVisualStyleBackColor = false;
@@ -376,26 +377,26 @@ namespace eParty
             rjDropdownMenu1.MenuItemTextColor = Color.Empty;
             rjDropdownMenu1.Name = "rjDropdownMenu1";
             rjDropdownMenu1.PrimaryColor = Color.Empty;
-            rjDropdownMenu1.Size = new Size(123, 70);
+            rjDropdownMenu1.Size = new Size(139, 76);
             // 
             // staffListToolStripMenuItem
             // 
             staffListToolStripMenuItem.Name = "staffListToolStripMenuItem";
-            staffListToolStripMenuItem.Size = new Size(122, 22);
+            staffListToolStripMenuItem.Size = new Size(138, 24);
             staffListToolStripMenuItem.Text = "Staff List";
             staffListToolStripMenuItem.Click += staffListToolStripMenuItem_Click;
             // 
             // ingreListToolStripMenuItem
             // 
             ingreListToolStripMenuItem.Name = "ingreListToolStripMenuItem";
-            ingreListToolStripMenuItem.Size = new Size(122, 22);
+            ingreListToolStripMenuItem.Size = new Size(138, 24);
             ingreListToolStripMenuItem.Text = "Ingre List";
             ingreListToolStripMenuItem.Click += ingreListToolStripMenuItem_Click;
             // 
             // foodListToolStripMenuItem
             // 
             foodListToolStripMenuItem.Name = "foodListToolStripMenuItem";
-            foodListToolStripMenuItem.Size = new Size(122, 22);
+            foodListToolStripMenuItem.Size = new Size(138, 24);
             foodListToolStripMenuItem.Text = "Food List";
             foodListToolStripMenuItem.Click += foodListToolStripMenuItem_Click;
             // 
@@ -408,18 +409,18 @@ namespace eParty
             rjDropdownMenu2.MenuItemTextColor = Color.Empty;
             rjDropdownMenu2.Name = "rjDropdownMenu2";
             rjDropdownMenu2.PrimaryColor = Color.Empty;
-            rjDropdownMenu2.Size = new Size(142, 48);
+            rjDropdownMenu2.Size = new Size(164, 52);
             // 
             // createOrderToolStripMenuItem
             // 
             createOrderToolStripMenuItem.Name = "createOrderToolStripMenuItem";
-            createOrderToolStripMenuItem.Size = new Size(141, 22);
+            createOrderToolStripMenuItem.Size = new Size(163, 24);
             createOrderToolStripMenuItem.Text = "Create Order";
             // 
             // orderDetailToolStripMenuItem
             // 
             orderDetailToolStripMenuItem.Name = "orderDetailToolStripMenuItem";
-            orderDetailToolStripMenuItem.Size = new Size(141, 22);
+            orderDetailToolStripMenuItem.Size = new Size(163, 24);
             orderDetailToolStripMenuItem.Text = "Order Detail";
             // 
             // MenuForm

@@ -21,6 +21,7 @@ namespace eParty
             _context = new ePartyDbDbContext();
             _startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
 
+            ConfigureDataGridViews(); // Thêm dòng này
             LoadSchedule();
             RegisterButtonEvents();
             this.username = username;
@@ -130,7 +131,6 @@ namespace eParty
 
         private void ScheduleButton_Click(object sender, EventArgs e)
         {
-
             var button = sender as ArtanButton;
             if (button == null) return;
 
@@ -138,7 +138,6 @@ namespace eParty
             {
                 _selectedButton.BorderSize = 0;
             }
-
 
             button.BorderSize = 2;
             _selectedButton = button;
@@ -176,7 +175,7 @@ namespace eParty
             }
 
             _selectedOrder = _context.Orders
-                .FirstOrDefault(o => o.BeginTime >= startTime && o.BeginTime < endTime);
+                .FirstOrDefault(o => o.BeginTime >= startTime && o.BeginTime < endTime && o.Manager == username);
 
             if (_selectedOrder != null)
             {
@@ -184,11 +183,13 @@ namespace eParty
                 txtTableNumber.Text = _selectedOrder.NoTables?.ToString() ?? "";
                 timeStart.Value = _selectedOrder.BeginTime ?? startTime;
                 TimeEnd.Value = _selectedOrder.EndTime ?? endTime;
-                // Chọn Manager từ danh sách
                 cboManager.SelectedItem = _selectedOrder.Manager ?? "None";
                 txtAddress.Text = _selectedOrder.Address ?? "";
                 txtPhone.Text = _selectedOrder.PhoneNumber ?? "";
                 txtFeedBack.Text = _selectedOrder.Feedback ?? "";
+
+                // Thêm dòng này để hiển thị danh sách Staff và Food
+                LoadOrderDetails(_selectedOrder.Id);
             }
             else
             {
@@ -200,6 +201,65 @@ namespace eParty
                 txtAddress.Text = "";
                 txtPhone.Text = "";
                 txtFeedBack.Text = "";
+
+                // Xóa dữ liệu trong DataGridView nếu không có Order được chọn
+                dataGridStaff.Rows.Clear();
+                dataGridFood.Rows.Clear();
+            }
+        }
+        private void LoadOrderDetails(int orderId)
+        {
+            try
+            {
+                // Xóa dữ liệu cũ trong DataGridView
+                dataGridStaff.Rows.Clear();
+                dataGridFood.Rows.Clear();
+
+                // Truy vấn danh sách Staff từ OrderHaveStaff
+                var staffList = _context.OrderHaveStaffs
+                    .Where(ohs => ohs.OrderId == orderId)
+                    .Join(_context.Staff,
+                        ohs => ohs.StaffId,
+                        s => s.Id,
+                        (ohs, s) => new
+                        {
+                            s.FullName,
+                            s.Role,
+                            s.Cost
+                        })
+                    .ToList();
+
+                foreach (var staff in staffList)
+                {
+                    dataGridStaff.Rows.Add(staff.FullName, staff.Role, staff.Cost);
+                }
+
+                // Truy vấn danh sách Food từ OrderHaveFood
+                var foodList = _context.OrderHaveFoods
+                    .Where(ohf => ohf.OrderId == orderId)
+                    .Join(_context.Foods,
+                        ohf => ohf.FoodId,
+                        f => f.Id,
+                        (ohf, f) => new
+                        {
+                            f.Name,
+                            ohf.Amount,
+                            f.Cost
+                        })
+                    .ToList();
+
+                foreach (var food in foodList)
+                {
+                    dataGridFood.Rows.Add(food.Name, food.Amount, food.Cost);
+                }
+
+                // Làm mới DataGridView
+                dataGridStaff.Refresh();
+                dataGridFood.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading order details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -296,6 +356,9 @@ namespace eParty
                 _context.SaveChanges();
                 MessageBox.Show("Order saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadSchedule();
+
+                // Làm mới danh sách Staff và Food
+                LoadOrderDetails(_selectedOrder.Id);
             }
             catch (Exception ex)
             {
@@ -379,6 +442,10 @@ namespace eParty
                     LoadEmptyOrderForm(DateTime.Now, DateTime.Now.AddHours(1));
                     _selectedOrder = null;
                     _selectedButton = null;
+
+                    // Xóa dữ liệu trong DataGridView
+                    dataGridStaff.Rows.Clear();
+                    dataGridFood.Rows.Clear();
                 }
             }
             catch (Exception ex)
@@ -417,6 +484,451 @@ namespace eParty
         private void cot2dong1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridFood_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void ConfigureDataGridViews()
+        {
+            // Cấu hình DataGridView cho Staff
+            dataGridStaff.Columns.Clear();
+            dataGridStaff.Columns.Add("FullName", "Staff Name");
+            dataGridStaff.Columns.Add("Role", "Role");
+            dataGridStaff.Columns.Add("Cost", "Cost");
+            dataGridStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridStaff.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridStaff.RowTemplate.Height = 30;
+            dataGridStaff.AllowUserToResizeRows = false;
+
+            // Cấu hình DataGridView cho Food
+            dataGridFood.Columns.Clear();
+            dataGridFood.Columns.Add("Name", "Food Name");
+            dataGridFood.Columns.Add("Amount", "Amount");
+            dataGridFood.Columns.Add("Cost", "Cost");
+            dataGridFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridFood.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridFood.RowTemplate.Height = 30;
+            dataGridFood.AllowUserToResizeRows = false;
+        }
+
+        private void dataGridFood_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridStaff_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void btnAddStaff_Click_1(object sender, EventArgs e)
+        {
+            if (_selectedOrder == null)
+            {
+                MessageBox.Show("Please select an order first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var staffList = _context.Staff.ToList();
+            if (!staffList.Any())
+            {
+                MessageBox.Show("No staff available in the database!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (var form = new Form())
+            {
+                form.Text = "Add Staff to Order";
+                form.Size = new Size(300, 200);
+                form.StartPosition = FormStartPosition.CenterParent;
+
+                Label lblStaff = new Label { Text = "Select Staff:", Location = new Point(10, 10) };
+                ComboBox cboStaff = new ComboBox
+                {
+                    Location = new Point(10, 30),
+                    Width = 250,
+                    DropDownStyle = ComboBoxStyle.DropDownList
+                };
+
+                // Tạo danh sách mới với thông tin hiển thị kết hợp FullName và Role
+                var staffDisplayList = staffList.Select(s => new
+                {
+                    Id = s.Id,
+                    DisplayText = $"{s.FullName} - {s.Role}" // Kết hợp FullName và Role
+                }).ToList();
+
+                cboStaff.DataSource = staffDisplayList;
+                cboStaff.DisplayMember = "DisplayText"; // Hiển thị FullName - Role
+                cboStaff.ValueMember = "Id"; // Giá trị vẫn là Id
+
+                Button btnConfirm = new Button
+                {
+                    Text = "Add",
+                    Location = new Point(10, 70),
+                    Size = new Size(80, 25)
+                };
+                btnConfirm.Click += (s, ev) =>
+                {
+                    if (cboStaff.SelectedItem == null)
+                    {
+                        MessageBox.Show("Please select a staff!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    int staffId = (int)cboStaff.SelectedValue;
+                    var existingStaff = _context.OrderHaveStaffs
+                        .FirstOrDefault(ohs => ohs.OrderId == _selectedOrder.Id && ohs.StaffId == staffId);
+
+                    if (existingStaff != null)
+                    {
+                        MessageBox.Show("This staff is already assigned to the order!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    var orderHaveStaff = new OrderHaveStaff
+                    {
+                        OrderId = _selectedOrder.Id,
+                        StaffId = staffId
+                    };
+                    _context.OrderHaveStaffs.Add(orderHaveStaff);
+                    _context.SaveChanges();
+
+                    LoadOrderDetails(_selectedOrder.Id);
+                    form.Close();
+                };
+
+                form.Controls.Add(lblStaff);
+                form.Controls.Add(cboStaff);
+                form.Controls.Add(btnConfirm);
+                form.ShowDialog();
+            }
+        }
+
+        private void btnEditStaff_Click(object sender, EventArgs e)
+        {
+            if (_selectedOrder == null)
+            {
+                MessageBox.Show("Please select an order first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dataGridStaff.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a staff to edit!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string staffName = dataGridStaff.SelectedRows[0].Cells["FullName"].Value?.ToString();
+            if (string.IsNullOrEmpty(staffName))
+            {
+                MessageBox.Show("Invalid staff name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var staff = _context.Staff.FirstOrDefault(s => s.FullName == staffName);
+            if (staff == null)
+            {
+                MessageBox.Show("Staff not found in the database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var staffList = _context.Staff.ToList();
+            if (!staffList.Any())
+            {
+                MessageBox.Show("No staff available in the database!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (var form = new Form())
+            {
+                form.Text = "Edit Staff";
+                form.Size = new Size(300, 200);
+                form.StartPosition = FormStartPosition.CenterParent;
+
+                Label lblStaff = new Label { Text = "Select New Staff:", Location = new Point(10, 10) };
+                ComboBox cboStaff = new ComboBox
+                {
+                    Location = new Point(10, 30),
+                    Width = 250,
+                    DropDownStyle = ComboBoxStyle.DropDownList
+                };
+
+                // Tạo danh sách mới với thông tin hiển thị kết hợp FullName và Role
+                var staffDisplayList = staffList.Select(s => new
+                {
+                    Id = s.Id,
+                    DisplayText = $"{s.FullName} - {s.Role}"
+                }).ToList();
+
+                cboStaff.DataSource = staffDisplayList;
+                cboStaff.DisplayMember = "DisplayText";
+                cboStaff.ValueMember = "Id";
+                cboStaff.SelectedValue = staff.Id;
+
+                Button btnConfirm = new Button
+                {
+                    Text = "Update",
+                    Location = new Point(10, 70),
+                    Size = new Size(80, 25)
+                };
+                btnConfirm.Click += (s, ev) =>
+                {
+                    if (cboStaff.SelectedItem == null)
+                    {
+                        MessageBox.Show("Please select a staff!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    int newStaffId = (int)cboStaff.SelectedValue;
+                    var existingStaff = _context.OrderHaveStaffs
+                        .FirstOrDefault(ohs => ohs.OrderId == _selectedOrder.Id && ohs.StaffId == staff.Id);
+
+                    if (existingStaff != null)
+                    {
+                        existingStaff.StaffId = newStaffId;
+                        _context.SaveChanges();
+                        LoadOrderDetails(_selectedOrder.Id);
+                    }
+
+                    form.Close();
+                };
+
+                form.Controls.Add(lblStaff);
+                form.Controls.Add(cboStaff);
+                form.Controls.Add(btnConfirm);
+                form.ShowDialog();
+            }
+        }
+
+        private void btnDeleteStaff_Click(object sender, EventArgs e)
+        {
+            if (_selectedOrder == null)
+            {
+                MessageBox.Show("Please select an order first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dataGridStaff.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a staff to delete!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string staffName = dataGridStaff.SelectedRows[0].Cells["FullName"].Value.ToString();
+            var staff = _context.Staff.FirstOrDefault(s => s.FullName == staffName);
+            if (staff == null) return;
+
+            if (MessageBox.Show($"Are you sure you want to delete {staffName} from this order?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            var orderHaveStaff = _context.OrderHaveStaffs
+                .FirstOrDefault(ohs => ohs.OrderId == _selectedOrder.Id && ohs.StaffId == staff.Id);
+
+            if (orderHaveStaff != null)
+            {
+                _context.OrderHaveStaffs.Remove(orderHaveStaff);
+                _context.SaveChanges();
+                LoadOrderDetails(_selectedOrder.Id);
+            }
+        }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            if (_selectedOrder == null)
+            {
+                MessageBox.Show("Please select an order first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var foodList = _context.Foods.ToList();
+            if (!foodList.Any())
+            {
+                MessageBox.Show("No food available in the database!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (var form = new Form())
+            {
+                form.Text = "Add Food to Order";
+                form.Size = new Size(300, 250);
+                form.StartPosition = FormStartPosition.CenterParent;
+
+                Label lblFood = new Label { Text = "Select Food:", Location = new Point(10, 10) };
+                ComboBox cboFood = new ComboBox
+                {
+                    Location = new Point(10, 30),
+                    Width = 250,
+                    DropDownStyle = ComboBoxStyle.DropDownList
+                };
+                cboFood.DataSource = foodList;
+                cboFood.DisplayMember = "Name";
+                cboFood.ValueMember = "Id";
+
+                Label lblAmount = new Label { Text = "Amount:", Location = new Point(10, 60) };
+                TextBox txtAmount = new TextBox { Location = new Point(10, 80), Width = 250 };
+
+                Button btnConfirm = new Button
+                {
+                    Text = "Add",
+                    Location = new Point(10, 120),
+                    Size = new Size(80, 25)
+                };
+                btnConfirm.Click += (s, ev) =>
+                {
+                    if (cboFood.SelectedItem == null)
+                    {
+                        MessageBox.Show("Please select a food!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    if (!int.TryParse(txtAmount.Text, out int amount) || amount <= 0)
+                    {
+                        MessageBox.Show("Please enter a valid amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    int foodId = (int)cboFood.SelectedValue;
+                    var existingFood = _context.OrderHaveFoods
+                        .FirstOrDefault(ohf => ohf.OrderId == _selectedOrder.Id && ohf.FoodId == foodId);
+
+                    if (existingFood != null)
+                    {
+                        existingFood.Amount += amount;
+                    }
+                    else
+                    {
+                        var orderHaveFood = new OrderHaveFood
+                        {
+                            OrderId = _selectedOrder.Id,
+                            FoodId = foodId,
+                            Amount = amount
+                        };
+                        _context.OrderHaveFoods.Add(orderHaveFood);
+                    }
+
+                    _context.SaveChanges();
+                    LoadOrderDetails(_selectedOrder.Id);
+                    form.Close();
+                };
+
+                form.Controls.Add(lblFood);
+                form.Controls.Add(cboFood);
+                form.Controls.Add(lblAmount);
+                form.Controls.Add(txtAmount);
+                form.Controls.Add(btnConfirm);
+                form.ShowDialog();
+            }
+        }
+
+        private void btnDeleteFood_Click(object sender, EventArgs e)
+        {
+            if (_selectedOrder == null)
+            {
+                MessageBox.Show("Please select an order first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dataGridFood.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a food to delete!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string foodName = dataGridFood.SelectedRows[0].Cells["Name"].Value.ToString();
+            var food = _context.Foods.FirstOrDefault(f => f.Name == foodName);
+            if (food == null) return;
+
+            if (MessageBox.Show($"Are you sure you want to delete {foodName} from this order?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            var orderHaveFood = _context.OrderHaveFoods
+                .FirstOrDefault(ohf => ohf.OrderId == _selectedOrder.Id && ohf.FoodId == food.Id);
+
+            if (orderHaveFood != null)
+            {
+                _context.OrderHaveFoods.Remove(orderHaveFood);
+                _context.SaveChanges();
+                LoadOrderDetails(_selectedOrder.Id);
+            }
+        }
+
+        private void btnEditFood_Click(object sender, EventArgs e)
+        {
+            if (_selectedOrder == null)
+            {
+                MessageBox.Show("Please select an order first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dataGridFood.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a food to edit!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string foodName = dataGridFood.SelectedRows[0].Cells["Name"].Value.ToString();
+            int currentAmount = int.Parse(dataGridFood.SelectedRows[0].Cells["Amount"].Value.ToString());
+            var food = _context.Foods.FirstOrDefault(f => f.Name == foodName);
+            if (food == null) return;
+
+            using (var form = new Form())
+            {
+                form.Text = "Edit Food";
+                form.Size = new Size(300, 200);
+                form.StartPosition = FormStartPosition.CenterParent;
+
+                Label lblAmount = new Label { Text = "Amount:", Location = new Point(10, 10) };
+                TextBox txtAmount = new TextBox
+                {
+                    Location = new Point(10, 30),
+                    Width = 250,
+                    Text = currentAmount.ToString()
+                };
+
+                Button btnConfirm = new Button
+                {
+                    Text = "Update",
+                    Location = new Point(10, 70),
+                    Size = new Size(80, 25)
+                };
+                btnConfirm.Click += (s, ev) =>
+                {
+                    if (!int.TryParse(txtAmount.Text, out int newAmount) || newAmount <= 0)
+                    {
+                        MessageBox.Show("Please enter a valid amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    var existingFood = _context.OrderHaveFoods
+                        .FirstOrDefault(ohf => ohf.OrderId == _selectedOrder.Id && ohf.FoodId == food.Id);
+
+                    if (existingFood != null)
+                    {
+                        existingFood.Amount = newAmount;
+                        _context.SaveChanges();
+                        LoadOrderDetails(_selectedOrder.Id);
+                    }
+
+                    form.Close();
+                };
+
+                form.Controls.Add(lblAmount);
+                form.Controls.Add(txtAmount);
+                form.Controls.Add(btnConfirm);
+                form.ShowDialog();
+            }
         }
     }
 }
