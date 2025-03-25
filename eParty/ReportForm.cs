@@ -32,15 +32,24 @@ namespace eParty
         private void InitializeComponent()
         {
             this.Text = "Report Form";
-            // Đặt form để hiển thị bên trong MenuForm
             this.TopLevel = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
 
-            panelContainer = new ArtanPanel
+            // Create a custom header panel for the title
+            Panel headerPanel = new Panel
             {
                 Location = new Point(0, 0),
-                Size = new Size(this.ClientSize.Width, this.ClientSize.Height),
+                Size = new Size(this.ClientSize.Width, 80),
+                BackColor = Color.DodgerBlue,
+                Dock = DockStyle.Top
+            };
+            this.Controls.Add(headerPanel);
+
+            panelContainer = new ArtanPanel
+            {
+                Location = new Point(0, 80),
+                Size = new Size(this.ClientSize.Width, this.ClientSize.Height - 80),
                 GradientTopColor = Color.FromArgb(135, 206, 250),
                 GradientBottomColor = Color.FromArgb(70, 130, 180),
                 BorderRadius = 30,
@@ -54,93 +63,97 @@ namespace eParty
                 Font = new Font("Segoe UI", 20, FontStyle.Bold),
                 ForeColor = Color.White,
                 AutoSize = true,
-                Location = new Point(this.ClientSize.Width / 2 - 150, 50),
+                Location = new Point(this.ClientSize.Width / 2 - 150, 20),
                 Size = new Size(300, 40),
                 TextAlign = ContentAlignment.MiddleCenter,
-                Anchor = AnchorStyles.Top
+                Anchor = AnchorStyles.None
             };
-            panelContainer.Controls.Add(lblTitle);
+            headerPanel.Controls.Add(lblTitle);
+
+            // Create a FlowLayoutPanel to hold the buttons
+            FlowLayoutPanel buttonPanel = new FlowLayoutPanel
+            {
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                FlowDirection = FlowDirection.TopDown,
+                WrapContents = false,
+                Location = new Point(0, 0), // Will be centered later
+                Padding = new Padding(0, 20, 0, 20) // Add some vertical padding between buttons
+            };
+            panelContainer.Controls.Add(buttonPanel);
 
             btnOrderReport = new ArtanButton
             {
                 Text = "Order Report",
-                Location = new Point(this.ClientSize.Width / 2 - 100, 150),
                 Size = new Size(200, 50),
                 BackColor = Color.DodgerBlue,
                 ForeColor = Color.White,
                 BorderRadius = 25,
-                Font = new Font("Segoe UI", 12, FontStyle.Regular),
-                Anchor = AnchorStyles.Top
+                Font = new Font("Segoe UI", 12, FontStyle.Regular)
             };
             btnOrderReport.Click += BtnOrderReport_Click;
-            panelContainer.Controls.Add(btnOrderReport);
+            buttonPanel.Controls.Add(btnOrderReport);
 
             btnProfitReport = new ArtanButton
             {
                 Text = "Profit Report",
-                Location = new Point(this.ClientSize.Width / 2 - 100, 220),
                 Size = new Size(200, 50),
                 BackColor = Color.DodgerBlue,
                 ForeColor = Color.White,
                 BorderRadius = 25,
-                Font = new Font("Segoe UI", 12, FontStyle.Regular),
-                Anchor = AnchorStyles.Top
+                Font = new Font("Segoe UI", 12, FontStyle.Regular)
             };
             btnProfitReport.Click += BtnProfitReport_Click;
-            panelContainer.Controls.Add(btnProfitReport);
+            buttonPanel.Controls.Add(btnProfitReport);
 
             btnStaffReport = new ArtanButton
             {
                 Text = "Staff Report",
-                Location = new Point(this.ClientSize.Width / 2 - 100, 290),
                 Size = new Size(200, 50),
                 BackColor = Color.DodgerBlue,
                 ForeColor = Color.White,
                 BorderRadius = 25,
-                Font = new Font("Segoe UI", 12, FontStyle.Regular),
-                Anchor = AnchorStyles.Top
+                Font = new Font("Segoe UI", 12, FontStyle.Regular)
             };
             btnStaffReport.Click += BtnStaffReport_Click;
-            panelContainer.Controls.Add(btnStaffReport);
+            buttonPanel.Controls.Add(btnStaffReport);
 
             btnFoodReport = new ArtanButton
             {
                 Text = "Food Report",
-                Location = new Point(this.ClientSize.Width / 2 - 100, 360),
                 Size = new Size(200, 50),
                 BackColor = Color.DodgerBlue,
                 ForeColor = Color.White,
                 BorderRadius = 25,
-                Font = new Font("Segoe UI", 12, FontStyle.Regular),
-                Anchor = AnchorStyles.Top
+                Font = new Font("Segoe UI", 12, FontStyle.Regular)
             };
             btnFoodReport.Click += BtnFoodReport_Click;
-            panelContainer.Controls.Add(btnFoodReport);
+            buttonPanel.Controls.Add(btnFoodReport);
 
             btnBack = new ArtanButton
             {
                 Text = "Back to Dashboard",
-                Location = new Point(this.ClientSize.Width / 2 - 100, 430),
                 Size = new Size(200, 50),
                 BackColor = Color.OrangeRed,
                 ForeColor = Color.White,
                 BorderRadius = 25,
-                Font = new Font("Segoe UI", 12, FontStyle.Regular),
-                Anchor = AnchorStyles.Top
+                Font = new Font("Segoe UI", 12, FontStyle.Regular)
             };
             btnBack.Click += BtnBack_Click;
-            panelContainer.Controls.Add(btnBack);
+            buttonPanel.Controls.Add(btnBack);
 
-            // Xử lý sự kiện thay đổi kích thước form
+            // Center the buttonPanel both horizontally and vertically
             this.Resize += (s, e) =>
             {
-                panelContainer.Size = new Size(this.ClientSize.Width, this.ClientSize.Height);
-                lblTitle.Location = new Point(this.ClientSize.Width / 2 - 150, 50);
-                btnOrderReport.Location = new Point(this.ClientSize.Width / 2 - 100, 150);
-                btnProfitReport.Location = new Point(this.ClientSize.Width / 2 - 100, 220);
-                btnStaffReport.Location = new Point(this.ClientSize.Width / 2 - 100, 290);
-                btnFoodReport.Location = new Point(this.ClientSize.Width / 2 - 100, 360);
-                btnBack.Location = new Point(this.ClientSize.Width / 2 - 100, 430);
+                headerPanel.Size = new Size(this.ClientSize.Width, 80);
+                panelContainer.Size = new Size(this.ClientSize.Width, this.ClientSize.Height - 80);
+                lblTitle.Location = new Point(this.ClientSize.Width / 2 - 150, 20);
+
+                // Center the buttonPanel
+                buttonPanel.Location = new Point(
+                    (panelContainer.ClientSize.Width - buttonPanel.Width) / 2, // Center horizontally
+                    (panelContainer.ClientSize.Height - buttonPanel.Height) / 2 // Center vertically
+                );
             };
         }
 
