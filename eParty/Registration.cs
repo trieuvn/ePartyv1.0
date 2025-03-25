@@ -40,6 +40,7 @@ namespace eParty
             string password = txtPass.Text.Trim();
             string confirmPassword = txtConfirmPass.Text.Trim();
 
+            // Step 1: Check for empty fields
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(phoneNumber) ||
                 string.IsNullOrEmpty(location) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
@@ -47,6 +48,44 @@ namespace eParty
                 return;
             }
 
+            // Step 2: Validate field lengths against database schema
+            if (username.Length > 50)
+            {
+                MessageBox.Show("Username cannot exceed 50 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (password.Length > 50)
+            {
+                MessageBox.Show("Password cannot exceed 50 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (fullName.Length > 50)
+            {
+                MessageBox.Show("Full Name cannot exceed 50 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (location.Length > 50)
+            {
+                MessageBox.Show("Location cannot exceed 50 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (email.Length > 30)
+            {
+                MessageBox.Show("Email cannot exceed 30 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (phoneNumber.Length > 15)
+            {
+                MessageBox.Show("Phone Number cannot exceed 15 characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Step 3: Existing validation logic
             if (username.Length < 6 || username.Length > 50 || !System.Text.RegularExpressions.Regex.IsMatch(username, @"^[a-z0-9]+$"))
             {
                 MessageBox.Show("Username must be 6-50 characters and contain only lowercase letters and numbers!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,6 +118,7 @@ namespace eParty
                 return;
             }
 
+            // Step 4: Database operations
             try
             {
                 using (var context = new ePartyDbDbContext())
