@@ -4785,23 +4785,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator.DESKTOP-M0KCUVC\\.nuget\\packages\\": {},
+    "C:\\Users\\Phuc\\.nuget\\packages\\": {},
+    "C:\\Users\\Phuc\\Downloads\\Components\\Offline Packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Phuc\\Documents\\epartyv1.0\\ObjectLayer\\BOLayer.csproj",
       "projectName": "BOLayer",
-      "projectPath": "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj",
-      "packagesPath": "C:\\Users\\Administrator.DESKTOP-M0KCUVC\\.nuget\\packages\\",
-      "outputPath": "D:\\aProjectInit\\eParty\\ObjectLayer\\obj\\",
+      "projectPath": "C:\\Users\\Phuc\\Documents\\epartyv1.0\\ObjectLayer\\BOLayer.csproj",
+      "packagesPath": "C:\\Users\\Phuc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Phuc\\Documents\\epartyv1.0\\ObjectLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Users\\Phuc\\Downloads\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\Users\\Administrator.DESKTOP-M0KCUVC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Phuc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4810,6 +4813,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Phuc\\Downloads\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4826,9 +4830,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -4879,7 +4883,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

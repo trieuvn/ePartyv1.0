@@ -3220,23 +3220,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator.DESKTOP-M0KCUVC\\.nuget\\packages\\": {},
+    "C:\\Users\\Phuc\\.nuget\\packages\\": {},
+    "C:\\Users\\Phuc\\Downloads\\Components\\Offline Packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\aProjectInit\\eParty\\eParty\\eParty.csproj",
+      "projectUniqueName": "C:\\Users\\Phuc\\Documents\\epartyv1.0\\eParty\\eParty.csproj",
       "projectName": "eParty",
-      "projectPath": "D:\\aProjectInit\\eParty\\eParty\\eParty.csproj",
-      "packagesPath": "C:\\Users\\Administrator.DESKTOP-M0KCUVC\\.nuget\\packages\\",
-      "outputPath": "D:\\aProjectInit\\eParty\\eParty\\obj\\",
+      "projectPath": "C:\\Users\\Phuc\\Documents\\epartyv1.0\\eParty\\eParty.csproj",
+      "packagesPath": "C:\\Users\\Phuc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Phuc\\Documents\\epartyv1.0\\eParty\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Users\\Phuc\\Downloads\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\Users\\Administrator.DESKTOP-M0KCUVC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Phuc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3245,14 +3248,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Phuc\\Downloads\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj": {
-              "projectPath": "D:\\aProjectInit\\eParty\\ObjectLayer\\BOLayer.csproj"
+            "C:\\Users\\Phuc\\Documents\\epartyv1.0\\ObjectLayer\\BOLayer.csproj": {
+              "projectPath": "C:\\Users\\Phuc\\Documents\\epartyv1.0\\ObjectLayer\\BOLayer.csproj"
             }
           }
         }
@@ -3265,9 +3269,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -3301,7 +3305,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
