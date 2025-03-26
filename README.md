@@ -36,14 +36,14 @@ eParty is a digital catering and event management system designed to streamline 
 - Business Object Layer (BOLayer)
 ## Installation
 ### Prerequisites
-- Install .NET Framework (version X.X - specify based on your project).
+- Install .NET Framework (version 1.0 - specify based on your project).
 - Set up MS SQL Server (ensure proper configuration for database access).
 
 ### Steps
 #### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/eParty.git
+git clone https://github.com/trieuvn/eParty.git
 ```
 #### 2. Open the solution file (eParty.sln) in Visual Studio.
 #### 3. Configure the database connection string in the project settings (e.g., appsettings.json or equivalent).
